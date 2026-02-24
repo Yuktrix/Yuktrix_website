@@ -7,19 +7,19 @@
     >
       <!-- Backdrop -->
       <div
-        class="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        class="absolute inset-0 bg-black/40 backdrop-blur-sm"
         @click="closeModal"
       ></div>
 
       <!-- Modal Content -->
       <div
-        class="relative bg-yuktrix-black border border-white/10 rounded-2xl shadow-2xl max-w-md w-full p-8 transform transition-all"
+        class="relative bg-[#cdcfd1] border border-black/10 rounded-2xl shadow-2xl max-w-md w-full p-8 transform transition-all"
         @click.stop
       >
         <!-- Close Button -->
         <button
           @click="closeModal"
-          class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          class="absolute top-4 right-4 text-gray-600 hover:text-black transition-colors"
         >
           <svg
             class="w-6 h-6"
@@ -38,9 +38,11 @@
 
         <!-- Modal Header -->
         <div class="mb-6">
-          <h2 class="text-2xl font-bold text-white mb-2">Get Early Access</h2>
-          <p class="text-gray-400 text-sm">
-            Join the waitlist and be among the first to experience Yuktrix.
+          <h2 class="text-2xl font-bold text-black mb-2">
+            Book a Consultation
+          </h2>
+          <p class="text-gray-600 text-sm">
+            Build a structured, validated trading system for serious capital.
           </p>
         </div>
 
@@ -50,7 +52,7 @@
           <div>
             <label
               for="name"
-              class="block text-sm font-medium text-gray-300 mb-2"
+              class="block text-sm font-medium text-gray-700 mb-2"
             >
               Full Name <span class="text-red-500">*</span>
             </label>
@@ -60,7 +62,7 @@
               id="name"
               required
               placeholder="Enter your full name"
-              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#e8bb6d] focus:ring-1 focus:ring-[#e8bb6d] transition-colors"
+              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
             />
           </div>
 
@@ -68,7 +70,7 @@
           <div>
             <label
               for="email"
-              class="block text-sm font-medium text-gray-300 mb-2"
+              class="block text-sm font-medium text-gray-700 mb-2"
             >
               Email Address <span class="text-red-500">*</span>
             </label>
@@ -77,8 +79,8 @@
               type="email"
               id="email"
               required
-              placeholder="Enter your email"
-              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#e8bb6d] focus:ring-1 focus:ring-[#e8bb6d] transition-colors"
+              placeholder="Enter your professional email"
+              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
             />
           </div>
 
@@ -86,7 +88,7 @@
           <div>
             <label
               for="phone"
-              class="block text-sm font-medium text-gray-300 mb-2"
+              class="block text-sm font-medium text-gray-700 mb-2"
             >
               Phone Number <span class="text-red-500">*</span>
             </label>
@@ -95,61 +97,155 @@
               type="tel"
               id="phone"
               required
-              placeholder="Enter your phone number"
-              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#e8bb6d] focus:ring-1 focus:ring-[#e8bb6d] transition-colors"
+              placeholder="Enter your contact number"
+              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
             />
           </div>
 
-          <!-- Services Needed -->
+          <!-- You Represent -->
           <div>
             <label
-              for="services"
-              class="block text-sm font-medium text-gray-300 mb-2"
+              for="represent"
+              class="block text-sm font-medium text-gray-700 mb-2"
             >
-              Services You Need <span class="text-red-500">*</span>
+              You Represent <span class="text-red-500">*</span>
             </label>
             <select
-              v-model="formData.services"
-              id="services"
+              v-model="formData.represent"
+              id="represent"
               required
-              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#e8bb6d] focus:ring-1 focus:ring-[#e8bb6d] transition-colors"
+              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
             >
-              <option value="" disabled class="bg-yuktrix-black">
-                Select a service
+              <option value="" disabled class="bg-[#cdcfd1]">
+                Select an option
               </option>
-              <option value="AI Learning Platform" class="bg-yuktrix-black">
-                AI Learning Platform
+              <option value="High Net Worth Individual (HNI)" class="bg-[#cdcfd1]">
+                High Net Worth Individual (HNI)
               </option>
-              <option value="AI Trading Tools" class="bg-yuktrix-black">
-                AI Trading Tools
+              <option value="Proprietary Trading Desk" class="bg-[#cdcfd1]">
+                Proprietary Trading Desk
               </option>
-              <option value="Strategy Development" class="bg-yuktrix-black">
-                Strategy Development
+              <option value="Fund / Asset Management Firm" class="bg-[#cdcfd1]">
+                Fund / Asset Management Firm
               </option>
-              <option value="Market Intelligence" class="bg-yuktrix-black">
-                Market Intelligence
+              <option value="Founder Building a Trading Desk" class="bg-[#cdcfd1]">
+                Founder Building a Trading Desk
               </option>
-              <option value="All Services" class="bg-yuktrix-black">
-                All Services
-              </option>
-              <option value="Other" class="bg-yuktrix-black">Other</option>
+              <option value="Other" class="bg-[#cdcfd1]">Other</option>
             </select>
           </div>
 
-          <!-- Additional Message (Optional) -->
+          <!-- What Are You Looking To Build -->
           <div>
             <label
-              for="message"
-              class="block text-sm font-medium text-gray-300 mb-2"
+              for="build"
+              class="block text-sm font-medium text-gray-700 mb-2"
             >
-              Additional Message (Optional)
+              What Are You Looking To Build? <span class="text-red-500">*</span>
+            </label>
+            <select
+              v-model="formData.build"
+              id="build"
+              required
+              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
+            >
+              <option value="" disabled class="bg-[#cdcfd1]">
+                Select an option
+              </option>
+              <option value="Strategy Structuring & Validation" class="bg-[#cdcfd1]">
+                Strategy Structuring & Validation
+              </option>
+              <option value="Full Trading System Architecture" class="bg-[#cdcfd1]">
+                Full Trading System Architecture
+              </option>
+              <option value="Automation & Execution Infrastructure" class="bg-[#cdcfd1]">
+                Automation & Execution Infrastructure
+              </option>
+              <option value="Risk Framework Design" class="bg-[#cdcfd1]">
+                Risk Framework Design
+              </option>
+              <option value="End-to-End Trading Desk Setup" class="bg-[#cdcfd1]">
+                End-to-End Trading Desk Setup
+              </option>
+            </select>
+          </div>
+
+          <!-- Approximate Capital Allocation -->
+          <div>
+            <label
+              for="capital"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Approximate Capital Allocation (Optional but Recommended)
+            </label>
+            <select
+              v-model="formData.capital"
+              id="capital"
+              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
+            >
+              <option value="" disabled class="bg-[#cdcfd1]">
+                Select an option
+              </option>
+              <option value="₹50L – ₹2Cr" class="bg-[#cdcfd1]">
+                ₹50L – ₹2Cr
+              </option>
+              <option value="₹2Cr – ₹10Cr" class="bg-[#cdcfd1]">
+                ₹2Cr – ₹10Cr
+              </option>
+              <option value="₹10Cr+" class="bg-[#cdcfd1]">₹10Cr+</option>
+              <option value="Prefer to discuss privately" class="bg-[#cdcfd1]">
+                Prefer to discuss privately
+              </option>
+            </select>
+          </div>
+
+          <!-- Current Trading Approach -->
+          <div>
+            <label
+              for="approach"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Current Trading Approach <span class="text-red-500">*</span>
+            </label>
+            <select
+              v-model="formData.approach"
+              id="approach"
+              required
+              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
+            >
+              <option value="" disabled class="bg-[#cdcfd1]">
+                Select an option
+              </option>
+              <option value="Discretionary Manual Trading" class="bg-[#cdcfd1]">
+                Discretionary Manual Trading
+              </option>
+              <option value="Semi-Systematic" class="bg-[#cdcfd1]">
+                Semi-Systematic
+              </option>
+              <option value="Fully Systematic but needs refinement" class="bg-[#cdcfd1]">
+                Fully Systematic but needs refinement
+              </option>
+              <option value="Exploring structured trading" class="bg-[#cdcfd1]">
+                Exploring structured trading
+              </option>
+            </select>
+          </div>
+
+          <!-- Objective -->
+          <div>
+            <label
+              for="objective"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Briefly Describe Your Objective <span class="text-red-500">*</span>
             </label>
             <textarea
-              v-model="formData.message"
-              id="message"
+              v-model="formData.objective"
+              id="objective"
               rows="3"
-              placeholder="Tell us more about your needs..."
-              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#e8bb6d] focus:ring-1 focus:ring-[#e8bb6d] transition-colors resize-none"
+              placeholder="Tell us what you’re trying to build or improve."
+              required
+              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors resize-none"
             ></textarea>
           </div>
 
@@ -157,9 +253,9 @@
           <button
             type="submit"
             :disabled="isSubmitting"
-            class="w-full bg-[#e8bb6d] text-black px-6 py-3 rounded-full font-bold text-base hover:bg-[#e8bb6d]/90 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg"
+            class="w-full bg-[#db961f] text-black px-6 py-3 rounded-full font-bold text-base hover:bg-[#db961f]/90 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg"
           >
-            <span v-if="!isSubmitting">Submit Registration</span>
+            <span v-if="!isSubmitting">Request Strategic Consultation</span>
             <span v-else class="flex items-center justify-center gap-2">
               <svg class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
                 <circle
@@ -207,8 +303,11 @@ const formData = ref({
   name: "",
   email: "",
   phone: "",
-  services: "",
-  message: "",
+  represent: "",
+  build: "",
+  capital: "",
+  approach: "",
+  objective: "",
 });
 
 const closeModal = () => {
@@ -231,8 +330,11 @@ const handleSubmit = async () => {
       name: "",
       email: "",
       phone: "",
-      services: "",
-      message: "",
+      represent: "",
+      build: "",
+      capital: "",
+      approach: "",
+      objective: "",
     };
 
     setTimeout(() => {

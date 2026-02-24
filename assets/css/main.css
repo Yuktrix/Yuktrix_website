@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-yuktrix-black text-yuktrix-white font-sans overflow-x-hidden;
+  @apply bg-[#cdcfd1] text-black font-sans overflow-x-hidden;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#e8bb6d] to-white;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#db961f] to-black;
 }
 
 /* Smooth Scrolling */
@@ -20,18 +20,18 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #cdcfd1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #9c987c;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffd700;
+  background: #8a876d;
 }
 @font-face {
   font-family: "Futura W01";
-  src: url("/fonts/FontsFree-Net-FUTURE.woff2") format("woff2");
+  src: url("/fonts/FuturaW01.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }

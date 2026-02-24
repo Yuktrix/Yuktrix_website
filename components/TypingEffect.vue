@@ -1,5 +1,5 @@
 <template>
-  <span ref="typedText" class="text-[#e8bb6d]"></span>
+  <span ref="typedText" class="text-[#db961f]"></span>
 </template>
 
 <script setup>

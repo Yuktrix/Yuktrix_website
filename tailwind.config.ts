@@ -13,9 +13,9 @@ export default <Config>{
     extend: {
       colors: {
         yuktrix: {
-          black: '#0a0a0a',       // Deep rich black background
-          dark: '#121212',        // Slightly lighter black for cards
-          yellow: '#FFD700',      // Primary accent yellow
+          black: '#020202ff',       // Deep rich black background
+          dark: '#0a0909ff',        // Slightly lighter black for cards
+          yellow: '#ffbf00ff',      // Primary accent yellow
           yellowHover: '#E5C100', // Darker yellow for hovers
           white: '#ffffff',
           gray: '#888888',

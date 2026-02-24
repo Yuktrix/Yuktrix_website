@@ -1,1151 +1,600 @@
 <template>
-  <div class="font-futura">
-    <!-- Hero Section -->
-    <section
-      class="relative md:h-screen pt-10 flex items-center justify-center overflow-hidden"
-    >
-      <!-- 1. Background Image with Overlay -->
+  <div class="font-sans selection:bg-[#db961f] selection:text-black bg-[#cdcfd1]">
+    <!-- ==========================================
+      1. HERO SECTION (Creative Tech Design)
+    =========================================== -->
+    <section class="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden bg-[#090a0a]">
+      <!-- Deep Background Image -->
       <div class="absolute inset-0 z-0">
-        <!-- Image: Abstract Financial Data / Tech Network -->
         <img
-          src="/home/bg.jpg"
+          src="/home/slide.png"
           alt="Financial Intelligence Background"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover object-center opacity-30 grayscale mix-blend-luminosity scale-105 animate-[pulse_20s_ease-in-out_infinite]"
         />
-        <!-- Gradient Overlay: Fades from black (bottom) to transparent (top) to ensure text readability -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black"
-        ></div>
+        <!-- Advanced Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/95 via-[#090a0a]/80 to-[#cdcfd1]/10"></div>
       </div>
 
-      <!-- 2. Animated Glow Effects -->
-      <div
-        class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#e8bb6d]/10 rounded-full blur-[50px] animate-pulse z-0"
-      ></div>
-      <div
-        class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[50px] animate-pulse delay-1000 z-0"
-      ></div>
+      <!-- Architectural Grid Overlay -->
+      <div class="absolute inset-0 pointer-events-none z-0 opacity-[0.15]" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 4rem 4rem; mask-image: radial-gradient(circle at center, black, transparent 80%); -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);"></div>
 
-      <!-- 3. Main Content -->
-      <div class="container mx-auto px-4 relative z-10 text-end pt-20">
-        <div class="gsap-hero-text opacity-0 translate-y-10">
-          <!-- Tagline Pill -->
-          <!-- <span
-            class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-[#e8bb6d] text-xs font-bold tracking-widest mb-8 uppercase"
-          >
-            <span
-              class="w-2 h-2 rounded-full bg-[#e8bb6d] animate-pulse"
-            ></span>
-            Yuktrix
-          </span> -->
+      <!-- Animated Glow Effects -->
+      <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#db961f]/15 rounded-full blur-[120px] animate-[pulse_8s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] animate-[pulse_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+
+      <!-- Floating Tech Badges (Parallax/Float effect) -->
+      <div class="hidden lg:flex absolute top-[30%] left-10 items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg text-white/50 font-mono text-[10px] uppercase tracking-widest animate-[bounce_4s_ease-in-out_infinite]">
+        <span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></span> System.Active
+      </div>
+      <div class="hidden lg:flex absolute bottom-[30%] right-10 items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg text-white/50 font-mono text-[10px] uppercase tracking-widest animate-[bounce_5s_ease-in-out_infinite_reverse]">
+        <svg class="w-4 h-4 text-[#db961f]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> 0.1ms Latency
+      </div>
+
+      <!-- Main Content -->
+      <div class="container mx-auto px-6 relative z-10 pt-10 text-center flex flex-col items-center justify-center">
+        <div class="gsap-hero-text opacity-0 translate-y-10 flex flex-col items-center w-full">
+          
+          <!-- Top Badge -->
+          <div class="inline-flex items-center justify-center gap-3 px-5 py-2 mb-8 bg-[#090a0a] border border-[#db961f]/30 rounded-full shadow-[0_0_20px_rgba(219,150,31,0.15)] backdrop-blur-xl">
+            <span class="w-2 h-2 rounded-full bg-[#db961f] animate-ping"></span>
+            <span class="text-[#db961f] text-[11px] font-mono font-bold uppercase tracking-[0.25em]">Quantitative Architecture</span>
+          </div>
 
           <!-- Main Heading -->
-          <h1
-            class="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-8 tracking-tight"
-          >
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#e8bb6d] to-white"
-            >
-              It Reads. <br />
-              It Reasons. <br />
-              It Trades.
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[1.05] mb-8 tracking-tighter max-w-5xl mx-auto drop-shadow-2xl">
+            <span class="block text-white mb-2">Where Quant Discipline</span>
+            <span class="flex items-center justify-center gap-4 text-[#db961f] italic font-light my-4 text-4xl md:text-5xl lg:text-6xl">
+              <span class="w-12 md:w-24 h-px bg-gradient-to-r from-transparent to-[#db961f]"></span>
+              Meets
+              <span class="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#db961f]"></span>
+            </span>
+            <span class="block text-transparent bg-clip-text bg-gradient-to-br from-white via-[#cdcfd1] to-white/50 pb-2">
+              Automation Intelligence
             </span>
           </h1>
 
-          <!-- Subheading -->
-
-          <!-- Feature Pills (Glassmorphism) -->
-          <div
-            class="flex flex-col md:flex-row justify-end gap-3 mb-12 max-w-[1440px] mx-auto"
-          >
-            <div
-              data-aos="fade-left"
-              v-for="item in heroFeatures"
-              :key="item"
-              class="flex justify-end md:justify-center md:items-center text-sm font-medium text-gray-200"
-            >
-              <p class="text-4xl font-bold -mt-5">.</p>
-              &nbsp;&nbsp;
-              {{ item }}
-            </div>
-          </div>
-
-          <!-- CTA Buttons -->
-          <div
-            class="flex flex-col sm:flex-row gap-5 justify-center items-center"
-          >
-            <button
-              @click="openRegistrationModal"
-              class="group relative bg-[#e8bb6d] text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all hover:scale-105 w-full sm:w-auto overflow-hidden"
-            >
-              <span class="relative z-10"> Get Early Access </span>
+          <!-- Dynamic Feature Scroller (Terminal Style) -->
+          <div class="h-14 md:h-16 overflow-hidden mb-12 flex items-center justify-start bg-white/5 border border-white/10 backdrop-blur-md px-6 md:px-8 py-3 rounded-2xl w-full max-w-lg shadow-inner">
+            <span class="text-[#db961f] font-mono mr-4 font-bold text-lg">></span>
+            <Transition name="hero-feature" mode="out-in">
               <div
-                class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-              ></div>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <div
-        class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-gray-500 animate-bounce"
-      >
-        <span class="text-xs uppercase tracking-widest opacity-70">Scroll</span>
-        <svg
-          class="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          ></path>
-        </svg>
-      </div>
-    </section>
-
-    <!-- Platform Features -->
-    <div class="pt-10 pb-24 bg-black">
-      <!-- Header Section -->
-
-      <section class="py-20 bg-black relative overflow-hidden">
-        <!-- Background Effects -->
-        <div
-          class="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#e8bb6d]/5 rounded-full blur-[120px] animate-pulse"
-        ></div>
-        <div
-          class="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-[#e8bb6d]/5 rounded-full blur-[120px] animate-pulse"
-        ></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-          <!-- Section Header -->
-          <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-              Your Path to <span class="text-[#e8bb6d]">Smarter Trading</span>
-            </h2>
-            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-              From learning to execution, our AI-powered platform guides you
-              through every step of your trading journey.
-            </p>
+                :key="activeHeroFeatureIndex"
+                class="text-base md:text-lg font-mono text-white/90 tracking-wide w-full text-left flex items-center"
+              >
+                {{ heroFeatures[activeHeroFeatureIndex] }}<span class="inline-block w-2 h-5 bg-[#db961f] ml-1 animate-pulse"></span>
+              </div>
+            </Transition>
           </div>
 
-          <!-- Timeline -->
-          <div class="max-w-6xl mx-auto relative">
-            <!-- Vertical Line (Hidden on mobile) -->
-            <div
-              class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#e8bb6d]/20 via-[#e8bb6d]/50 to-[#e8bb6d]/20 -translate-x-1/2"
-            ></div>
-
-            <!-- Step 1 - Left -->
-            <div
-              class="relative mb-16 md:mb-24"
-              data-aos="fade-right"
-              data-aos-delay="100"
-            >
-              <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-                <!-- Content - Left Side -->
-                <div class="md:text-right mb-8 md:mb-0">
-                  <div
-                    class="inline-block md:block bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#e8bb6d]/50 transition-all group"
-                  >
-                    <h3
-                      class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#e8bb6d] transition-colors"
-                    >
-                      Learn the Market
-                    </h3>
-                    <p class="text-gray-400 text-base leading-relaxed mb-4">
-                      Master trading fundamentals with our AI Tutor. Get
-                      personalized lessons, real-time explanations, and
-                      interactive learning experiences tailored to your pace.
-                    </p>
-                    <div class="flex md:justify-end gap-2 flex-wrap">
-                      <span
-                        class="px-3 py-1 rounded-full bg-[#e8bb6d]/5 text-[#e8bb6d] text-xs border border-[#e8bb6d]/20"
-                      >
-                        AI Tutor
-                      </span>
-                      <span
-                        class="px-3 py-1 rounded-full bg-[#e8bb6d]/5 text-[#e8bb6d] text-xs border border-[#e8bb6d]/20"
-                      >
-                        Interactive Learning
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Timeline Marker - Center -->
-                <div
-                  class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10"
-                >
-                  <div
-                    class="w-16 h-16 rounded-full bg-gradient-to-br from-[#e8bb6d] to-[#e8bb6d]/70 flex items-center justify-center shadow-lg shadow-[#e8bb6d]/50 ring-4 ring-black"
-                  >
-                    <span class="text-black font-bold text-xl">1</span>
-                  </div>
-                </div>
-
-                <!-- Image - Right Side -->
-                <div class="md:block">
-                  <div
-                    class="relative group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2"
-                  >
-                    <img
-                      src="/home/1.jpg"
-                      alt="Learn the Market"
-                      class="w-full h-[500px] object-cover object-top rounded-xl group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 2 - Right -->
-            <div
-              class="relative mb-16 md:mb-24"
-              data-aos="fade-left"
-              data-aos-delay="200"
-            >
-              <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-                <!-- Image - Left Side -->
-
-                <!-- Timeline Marker - Center -->
-                <div
-                  class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10"
-                >
-                  <div
-                    class="w-16 h-16 rounded-full bg-gradient-to-br from-[#e8bb6d] to-[#e8bb6d]/70 flex items-center justify-center shadow-lg shadow-[#e8bb6d]/50 ring-4 ring-black"
-                  >
-                    <span class="text-black font-bold text-xl">2</span>
-                  </div>
-                </div>
-
-                <!-- Content - Right Side -->
-                <div class="md:text-left order-1 mb-8 md:mb-0 md:order-2">
-                  <div
-                    class="inline-block md:block bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#e8bb6d]/50 transition-all group"
-                  >
-                    <h3
-                      class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#e8bb6d] transition-colors"
-                    >
-                      Build Your Strategy
-                    </h3>
-                    <p class="text-gray-400 text-base leading-relaxed mb-4">
-                      Design winning strategies with our AI Strategy Builder. No
-                      coding required—just describe your idea and let AI create,
-                      optimize, and refine your trading logic.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                      <span
-                        class="px-3 py-1 rounded-full bg-[#e8bb6d]/5 text-[#e8bb6d] text-xs border border-[#e8bb6d]/20"
-                      >
-                        AI Strategy Builder
-                      </span>
-                      <span
-                        class="px-3 py-1 rounded-full bg-[#e8bb6d]/5 text-[#e8bb6d] text-xs border border-[#e8bb6d]/20"
-                      >
-                        No Code
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="order-2 md:order-1">
-                  <div
-                    class="relative group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
-                      alt="Build Your Strategy"
-                      class="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 3 - Left -->
-            <div
-              class="relative mb-16 md:mb-24"
-              data-aos="fade-right"
-              data-aos-delay="300"
-            >
-              <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-                <!-- Content - Left Side -->
-                <div class="md:text-right mb-8 md:mb-0 order-2 md:order-1">
-                  <div
-                    class="inline-block md:block bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#e8bb6d]/50 transition-all group"
-                  >
-                    <h3
-                      class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#e8bb6d] transition-colors"
-                    >
-                      Test in Seconds
-                    </h3>
-                    <p class="text-gray-400 text-base leading-relaxed mb-4">
-                      Validate your strategy instantly with our lightning-fast
-                      Backtesting Engine. Analyze years of historical data in
-                      seconds and get comprehensive performance metrics.
-                    </p>
-                    <div class="flex md:justify-end gap-2 flex-wrap">
-                      <span
-                        class="px-3 py-1 rounded-full bg-[#e8bb6d]/5 text-[#e8bb6d] text-xs border border-[#e8bb6d]/20"
-                      >
-                        Backtesting Engine
-                      </span>
-                      <span
-                        class="px-3 py-1 rounded-full bg-[#e8bb6d]/5 text-[#e8bb6d] text-xs border border-[#e8bb6d]/20"
-                      >
-                        Real-time Analysis
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Timeline Marker - Center -->
-                <div
-                  class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10"
-                >
-                  <div
-                    class="w-16 h-16 rounded-full bg-gradient-to-br from-[#e8bb6d] to-[#e8bb6d]/70 flex items-center justify-center shadow-lg shadow-[#e8bb6d]/50 ring-4 ring-black"
-                  >
-                    <span class="text-black font-bold text-xl">3</span>
-                  </div>
-                </div>
-
-                <!-- Image - Right Side -->
-                <div class="md:block order-1 md:order-2">
-                  <div
-                    class="relative group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
-                      alt="Test in Seconds"
-                      class="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 4 - Right -->
-            <div class="relative" data-aos="fade-left" data-aos-delay="400">
-              <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-                <!-- Image - Left Side -->
-                <div class="md:block order-2 md:order-1 mb-8 md:mb-0">
-                  <div
-                    class="relative group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2"
-                  >
-                    <img
-                      src="/home/2.jpg"
-                      alt="Automate With Precision"
-                      class="w-full h-[500px] object-cover object-top rounded-xl group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl"
-                    ></div>
-                  </div>
-                </div>
-
-                <!-- Timeline Marker - Center -->
-                <div
-                  class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10"
-                >
-                  <div
-                    class="w-16 h-16 rounded-full bg-gradient-to-br from-[#e8bb6d] to-[#e8bb6d]/70 flex items-center justify-center shadow-lg shadow-[#e8bb6d]/50 ring-4 ring-black"
-                  >
-                    <span class="text-black font-bold text-xl">4</span>
-                  </div>
-                </div>
-
-                <!-- Content - Right Side -->
-                <div class="md:text-left order-1 md:order-2">
-                  <div
-                    class="inline-block md:block bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#e8bb6d]/50 transition-all group"
-                  >
-                    <h3
-                      class="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#e8bb6d] transition-colors"
-                    >
-                      Automate With Precision
-                    </h3>
-                    <p class="text-gray-400 text-base leading-relaxed mb-4">
-                      Deploy your strategies seamlessly with our Execution
-                      Engine. Automate trades with institutional-grade
-                      precision, risk management, and real-time monitoring.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                      <span
-                        class="px-3 py-1 rounded-full bg-[#e8bb6d]/5 text-[#e8bb6d] text-xs border border-[#e8bb6d]/20"
-                      >
-                        Execution Engine
-                      </span>
-                      <span
-                        class="px-3 py-1 rounded-full bg-[#e8bb6d]/5 text-[#e8bb6d] text-xs border border-[#e8bb6d]/20"
-                      >
-                        Auto-trading
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- CTA Section -->
-          <div
-            class="text-center mt-20"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            <button
-              class="bg-[#e8bb6d] text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-[#e8bb6d]/90 transition-all hover:scale-105 shadow-lg shadow-[#e8bb6d]/30"
-            >
-              Start Your Journey
-            </button>
-          </div>
-        </div>
-      </section>
-      <!-- Process Flow Visualization -->
-    </div>
-
-    <!-- How It Works -->
-    <section class="py-24 bg-black relative">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2
-            class="text-3xl md:text-5xl font-display font-bold mb-6 text-white"
-          >
-            Why People Choose <span class="text-[#e8bb6d]">Yuktrix</span>
-          </h2>
-          <p class="text-xl text-white/70 max-w-3xl mx-auto">
-            Because it turns complexity into clarity — and clarity into action.
-          </p>
-        </div>
-
-        <div
-          class="flex gap-10 flex-col justify-center items-center md:flex-row"
-        >
-          <div
-            class="flex justify-center items-center gap-6 max-w-[1400px] mx-auto"
-          >
-            <!-- Card 1 -->
-            <div
-              class="flex flex-col justify-start items-start transition-all group"
-            >
-              <div
-                data-aos="fade-up"
-                data-aos-delay="0"
-                class="flex items-center gap-4 mb-6"
-              >
-                <div
-                  class="w-12 h-12 rounded-full bg-[#e8bb6d]/10 flex items-center justify-center text-[#e8bb6d] group-hover:scale-110 transition-transform"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 class="text-white text-sm md:text-3xl font-bold">
-                  Intelligence That Explains, Not Confuses
-                </h3>
-              </div>
-
-              <div
-                data-aos="fade-up"
-                data-aos-delay="0"
-                class="flex items-center gap-4 mb-6"
-              >
-                <div
-                  class="w-12 h-12 rounded-full bg-[#e8bb6d]/10 flex items-center justify-center text-[#e8bb6d] group-hover:scale-110 transition-transform"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 class="text-white text-sm md:text-3xl font-bold">
-                  One Platform for the Entire Trading Journey
-                </h3>
-              </div>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="0"
-                class="flex items-center gap-4 mb-6"
-              >
-                <div
-                  class="w-12 h-12 rounded-full bg-[#e8bb6d]/10 flex items-center justify-center text-[#e8bb6d] group-hover:scale-110 transition-transform"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 class="text-white text-sm md:text-3xl font-bold">
-                  Decisions Backed by Real Data, Not Guesswork
-                </h3>
-              </div>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="0"
-                class="flex items-center gap-4 mb-6"
-              >
-                <div
-                  class="w-12 h-12 rounded-full bg-[#e8bb6d]/10 flex items-center justify-center text-[#e8bb6d] group-hover:scale-110 transition-transform"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 class="text-white text-sm md:text-3xl font-bold">
-                  Execution You Can Trust
-                </h3>
-              </div>
-            </div>
-            <!-- Card 1 -->
-          </div>
-          <div>
-            <img src="/how.png" class="rounded-3xl w-[600px]" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- "A Smarter Way" Section -->
-    <section class="py-24 bg-black relative overflow-hidden">
-      <!-- Diagonal Background Shape -->
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-[#e8bb6d]/5 to-transparent transform -skew-y-3"
-      ></div>
-
-      <div class="px-4 relative z-10">
-        <div class="gap-12 items-start">
-          <!-- Left: Engine Components Grid -->
-
-          <!-- Right: Content + New Image -->
-          <div
-            class="flex flex-col gap-8 justify-center items-center"
-            data-aos="fade-right"
-          >
-            <!-- Text Content -->
-            <div>
-              <h2
-                data-aos="fade-up"
-                data-aos-delay="0"
-                class="text-3xl md:text-6xl text-center font-display font-bold mb-6 leading-tight text-white"
-              >
-                The
-                <span class="text-[#e8bb6d]">Yuktrix Intelligence Layer</span>
-              </h2>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="0"
-                class="space-y-5 text-center text-2xl text-white/70 leading-relaxed"
-              >
-                <p class="text-white font-medium pt-2">
-                  Everything works together — making markets simple, powerful,
-                  and actionable.
-                </p>
-              </div>
-            </div>
-
-            <!-- New Image: Dashboard Mockup -->
-            <div
-              class="relative mt-4 rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-[#e8bb6d]/10 group"
-            >
-              <!-- Image -->
-              <img
-                src="/market.png"
-                alt="Yuktrix Intelligence Layer Interface"
-                class="w-full"
-              />
-
-              <!-- Floating Badge -->
-              <div
-                class="absolute bottom-4 right-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 z-20 flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-                ></span>
-                <span class="text-xs font-mono text-white"
-                  >Intelligence Layer Active</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Plans -->
-    <div class="py-10 md:pb-24 bg-black">
-      <!-- Header -->
-      <section
-        class="container mx-auto px-4 md:py-20 py-4 text-center"
-        data-aos="fade-up"
-      >
-        <h1 class="text-4xl md:text-6xl font-display font-bold mb-6 text-white">
-          Built for <TypingEffect />
-        </h1>
-        <p class="text-xl text-white/70 max-w-3xl mx-auto">
-          Optimized for volatility patterns, liquidity behavior, and the Indian
-          broker ecosystem.
-        </p>
-      </section>
-    </div>
-
-    <!-- Testimonials -->
-    <!-- Trust, Safety & Clarity Section -->
-    <section class="md:py-24 bg-black relative">
-      <div
-        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"
-      ></div>
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2
-            class="text-3xl md:text-5xl font-display font-bold mb-6 text-white"
-          >
-            Trust, Safety & <span class="text-[#e8bb6d]">Clarity</span>
-          </h2>
-          <p class="text-xl text-white/70 max-w-3xl mx-auto">
-            Yuktrix is a financial analytics and automation platform.<br />
-            <span class="text-[#e8bb6d]">
-              It does not provide personalized investment advice or guaranteed
-              returns.
-            </span>
-          </p>
-        </div>
-
-        <div class="">
-          <div class="">
-            <!-- Left: Content -->
-
-            <!-- Right: Image -->
-            <div
-              class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#e8bb6d]/10 group"
-              data-aos="data-right"
-            >
-              <!-- Overlay for hover effect -->
-
-              <!-- Image -->
-              <img
-                src="/slide.png"
-                alt="Trust and Safety - Secure Platform"
-                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-
-              <!-- Floating Badge -->
-              <div
-                class="absolute bottom-4 right-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 z-20 flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-                ></span>
-                <span class="text-xs font-mono text-white"
-                  >Secure & Transparent</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Closing Statement -->
-    <section
-      class="relative py-32 bg-black text-center border-t border-white/10 overflow-hidden"
-    >
-      <!-- 1. Background Image -->
-      <div class="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop"
-          alt="AI Technology Background"
-          class="w-full h-full object-cover opacity-40"
-        />
-        <!-- Gradient Overlay for Readability -->
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"
-        ></div>
-      </div>
-
-      <!-- 2. Glowing Orb Effect (Preserved & Enhanced) -->
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8bb6d]/10 rounded-full blur-[100px] pointer-events-none z-0 animate-pulse"
-      ></div>
-
-      <!-- 3. Content Container -->
-      <div class="container mx-auto px-4 relative z-10" data-aos="zoom-in">
-        <!-- Small Badge -->
-        <div class="mb-8 flex justify-center">
-          <span
-            class="px-4 py-1.5 rounded-full border border-[#e8bb6d]/30 bg-[#e8bb6d]/10 text-[#e8bb6d] text-4xl md:text-6xl font-semibold tracking-wide uppercase backdrop-blur-sm"
-          >
-            Yuktrix
-          </span>
-        </div>
-
-        <!-- Main Heading -->
-        <h3
-          class="text-4xl md:text-6xl font-display font-bold max-w-[1440px] mx-auto leading-tight mb-8 text-white drop-shadow-lg"
-        >
-          Where Data Awakens <br />
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-[#e8bb6d] to-white"
-            >Intelligence</span
-          >
-        </h3>
-
-        <!-- Subtext -->
-        <p
-          class="text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
-        >
-          <strong class="text-white font-medium">Yuktrix</strong> — Your AI
-          companion for smarter trading and investing.
-        </p>
-
-        <!-- Buttons -->
-        <div
-          class="flex flex-col sm:flex-row items-center justify-center gap-6"
-        >
+          <!-- CTA Button -->
           <button
             @click="openRegistrationModal"
-            class="group relative bg-[#e8bb6d] text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,215,0,0.2)] overflow-hidden"
+            class="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-[#090a0a] bg-gradient-to-r from-[#db961f] to-[#FEE337] rounded-full overflow-hidden shadow-[0_0_40px_rgba(219,150,31,0.25)] hover:shadow-[0_0_60px_rgba(219,150,31,0.4)] transition-all duration-300 transform hover:-translate-y-1"
           >
-            <span class="relative z-10"> Get Started For Free </span>
-            <div
-              class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-            ></div>
+            <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+            <span class="relative z-10 flex items-center gap-3 text-lg tracking-wide uppercase"> 
+              Book Free Consultation
+              <svg class="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </span>
+            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
           </button>
         </div>
       </div>
+
+      <!-- Advanced Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-4 text-white/30 z-10">
+        <span class="text-[10px] font-bold font-mono uppercase tracking-[0.3em] opacity-80">Initialize</span>
+        <div class="relative w-px h-16 bg-white/10 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-[#db961f] to-transparent animate-scrolldown"></div>
+        </div>
+      </div>
     </section>
+
+   <!-- ==========================================
+      2. PROBLEM VS SOLUTION (Editorial Glassmorphism)
+    =========================================== -->
+    <section class="py-24 bg-[#cdcfd1] relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
+      <div class="container mx-auto px-6 max-w-[1400px]">
+        
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+          
+          <!-- LEFT COLUMN: THE FLAW -->
+          <div class="flex flex-col h-full" data-aos="fade-right">
+            
+            <!-- 1. Heading (Standardized Height for Alignment) -->
+            <div class="lg:h-[200px] mb-8 lg:mb-0">
+              <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-red-500/10 border border-red-500/20 text-red-600 rounded-full font-mono text-xs uppercase tracking-[0.2em] font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]"></span>
+                The Flaw
+              </div>
+              <h2 class="text-4xl md:text-5xl font-display font-bold text-[#090a0a] leading-[1.1]">
+                Structural Problem in <br/><span class="text-red-600/90">Modern Trading</span>
+              </h2>
+            </div>
+
+            <!-- 2. Image -->
+            <div class="relative group mb-8">
+              <div class="absolute inset-0 bg-red-500/10 blur-[60px] rounded-full transform translate-y-4 group-hover:bg-red-500/20 transition-colors duration-500 pointer-events-none"></div>
+              <div class="relative rounded-[2rem] p-3 bg-white/20 backdrop-blur-md border border-white/40 shadow-xl overflow-hidden">
+                 <img src="/home/Structural_problem.png" alt="Structural Problem" class="rounded-3xl w-full h-[250px] md:h-[300px] object-cover" />
+                 <div class="absolute inset-0 bg-red-500/5 mix-blend-overlay pointer-events-none rounded-3xl"></div>
+              </div>
+            </div>
+
+            <!-- 3. Content -->
+            <div class="flex-grow flex flex-col">
+              <p class="text-xl font-light text-[#090a0a]/70 mb-8 leading-snug">
+                <strong class="font-bold text-[#090a0a]">It’s not the strategy. It’s the structure.</strong> If your system leaks at every stage, no amount of capital will fix it.
+              </p>
+
+              <!-- Elegant Glassmorphic Card (Flaw Pattern) -->
+              <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 md:p-8 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.05)] relative overflow-hidden mt-auto">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/5 blur-[60px] rounded-full pointer-events-none"></div>
+                
+                <h3 class="text-sm font-bold text-[#090a0a]/50 uppercase tracking-widest mb-4 relative z-10">Common Structural Weaknesses:</h3>
+                
+                <div class="space-y-2 relative z-10">
+                  <div v-for="(item, i) in flawPoints" :key="i" class="flex items-start gap-4 p-3 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-black/5 group">
+                    <div class="w-7 h-7 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-red-500 transition-colors duration-300">
+                       <svg class="w-3.5 h-3.5 text-red-500 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </div>
+                    <span class="text-sm md:text-[15px] text-[#090a0a]/80 font-medium leading-relaxed group-hover:text-[#090a0a] transition-colors">{{ item }}</span>
+                  </div>
+                </div>
+
+                <!-- Strong Centralized Statement -->
+                <div class="mt-6 flex justify-center relative z-10">
+                   <div class="inline-flex items-center gap-3 bg-red-500 text-white px-6 py-3 rounded-full text-xs md:text-sm font-bold tracking-[0.1em] uppercase shadow-lg cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_white]"></span>
+                    It breaks faster.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: THE FIX -->
+          <div class="flex flex-col h-full" data-aos="fade-left">
+            
+            <!-- 1. Heading (Standardized Height for Alignment) -->
+            <div class="lg:h-[200px] mb-8 lg:mb-0">
+              <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#db961f]/10 border border-[#db961f]/30 text-[#db961f] rounded-full font-mono text-xs uppercase tracking-[0.2em] font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#db961f] animate-pulse shadow-[0_0_8px_rgba(219,150,31,0.8)]"></span>
+                The Fix
+              </div>
+              <h2 class="text-4xl md:text-5xl font-display font-bold text-[#090a0a] leading-[1.1]">
+                The <span class="text-[#db961f]">Optimized Solution</span>
+              </h2>
+            </div>
+
+            <!-- 2. Image -->
+            <div class="relative group mb-8">
+              <div class="absolute inset-0 bg-[#db961f]/20 blur-[60px] rounded-full transform translate-y-4 group-hover:bg-[#db961f]/30 transition-colors duration-500 pointer-events-none"></div>
+              <div class="relative rounded-[2rem] p-3 bg-white/20 backdrop-blur-md border border-white/40 shadow-xl overflow-hidden">
+                 <img src="/home/systemized_trading.png" alt="Systemized Trading" class="rounded-3xl w-full h-[250px] md:h-[300px] object-cover" />
+              </div>
+            </div>
+
+            <!-- 3. Content -->
+            <div class="flex-grow flex flex-col">
+              <p class="text-xl font-light text-[#090a0a]/70 mb-8 leading-snug">
+                <strong class="font-bold text-[#db961f]">It’s Not More Signals. It’s a System.</strong> Systemized trading converts ideas into rule-defined, statistically validated, risk-governed processes.
+              </p>
+              
+              <!-- Elegant Glassmorphic Card (Solution Pattern) -->
+              <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 md:p-8 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.05)] relative overflow-hidden mt-auto">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#db961f]/5 blur-[60px] rounded-full pointer-events-none"></div>
+                
+                <h3 class="text-sm font-bold text-[#090a0a]/50 uppercase tracking-widest mb-4 relative z-10">Systemized Advantages:</h3>
+
+                <div class="space-y-2 relative z-10">
+                  <div v-for="(item, i) in solutionPoints" :key="i" class="flex items-start gap-4 p-3 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-black/5 group">
+                    <div class="w-7 h-7 rounded-full bg-[#db961f]/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#db961f] transition-colors duration-300">
+                       <svg class="w-3.5 h-3.5 text-[#db961f] group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <span class="text-sm md:text-[15px] text-[#090a0a]/80 font-medium leading-relaxed group-hover:text-[#090a0a] transition-colors">{{ item }}</span>
+                  </div>
+                </div>
+
+                <!-- Strong Centralized Statement -->
+                <div class="mt-6 flex justify-center relative z-10">
+                   <div class="inline-flex items-center gap-3 bg-[#090a0a] text-white px-6 py-3 rounded-full text-xs md:text-sm font-bold tracking-[0.1em] uppercase shadow-lg cursor-default">
+                    <span class="w-2 h-2 rounded-full bg-[#db961f] shadow-[0_0_8px_#db961f]"></span>
+                    Structure first. Scale second.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+      3. IMPLEMENTATION FRAMEWORK (Glowing Timeline)
+    =========================================== -->
+    <section class="py-32 bg-[#090a0a] relative overflow-hidden">
+      <!-- Ambient Glows -->
+      <div class="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-[#cdcfd1]/20 to-transparent"></div>
+      <div class="absolute top-1/2 right-0 w-[800px] h-[800px] bg-[#db961f]/5 rounded-full blur-[150px] -translate-y-1/2 pointer-events-none"></div>
+
+      <div class="container mx-auto px-6 max-w-7xl relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center mb-24" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Our <span class="text-[#db961f]">Implementation Framework</span>
+          </h2>
+          <p class="text-white/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Yuktrix operates as an algorithmic trading consultancy focused on structured systemized trading implementation.
+            <br/><span class="text-white font-semibold mt-2 inline-block">This is not bot selling. This is professional trading architecture.</span>
+          </p>
+        </div>
+
+        <!-- Central Timeline Track -->
+        <div class="relative max-w-6xl mx-auto">
+          <!-- The Glowing Line -->
+          <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#db961f]/0 via-[#db961f] to-[#db961f]/0 -translate-x-1/2 shadow-[0_0_15px_rgba(219,150,31,0.5)]"></div>
+
+          <!-- Timeline Items -->
+          <div v-for="(step, index) in frameworkSteps" :key="index" class="relative mb-24 md:mb-32 last:mb-0" :data-aos="index % 2 === 0 ? 'fade-right' : 'fade-left'">
+            <div class="md:grid md:grid-cols-2 gap-16 items-stretch">
+              
+              <!-- Content (Alternating logic) -->
+              <div :class="['order-2 md:order-none md:row-start-1 md:h-full', index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:col-start-2 md:pl-12']">
+                <div class="h-full bg-white/5 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/10 hover:border-[#db961f]/50 hover:bg-white/10 transition-all group relative overflow-hidden flex flex-col">
+                  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#db961f] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  
+                  <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-[#db961f] transition-colors">
+                    {{ step.title }}
+                  </h3>
+                  <p class="text-white/70 text-lg leading-relaxed mb-8">
+                    <span class="font-bold text-white block mb-2">{{ step.subtitle }}</span>
+                    {{ step.desc }}
+                  </p>
+                  <div :class="['flex flex-wrap gap-3', index % 2 === 0 ? 'md:justify-end' : 'md:justify-start']">
+                    <span v-for="tag in step.tags" :key="tag" class="px-4 py-1.5 rounded-full bg-[#db961f]/10 text-[#db961f] text-xs font-bold uppercase tracking-wider border border-[#db961f]/20">
+                      {{ tag }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Node Marker (Desktop) -->
+              <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                <div class="w-14 h-14 rounded-full bg-[#090a0a] border-4 border-[#db961f] flex items-center justify-center shadow-[0_0_20px_rgba(219,150,31,0.6)]">
+                  <span class="text-[#db961f] font-bold text-xl">{{ index + 1 }}</span>
+                </div>
+              </div>
+
+              <!-- Image (Alternating logic) -->
+              <div :class="['order-1 mb-8 md:mb-0 md:order-none md:row-start-1 md:h-full', index % 2 === 0 ? 'md:col-start-2 md:pl-12' : 'md:col-start-1 md:pr-12']">
+                <div class="relative group rounded-3xl overflow-hidden border border-white/10 bg-white/5 p-2 h-full min-h-[300px] lg:min-h-[400px]">
+                  <img :src="step.image" :alt="step.title" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#090a0a]/80 to-transparent pointer-events-none rounded-2xl"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-32" data-aos="fade-up">
+          <button @click="openRegistrationModal" class="relative inline-flex items-center justify-center px-8 py-4 font-bold text-black bg-[#db961f] rounded-full overflow-hidden group">
+            <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56"></span>
+            <span class="relative">Start Building Your Framework</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+<!-- ==========================================
+      4. AUDIENCE SEGMENTATION
+    =========================================== -->
+    <section class="py-32 px-6 bg-[#cdcfd1]">
+        <div class="max-w-7xl mx-auto" data-aos="fade-up">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4 flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-[#090a0a] mb-6">Target <br/><span class="text-[#db961f]">Parameters</span></h2>
+                    <p class="text-[#090a0a]/70 text-lg leading-relaxed">
+                        We maintain a strict qualification process to ensure implementation alignment and capital seriousness.
+                    </p>
+                    <div class="mt-10 p-4 border border-red-500/20 rounded-xl bg-red-500/10 text-red-600 font-bold text-xs md:text-sm font-mono tracking-widest uppercase shadow-sm">
+                        [!] Yuktrix does not sell signals
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-8 grid md:grid-cols-2 gap-8">
+                    <!-- ACCESS GRANTED -->
+                    <div class="p-8 lg:p-10 border border-white/40 bg-white/60 backdrop-blur-md rounded-[2rem] shadow-xl hover:-translate-y-1 transition-transform">
+                        <span class="font-mono text-[11px] font-bold text-[#db961f] block mb-6 tracking-[0.2em] uppercase">ACCESS_GRANTED</span>
+                        <h3 class="text-[#090a0a] font-bold text-xl lg:text-2xl mb-8 uppercase tracking-wider">This Engagement is For:</h3>
+                        <ul class="space-y-5 text-base text-[#090a0a]/80 font-medium">
+                            <li class="flex items-start gap-4">
+                                <span class="text-[#db961f] mt-0.5">→</span>
+                                <span>Serious Individual Market Participants</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-[#db961f] mt-0.5">→</span>
+                                <span>High Net Worth Traders (HNIs)</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-[#db961f] mt-0.5">→</span>
+                                <span>Proprietary Trading Desks</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-[#db961f] mt-0.5">→</span>
+                                <span>Advisory & Financial Firms</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ACCESS DENIED -->
+                    <div class="p-8 lg:p-10 border border-[#090a0a]/10 bg-[#090a0a] rounded-[2rem] shadow-2xl hover:-translate-y-1 transition-transform relative overflow-hidden">
+                        <div class="absolute right-0 top-0 w-64 h-64 bg-red-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+                        <span class="font-mono text-[11px] font-bold text-red-500 block mb-6 tracking-[0.2em] uppercase relative z-10">ACCESS_DENIED</span>
+                        <h3 class="text-white font-bold text-xl lg:text-2xl mb-8 uppercase tracking-wider relative z-10">This is Not For:</h3>
+                        <ul class="space-y-5 text-base text-white/70 font-light relative z-10">
+                            <li class="flex items-start gap-4">
+                                <span class="text-red-500 mt-0.5">✕</span>
+                                <span>Short-term signal seekers</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-red-500 mt-0.5">✕</span>
+                                <span>Copy-trading participants</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-red-500 mt-0.5">✕</span>
+                                <span>"Guaranteed return" expectations</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="text-red-500 mt-0.5">✕</span>
+                                <span>Casual capital experimentation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+      5. TECH STACK (Full-Stack Data & AI Expertise)
+    =========================================== -->
+    <section class="py-32 px-6 bg-[#090a0a] relative overflow-hidden border-t border-white/5">
+        <!-- Glows -->
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#db961f]/5 blur-[150px] rounded-full pointer-events-none"></div>
+        
+        <div class="container max-w-7xl mx-auto relative z-10" data-aos="fade-up">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: 2x2 Grid -->
+                <div class="order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4 md:gap-6">
+                        <div class="p-6 md:p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-[#db961f]/50 transition-all group">
+                            <div class="font-mono text-xs font-bold text-[#db961f] mb-4 tracking-[0.2em]">DATA_ENG</div>
+                            <span class="text-white/90 font-bold text-sm md:text-lg uppercase leading-tight block group-hover:text-white">Pipeline Architecture</span>
+                        </div>
+                        <div class="p-6 md:p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-[#db961f]/50 transition-all group">
+                            <div class="font-mono text-xs font-bold text-[#db961f] mb-4 tracking-[0.2em]">STAT_MOD</div>
+                            <span class="text-white/90 font-bold text-sm md:text-lg uppercase leading-tight block group-hover:text-white">Quantitative Analytics</span>
+                        </div>
+                        <div class="p-6 md:p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-[#db961f]/50 transition-all group">
+                            <div class="font-mono text-xs font-bold text-[#db961f] mb-4 tracking-[0.2em]">ML_CORE</div>
+                            <span class="text-white/90 font-bold text-sm md:text-lg uppercase leading-tight block group-hover:text-white">Engineered Enhancements</span>
+                        </div>
+                        <div class="p-6 md:p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-[#db961f]/50 transition-all group">
+                            <div class="font-mono text-xs font-bold text-[#db961f] mb-4 tracking-[0.2em]">INFRA_DEV</div>
+                            <span class="text-white/90 font-bold text-sm md:text-lg uppercase leading-tight block group-hover:text-white">Execution Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Content -->
+                <div class="order-1 lg:order-2">
+                    <span class="font-mono text-xs font-bold text-[#db961f] mb-6 block tracking-[0.2em] uppercase">CAPABILITY_INDEX</span>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8 leading-[1.1]">Built on Full-Stack <br/><span class="text-[#db961f]">Data & AI Expertise</span></h2>
+                    <p class="text-white/70 text-lg leading-relaxed mb-10">
+                        Yuktrix integrates professional data engineering with quantitative strategy evaluation. Our multidisciplinary capability enables solutions grounded in measurable validation — not assumptions.
+                    </p>
+                    <div class="p-6 border-l-4 border-[#db961f] bg-[#db961f]/10 rounded-r-xl backdrop-blur-sm">
+                        <p class="text-white/90 italic font-medium">
+                            "We do not deploy opaque black-box systems. Clarity before commitment."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+      6. CONSULTATION PROCESS (Closing CTA)
+    =========================================== -->
+    <section id="consultation" class="relative py-32 px-6 bg-[#cdcfd1] text-center overflow-hidden">
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="/home/background.png" alt="AI Technology Background" class="w-full h-full object-cover opacity-30 grayscale mix-blend-multiply" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#cdcfd1] via-[#cdcfd1]/90 to-[#cdcfd1]/40"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto relative z-10" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#090a0a] mb-6 tracking-tight">Consultation Structure</h2>
+            <div class="font-mono text-xs md:text-sm font-bold text-[#db961f] uppercase tracking-[0.2em] mb-16 px-6 py-2.5 bg-[#090a0a] inline-block rounded-full shadow-lg">Engagement_Workflow</div>
+            
+            <div class="grid md:grid-cols-2 gap-px bg-[#090a0a]/10 rounded-[2.5rem] border border-[#090a0a]/10 overflow-hidden shadow-2xl mb-24">
+                
+                <!-- Phase 01 -->
+                <div class="p-10 md:p-14 text-left bg-white/80 backdrop-blur-xl hover:bg-white transition-colors">
+                    <h4 class="text-[#db961f] font-mono text-xs font-bold tracking-[0.2em] mb-6 uppercase">PHASE_01</h4>
+                    <h3 class="text-2xl font-bold text-[#090a0a] mb-8">Assessment Phase</h3>
+                    <ul class="space-y-4 text-base text-[#090a0a]/80 font-medium">
+                        <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 rounded-full bg-[#db961f]"></span> Strategy clarity assessment</li>
+                        <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 rounded-full bg-[#db961f]"></span> Risk tolerance modeling</li>
+                        <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 rounded-full bg-[#db961f]"></span> Capital structure review</li>
+                        <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 rounded-full bg-[#db961f]"></span> Implementation scoping</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 02 -->
+                <div class="p-10 md:p-14 text-left bg-[#090a0a] relative overflow-hidden">
+                    <div class="absolute right-0 bottom-0 w-64 h-64 bg-[#db961f]/10 blur-[80px] rounded-full pointer-events-none"></div>
+                    <h4 class="text-[#db961f] font-mono text-xs font-bold tracking-[0.2em] mb-6 uppercase relative z-10">PHASE_02</h4>
+                    <h3 class="text-2xl font-bold text-white mb-8 relative z-10">Roadmap Design</h3>
+                    <p class="text-white/70 text-lg leading-relaxed relative z-10">
+                        Qualified engagements proceed to a structured technical assessment and implementation roadmap design.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- CTA Button -->
+            <div>
+                <h3 class="text-3xl md:text-4xl font-bold text-[#090a0a] mb-10">Build Structured Infrastructure</h3>
+                <button @click="openRegistrationModal" class="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-white bg-[#090a0a] rounded-full overflow-hidden shadow-[0_15px_30px_rgba(9,10,10,0.2)] hover:-translate-y-1 transition-all">
+                    <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#db961f] rounded-full group-hover:w-[30rem] group-hover:h-[30rem]"></span>
+                    <span class="relative group-hover:text-[#090a0a] transition-colors tracking-widest uppercase text-sm md:text-base">Book Consultation Call</span>
+                </button>
+                <p class="mt-10 font-mono text-[11px] font-bold text-[#090a0a]/50 tracking-[0.2em] uppercase">SERIOUS INQUIRIES ONLY // SUBJECT TO QUALIFICATION</p>
+            </div>
+        </div>
+    </section>
+
     <RegistrationModal />
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useRegistration } from "~/composables/useRegistration";
-
 const { openRegistrationModal } = useRegistration();
-import { onMounted } from "vue";
-import {
-  ChartBarIcon,
-  BriefcaseIcon,
-  CurrencyRupeeIcon,
-  BoltIcon,
-  AcademicCapIcon,
-  UserGroupIcon,
-  ArrowPathIcon,
-  RocketLaunchIcon,
-  ShieldCheckIcon,
-  ServerStackIcon,
-  CpuChipIcon,
-  SignalIcon,
-  NewspaperIcon,
-  ChatBubbleLeftRightIcon,
-  WrenchScrewdriverIcon,
-  GlobeAltIcon,
-  FingerPrintIcon,
-} from "@heroicons/vue/24/outline";
 
 const { $gsap } = useNuxtApp();
-const activeFAQ = ref(null);
+
+// --- DATA ARRAYS TO KEEP TEMPLATE CLEAN ---
 
 const heroFeatures = [
-  "Wealth Management",
-  "Equity & Options Trading",
-  "Personalised AI Trader",
-  "Advanced Risk Management",
-  "Algorithmic Trading",
-  "Quantitative Finance",
+  "Structured Strategy Design",
+  "Statistical Validation",
+  "Controlled Automation",
+  "Capital Risk Engineering",
+  "Execution Infrastructure",
+  "Performance Governance",
 ];
 
-const userPersonas = [
-  { title: "Long-term Investors", icon: BriefcaseIcon },
-  { title: "Intraday & Swing Traders", icon: BoltIcon },
-  { title: "F&O Traders", icon: ChartBarIcon },
-  { title: "Index Investors", icon: CurrencyRupeeIcon },
-  { title: "Wealth Builders", icon: UserGroupIcon },
-  { title: "Analysts & Researchers", icon: AcademicCapIcon },
+const flawPoints = [
+  "Undefined rule logic",
+  "Inconsistent risk boundaries",
+  "Over-optimized backtests",
+  "Execution variability",
+  "Lack of statistical robustness",
+  "Black Box Trading Bots",
+  "Uncontrolled execution environments"
 ];
 
-const platformFeatures = [
-  {
-    title: "AI Market Intelligence",
-    icon: CpuChipIcon,
-    description:
-      "Real-time AI analysis of market trends, sentiment, and opportunities across asset classes.",
-    items: [
-      "News sentiment analysis",
-      "Technical pattern recognition",
-      "Fundamental scorecards",
-    ],
-  },
-  {
-    title: "Smart Portfolio Management",
-    icon: BriefcaseIcon,
-    description:
-      "Dynamic portfolio optimization with risk-adjusted recommendations tailored to your goals.",
-    items: [
-      "Asset allocation models",
-      "Rebalancing alerts",
-      "Performance analytics",
-    ],
-  },
-  {
-    title: "Automated Research",
-    icon: AcademicCapIcon,
-    description:
-      "AI-powered research reports that compile data from 100+ sources in seconds.",
-    items: ["Company deep dives", "Sector analysis", "Earnings summaries"],
-  },
-  {
-    title: "Risk Management",
-    icon: ShieldCheckIcon,
-    description:
-      "Advanced risk metrics and drawdown protection strategies for capital preservation.",
-    items: [
-      "VaR calculations",
-      "Stop-loss optimization",
-      "Correlation analysis",
-    ],
-  },
-  {
-    title: "Trade Execution",
-    icon: RocketLaunchIcon,
-    description:
-      "Seamless integration with major brokers for one-click execution of AI-suggested trades.",
-    items: ["Multi-broker support", "Order automation", "Execution tracking"],
-  },
-  {
-    title: "Real-time Monitoring",
-    icon: SignalIcon,
-    description:
-      "Live dashboard with custom alerts for market movements, news, and portfolio changes.",
-    items: ["Price alerts", "News alerts", "Portfolio drift alerts"],
-  },
+const solutionPoints = [
+  "Clear entry and exit rules — no ambiguity.",
+  "Measurable risk parameters — position size, drawdown, exposure.",
+  "Statistical validation — edge proven, not assumed.",
+  "Backtesting integrity — realistic, unbiased testing.",
+  "Structured execution — discipline through process.",
+  "Ongoing performance governance — monitored, refined, controlled.",
+  "Automation is the final layer — not the starting point."
 ];
 
-const howItWorks = [
+const frameworkSteps = [
   {
-    title: "Connect & Analyze",
-    description:
-      "Link your portfolios and trading accounts. Our AI analyzes your historical behavior, risk appetite, and investment patterns.",
+    title: "Strategy Structuring",
+    subtitle: "Turn intuition into rules.",
+    desc: "We convert discretionary trading logic into clearly defined, rule-based systems that can be tested, measured, and scaled.",
+    tags: ["No assumptions", "Only structure"],
+    image: "/home/Strategy Structuring.png"
   },
   {
-    title: "AI Generates Insights",
-    description:
-      "Yuktrix processes terabytes of market data to generate personalized investment ideas and timing recommendations.",
+    title: "Quantitative Validation",
+    subtitle: "Test the edge before risking capital.",
+    desc: "We evaluate statistical robustness, model expectancy, and analyze risk to ensure your strategy has a measurable foundation — not just hope.",
+    tags: ["If it’s not quantifiable,", "It’s not tradable."],
+    image: "/home/Data Validation.png"
   },
   {
-    title: "You Decide & Execute",
-    description:
-      "Review AI suggestions with full transparency into the rationale. Execute with confidence through your preferred broker.",
+    title: "Backtesting & Stress Testing",
+    subtitle: "See how it survives reality.",
+    desc: "We test your system across multiple market cycles and extreme conditions to validate durability and behavioral stability. Because markets don’t move in straight lines.",
+    tags: ["If it doesn’t survive history,", "It won’t survive reality."],
+    image: "/home/backtest.png"
   },
+  {
+    title: "Execution Architecture Design",
+    subtitle: "Automate with discipline.",
+    desc: "We design clean execution frameworks with broker API integration, ensuring structured and consistent order placement. Automation is powerful — only when engineered correctly.",
+    tags: ["If it’s not systematically executed,", "It’s emotionally exposed."],
+    image: "/home/Execution.png"
+  },
+  {
+    title: "Risk Framework Engineering",
+    subtitle: "See how it survives reality.", 
+    desc: "We test your system across multiple market cycles and extreme conditions to validate durability and behavioral stability. Because markets don’t move in straight lines.", 
+    tags: ["If risk isn’t controlled,", "Loss is guaranteed."],
+    image: "/home/Risk.png"
+  },
+  {
+    title: "Monitoring & Optimization",
+    subtitle: "Stay adaptive. Stay structured.",
+    desc: "Markets evolve. Systems must too. We provide periodic evaluation to maintain robustness and performance integrity. Structure is not a one-time setup — it’s governance.",
+    tags: ["If it’s not monitored,", "It’s decaying."],
+    image: "/home/Monitoring.png"
+  }
 ];
 
-const pricingPlans = [
-  {
-    name: "Starter",
-    price: "₹0",
-    description: "Perfect for beginners exploring AI-powered investing",
-    button: "Get Started",
-    features: [
-      "Basic AI insights",
-      "1 portfolio tracking",
-      "Limited research reports",
-      "Email support",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "₹1,999",
-    description: "For serious investors ready to leverage AI",
-    button: "Start Free Trial",
-    features: [
-      "Advanced AI engine",
-      "Unlimited portfolios",
-      "Full research access",
-      "Real-time alerts",
-      "Priority support",
-    ],
-    popular: true,
-  },
-  {
-    name: "Institutional",
-    price: "Custom",
-    description: "Enterprise-grade solutions for teams",
-    button: "Contact Sales",
-    features: [
-      "Custom AI models",
-      "Team collaboration",
-      "API access",
-      "Dedicated manager",
-      "White-label options",
-    ],
-  },
-];
+// --- ANIMATION LOGIC ---
 
-const testimonials = [
-  {
-    name: "Vishal",
-    role: "Investor",
-    initials: "V",
-    quote: "I used to check 5 apps. Now I check Yuktrix.",
-  },
-  {
-    name: "Smitha",
-    role: "Long-term Investor",
-    initials: "S",
-    quote:
-      "AI breaking down fundamentals is genius. I finally understand what I'm buying.",
-  },
-  {
-    name: "Amaan",
-    role: "Trader",
-    initials: "A",
-    quote: "Strategy building takes me 2 minutes now.",
-  },
-  {
-    name: "Rashmi",
-    role: "Working Professional",
-    initials: "R",
-    quote:
-      "My portfolio's weaknesses were invisible. Yuktrix showed me everything clearly.",
-  },
-];
-
-const faqs = [
-  {
-    question: "Can I use Yuktrix for both investing and trading?",
-    answer:
-      "Absolutely. Yuktrix is designed for both worlds — whether you're making short-term trading decisions or building long-term wealth. Our AI adapts to your strategy and time horizon.",
-  },
-  {
-    question: "Do I need financial knowledge to use Yuktrix?",
-    answer:
-      "No. Our AI explains everything in simple language. You don't need to be a market expert — Yuktrix breaks down complex data into actionable insights anyone can understand.",
-  },
-  {
-    question: "Will I get stock recommendations?",
-    answer:
-      "No. You get data-backed interpretations, not tips. Yuktrix provides context, analysis, and insights to help you make informed decisions — the final call is always yours.",
-  },
-  {
-    question: "Does Yuktrix automate investing and trading?",
-    answer:
-      "Yes — using your broker's authorized APIs. You can automate execution of strategies while maintaining full control. All trades require your approval unless you enable auto-execution.",
-  },
-  {
-    question: "Does it support mutual funds and SIPs?",
-    answer:
-      "Yes — our portfolio insights include mutual fund and SIP intelligence. Track, analyze, and optimize your entire investment portfolio in one place, including equity, debt, and hybrid funds.",
-  },
-];
-
-const footerLinks = [
-  {
-    title: "Product",
-    links: ["Features", "Pricing", "Roadmap", "Changelog", "Status"],
-  },
-  {
-    title: "Resources",
-    links: [
-      "Documentation",
-      "API Reference",
-      "Blog",
-      "Help Center",
-      "Community",
-    ],
-  },
-  {
-    title: "Company",
-    links: ["About Us", "Careers", "Press", "Contact", "Legal"],
-  },
-];
-
-const socialLinks = [
-  { name: "Twitter", icon: "svg-twitter" },
-  { name: "LinkedIn", icon: "svg-linkedin" },
-  { name: "Discord", icon: "svg-discord" },
-  { name: "GitHub", icon: "svg-github" },
-];
-
-function toggleFAQ(index) {
-  activeFAQ.value = activeFAQ.value === index ? null : index;
-}
+const activeHeroFeatureIndex = ref(0);
+const heroFeatureIntervalMs = 2200;
+let heroFeatureTimer;
 
 onMounted(() => {
-  $gsap.to(".gsap-hero-text", {
-    opacity: 1,
-    y: 0,
-    duration: 1.2,
-    ease: "power3.out",
-    stagger: 0.1,
-  });
-});
-const instruments = [
-  {
-    id: 1,
-    name: "NIFTY 50",
-    category: "Index Trading",
-    icon: "📊",
-    features: ["Real-time alerts", "AI signals", "Momentum tracking"],
-    status: "24/5 Monitoring",
-  },
-  {
-    id: 2,
-    name: "BankNIFTY",
-    category: "Sector Index",
-    icon: "🏦",
-    features: ["Volatility insights", "Swing setups", "Banking correlations"],
-    status: "High Volatility",
-  },
-  {
-    id: 3,
-    name: "Futures",
-    category: "F&O Trading",
-    icon: "📈",
-    features: ["Leverage strategies", "Expiry alerts", "Risk automation"],
-    status: "Advanced Tools",
-  },
-  {
-    id: 4,
-    name: "Options",
-    category: "IV & Greeks",
-    icon: "⚙️",
-    features: ["IV rank tracking", "Greeks calculator", "Chain analysis"],
-    status: "Pro Strategies",
-  },
-  {
-    id: 5,
-    name: "Stocks",
-    category: "Individual Securities",
-    icon: "📱",
-    features: ["Company research", "Fundamentals AI", "SIP optimization"],
-    status: "Long-Term Growth",
-  },
-  {
-    id: 6,
-    name: "Intraday",
-    category: "Day Trading",
-    icon: "⚡",
-    features: ["1-min signals", "Quick exits", "Scalping tools"],
-    status: "Real-time Data",
-  },
-  {
-    id: 7,
-    name: "Swing",
-    category: "Multi-Day Trades",
-    icon: "🌊",
-    features: [
-      "Pattern recognition",
-      "Support & resistance",
-      "Weekly consolidations",
-    ],
-    status: "Balanced Hold",
-  },
-  {
-    id: 8,
-    name: "Long-Term",
-    category: "Wealth Building",
-    icon: "🏔️",
-    features: ["Portfolio analysis", "Annual reviews", "Rebalancing"],
-    status: "Peace of Mind",
-  },
-];
-
-// Duplicate instruments for infinite scroll effect
-const instrumentsInfinite = ref([
-  ...instruments,
-  ...instruments,
-  ...instruments,
-]);
-
-onMounted(() => {
-  const container = document.getElementById("scrollContainer");
-  if (container) {
-    // Clone items for seamless infinite scroll
-    const items = container.querySelectorAll(".flex-shrink-0");
-    items.forEach((item) => {
-      const clone = item.cloneNode(true);
-      container.appendChild(clone);
+  // GSAP initialization for hero
+  if ($gsap) {
+    $gsap.to(".gsap-hero-text", {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      stagger: 0.1,
     });
+  }
+
+  // Text rotator
+  heroFeatureTimer = window.setInterval(() => {
+    activeHeroFeatureIndex.value =
+      (activeHeroFeatureIndex.value + 1) % heroFeatures.length;
+  }, heroFeatureIntervalMs);
+});
+
+onBeforeUnmount(() => {
+  if (heroFeatureTimer) {
+    window.clearInterval(heroFeatureTimer);
   }
 });
 </script>
 
 <style scoped>
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.hero-feature-enter-active,
+.hero-feature-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.animate-scroll {
-  animation: scroll 60s linear infinite;
-  width: max-content;
+.hero-feature-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.animate-scroll:hover {
-  animation-play-state: paused;
-}
-
-/* Smooth pause on hover */
-.animate-scroll:hover {
-  animation-duration: 60s;
-}
-.future-text {
-  font-family: "Future", sans-serif;
+.hero-feature-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 </style>

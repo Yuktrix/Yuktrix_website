@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss'],
+  compatibilityDate: '2026-02-23',
   googleFonts: {
     families: {
       Inter: [300, 400, 500, 600, 700],

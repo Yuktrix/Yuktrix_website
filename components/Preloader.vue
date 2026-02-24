@@ -12,7 +12,7 @@
         <div class="mil-reveal-frame">
           <p class="mil-reveal-box"></p>
           <p class="flex flex-col items-center justify-center mil-h3 mil-thin">
-            <img src="/logo.png" class="w-[250px]" alt="logo" />
+            <img src="/logo.png" class="w-[340px]" alt="logo" />
             yuktrix.com
           </p>
         </div>
@@ -195,7 +195,7 @@ export default {
   height: 100%;
   background: linear-gradient(
     to right,
-    #e8bb6d,
+    #db961f,
     #ecda62
   ); /* Background gradient for reveal box */
 }
@@ -209,7 +209,7 @@ export default {
   font-size: 50px;
 }
 .text-gradient {
-  background: linear-gradient(to right, #e8bb6d, #ecda62);
+  background: linear-gradient(to right, #db961f, #ecda62);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; /* This keeps the text gradient */
 }

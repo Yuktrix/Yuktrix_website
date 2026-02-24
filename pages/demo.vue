@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section
       data-aos="fade-up"
-      class="relative md:h-screen pt-10 flex items-center justify-center overflow-hidden bg-black"
+      class="relative md:h-screen pt-10 flex items-center justify-center overflow-hidden bg-[#cdcfd1]"
     >
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
@@ -13,13 +13,13 @@
           class="w-full h-full object-cover opacity-30"
         />
         <div
-          class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black"
+          class="absolute inset-0 bg-gradient-to-b from-[#cdcfd1]/30 via-[#cdcfd1]/30 to-[#cdcfd1]"
         ></div>
       </div>
 
       <!-- Animated Glow Effects -->
       <div
-        class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#e8bb6d]/10 rounded-full blur-[100px] animate-pulse z-0"
+        class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#db961f]/10 rounded-full blur-[100px] animate-pulse z-0"
       ></div>
       <div
         class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] animate-pulse delay-1000 z-0"
@@ -29,10 +29,10 @@
       <div class="container mx-auto px-4 relative z-10 text-center pt-20">
         <div ref="heroText" class="gsap-hero-text opacity-0 translate-y-10">
           <span
-            class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-[#e8bb6d] text-xs font-bold tracking-widest mb-8 uppercase"
+            class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-black/5 border border-black/10 backdrop-blur-sm text-[#db961f] text-xs font-bold tracking-widest mb-8 uppercase"
           >
             <span
-              class="w-2 h-2 rounded-full bg-[#e8bb6d] animate-pulse"
+              class="w-2 h-2 rounded-full bg-[#db961f] animate-pulse"
             ></span>
             Platform Tools
           </span>
@@ -41,17 +41,17 @@
             class="text-3xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-8 tracking-tight"
           >
             The Yuktrix <br />
-            <span class="text-[#e8bb6d]">Intelligence Stack</span>
+            <span class="text-[#db961f]">Intelligence Stack</span>
           </h1>
 
           <p
-            class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light"
+            class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed font-light"
           >
             Built to help you
-            <strong class="text-white font-semibold"
+            <strong class="text-black font-semibold"
               >learn, research, build, test,</strong
             >
-            and <strong class="text-white font-semibold">execute</strong> with
+            and <strong class="text-black font-semibold">execute</strong> with
             clarity and confidence Simple. Powerful. Unified.
           </p>
         </div>
@@ -59,7 +59,7 @@
 
       <!-- Scroll Indicator -->
       <div
-        class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 md:flex flex-col items-center gap-2 text-gray-500 animate-bounce"
+        class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 md:flex flex-col items-center gap-2 text-gray-600 animate-bounce"
       >
         <span class="text-xs uppercase tracking-widest opacity-70">Scroll</span>
         <svg
@@ -80,30 +80,30 @@
 
     <!-- Tool 1: AI Learning Intelligence -->
     <section
-      class="py-4 md:py-24 bg-gradient-to-b from-black to-black relative overflow-hidden"
+      class="py-4 md:py-24 bg-gradient-to-b from-[#cdcfd1] to-[#cdcfd1] relative overflow-hidden"
       data-aos="fade-up"
     >
       <div
-        class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#e8bb6d]/5 via-transparent to-transparent"
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#db961f]/5 via-transparent to-transparent"
       ></div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <!-- Content -->
           <div data-aos="fade-right">
             <div
-              class="inline-flex items-center gap-2 px-4 py-2 bg-[#e8bb6d]/10 rounded-full mb-6 border border-[#e8bb6d]/20"
+              class="inline-flex items-center gap-2 px-4 py-2 bg-[#db961f]/10 rounded-full mb-6 border border-[#db961f]/20"
             >
               <span
-                class="text-[#e8bb6d] font-bold text-base md:text-2xl uppercase tracking-wider"
+                class="text-[#db961f] font-bold text-base md:text-2xl uppercase tracking-wider"
                 >AI Learning Intelligence</span
               >
             </div>
             <h2
-              class="text-4xl md:text-5xl font-display font-bold mb-6 text-white leading-tight"
+              class="text-4xl md:text-5xl font-display font-bold mb-6 text-black leading-tight"
             >
               Learn the Market with AI
             </h2>
-            <p class="text-white/70 text-lg mb-8 leading-relaxed">
+            <p class="text-black/70 text-lg mb-8 leading-relaxed">
               An AI that explains everything clearly. Indicators, candlesticks,
               options, patterns — in plain English.
             </p>
@@ -111,7 +111,7 @@
 
           <!-- Image -->
           <div
-            class="relative rounded-xl overflow-hidden -mt-10 md:mt-0 shadow-2xl shadow-[#e8bb6d]/10 group"
+            class="relative rounded-xl overflow-hidden -mt-10 md:mt-0 shadow-2xl shadow-[#db961f]/10 group"
             data-aos="data-right"
           >
             <img
@@ -126,17 +126,17 @@
 
     <!-- Tool 2: Research Intelligence -->
     <section
-      class="py-10 md:py-24 bg-black relative overflow-hidden"
+      class="py-10 md:py-24 bg-[#cdcfd1] relative overflow-hidden"
       data-aos="fade-up"
     >
       <div
-        class="absolute inset-0 bg-gradient-to-br from-[#e8bb6d]/5 to-transparent transform -skew-y-3"
+        class="absolute inset-0 bg-gradient-to-br from-[#db961f]/5 to-transparent transform -skew-y-3"
       ></div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Image -->
           <div
-            class="order-1 lg:order-1 relative rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-[#e8bb6d]/10 group"
+            class="order-1 lg:order-1 relative rounded-xl overflow-hidden border border-black/10 shadow-2xl shadow-[#db961f]/10 group"
             data-aos="fade-right"
           >
             <img
@@ -149,19 +149,19 @@
           <!-- Content -->
           <div class="order-2 lg:order-2" data-aos="data-right">
             <div
-              class="inline-flex items-center gap-2 px-4 py-2 bg-[#e8bb6d]/10 rounded-full mb-6 border border-[#e8bb6d]/20"
+              class="inline-flex items-center gap-2 px-4 py-2 bg-[#db961f]/10 rounded-full mb-6 border border-[#db961f]/20"
             >
               <span
-                class="text-[#e8bb6d] font-bold text-base md:text-2xl uppercase tracking-wider"
+                class="text-[#db961f] font-bold text-base md:text-2xl uppercase tracking-wider"
                 >Research Intelligence</span
               >
             </div>
             <h2
-              class="text-4xl md:text-5xl font-display font-bold mb-6 text-white leading-tight"
+              class="text-4xl md:text-5xl font-display font-bold mb-6 text-black leading-tight"
             >
               Understand Market Behaviour
             </h2>
-            <p class="text-white/70 text-lg mb-8 leading-relaxed">
+            <p class="text-black/70 text-lg mb-8 leading-relaxed">
               Everything you need to understand the market. Market scanner,
               stock insights, sector heatmaps, and F&O dashboards.
             </p>
@@ -174,26 +174,26 @@
 
     <!-- Tool 3: Strategy Intelligence -->
     <section
-      class="py-10 md:py-24 bg-gradient-to-b from-black to-black relative overflow-hidden"
+      class="py-10 md:py-24 bg-gradient-to-b from-[#cdcfd1] to-[#cdcfd1] relative overflow-hidden"
       data-aos="fade-up"
     >
       <div
-        class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#e8bb6d]/5 via-transparent to-transparent"
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[#db961f]/5 via-transparent to-transparent"
       ></div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Content -->
           <div data-aos="fade-right">
             <div
-              class="inline-flex items-center gap-2 px-4 py-2 bg-[#e8bb6d]/10 rounded-full mb-6 border border-[#e8bb6d]/20"
+              class="inline-flex items-center gap-2 px-4 py-2 bg-[#db961f]/10 rounded-full mb-6 border border-[#db961f]/20"
             >
               <span
-                class="text-[#e8bb6d] font-bold text-base md:text-2xl uppercase tracking-wider"
+                class="text-[#db961f] font-bold text-base md:text-2xl uppercase tracking-wider"
                 >Strategy Intelligence</span
               >
             </div>
             <h2
-              class="text-4xl md:text-5xl font-display font-bold mb-6 text-white leading-tight"
+              class="text-4xl md:text-5xl font-display font-bold mb-6 text-black leading-tight"
             >
               From Idea to Execution
             </h2>
@@ -201,19 +201,19 @@
             <!-- Process Flow -->
             <div class="flex items-center gap-4 mb-8 flex-wrap">
               <div
-                class="px-4 py-3 bg-white/5 rounded-lg border border-white/10 text-white font-medium"
+                class="px-4 py-3 bg-black/5 rounded-lg border border-black/10 text-black font-medium"
               >
                 Idea
               </div>
-              <span class="text-[#e8bb6d] text-2xl">→</span>
+              <span class="text-[#db961f] text-2xl">→</span>
               <div
-                class="px-4 py-3 bg-white/5 rounded-lg border border-white/10 text-white font-medium"
+                class="px-4 py-3 bg-black/5 rounded-lg border border-black/10 text-black font-medium"
               >
                 Logic
               </div>
-              <span class="text-[#e8bb6d] text-2xl">→</span>
+              <span class="text-[#db961f] text-2xl">→</span>
               <div
-                class="px-4 py-3 bg-[#e8bb6d]/10 rounded-lg border border-[#e8bb6d]/30 text-[#e8bb6d] font-bold"
+                class="px-4 py-3 bg-[#db961f]/10 rounded-lg border border-[#db961f]/30 text-[#db961f] font-bold"
               >
                 Strategy
               </div>
@@ -224,7 +224,7 @@
 
           <!-- Image -->
           <div
-            class="relative rounded-xl overflow-hidden shadow-2xl shadow-[#e8bb6d]/10 group"
+            class="relative rounded-xl overflow-hidden shadow-2xl shadow-[#db961f]/10 group"
             data-aos="data-right"
           >
             <img
@@ -238,19 +238,19 @@
     </section>
 
     <!-- Tool 4: Execution Intelligence -->
-    <section class="py-24 bg-black relative overflow-hidden" data-aos="fade-up">
+    <section class="py-24 bg-[#cdcfd1] relative overflow-hidden" data-aos="fade-up">
       <div
-        class="absolute inset-0 bg-gradient-to-br from-[#e8bb6d]/5 to-transparent transform skew-y-3"
+        class="absolute inset-0 bg-gradient-to-br from-[#db961f]/5 to-transparent transform skew-y-3"
       ></div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Image -->
           <div
-            class="order-2 lg:order-1 relative rounded-xl overflow-hidden shadow-2xl shadow-[#e8bb6d]/10 group"
+            class="order-2 lg:order-1 relative rounded-xl overflow-hidden shadow-2xl shadow-[#db961f]/10 group"
             data-aos="fade-right"
           >
             <!-- <div
-              class="absolute inset-0 bg-[#e8bb6d]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
+              class="absolute inset-0 bg-[#db961f]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
             ></div> -->
             <img
               src="/tools/execution.png"
@@ -263,25 +263,25 @@
           <!-- Content -->
           <div class="order-1 lg:order-2" data-aos="data-right">
             <div
-              class="inline-flex items-center gap-2 px-4 py-2 bg-[#e8bb6d]/10 rounded-full mb-6 border border-[#e8bb6d]/20"
+              class="inline-flex items-center gap-2 px-4 py-2 bg-[#db961f]/10 rounded-full mb-6 border border-[#db961f]/20"
             >
               <span
-                class="text-[#e8bb6d] font-bold text-base md:text-2xl uppercase tracking-wider"
+                class="text-[#db961f] font-bold text-base md:text-2xl uppercase tracking-wider"
                 >Execution Intelligence</span
               >
             </div>
             <h2
-              class="text-4xl md:text-5xl font-display font-bold mb-6 text-white leading-tight"
+              class="text-4xl md:text-5xl font-display font-bold mb-6 text-black leading-tight"
             >
               Automated Execution You Trust
             </h2>
 
             <!-- Unified Broker API -->
             <div class="mb-8">
-              <h3 class="text-white font-bold text-xl mb-3">
+              <h3 class="text-black font-bold text-xl mb-3">
                 Unified Broker API
               </h3>
-              <p class="text-white/70 mb-4">
+              <p class="text-black/70 mb-4">
                 One integration for all major Indian brokers:
               </p>
             </div>
@@ -294,37 +294,37 @@
 
     <!-- Tool 5: Developer & Quant Intelligence -->
     <section
-      class="py-24 bg-gradient-to-b from-black to-black relative overflow-hidden"
+      class="py-24 bg-gradient-to-b from-[#cdcfd1] to-[#cdcfd1] relative overflow-hidden"
       data-aos="fade-up"
     >
       <div
-        class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#e8bb6d]/5 via-transparent to-transparent"
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#db961f]/5 via-transparent to-transparent"
       ></div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Content -->
           <div data-aos="fade-right">
             <div
-              class="inline-flex items-center gap-2 px-4 py-2 bg-[#e8bb6d]/10 rounded-full mb-6 border border-[#e8bb6d]/20"
+              class="inline-flex items-center gap-2 px-4 py-2 bg-[#db961f]/10 rounded-full mb-6 border border-[#db961f]/20"
             >
               <span
-                class="text-[#e8bb6d] font-bold text-base md:text-2xl uppercase tracking-wider"
+                class="text-[#db961f] font-bold text-base md:text-2xl uppercase tracking-wider"
                 >Developer & Quant Tools</span
               >
             </div>
             <h2
-              class="text-4xl md:text-5xl font-display font-bold mb-6 text-white leading-tight"
+              class="text-4xl md:text-5xl font-display font-bold mb-6 text-black leading-tight"
             >
               Developer & Quant Intelligence (Pro Mode)
             </h2>
-            <p class="text-white/70 text-lg mb-8 leading-relaxed">
+            <p class="text-black/70 text-lg mb-8 leading-relaxed">
               Tools for quants, analysts, and developers
             </p>
           </div>
 
           <!-- Image -->
           <div
-            class="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-[#e8bb6d]/10 group"
+            class="relative rounded-xl overflow-hidden border border-black/10 shadow-2xl shadow-[#db961f]/10 group"
             data-aos="data-right"
           >
             <img
@@ -337,7 +337,7 @@
       </div>
     </section>
     <section
-      class="relative py-32 bg-black text-center border-t border-white/10 overflow-hidden"
+      class="relative py-32 bg-[#cdcfd1] text-center border-t border-black/10 overflow-hidden"
     >
       <!-- 1. Background Image -->
       <div class="absolute inset-0 z-0">
@@ -348,13 +348,13 @@
         />
         <!-- Gradient Overlay for Readability -->
         <div
-          class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"
+          class="absolute inset-0 bg-gradient-to-t from-[#cdcfd1] via-[#cdcfd1]/30 to-[#cdcfd1]/30"
         ></div>
       </div>
 
       <!-- 2. Glowing Orb Effect (Preserved & Enhanced) -->
       <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8bb6d]/10 rounded-full blur-[100px] pointer-events-none z-0 animate-pulse"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#db961f]/10 rounded-full blur-[100px] pointer-events-none z-0 animate-pulse"
       ></div>
 
       <!-- 3. Content Container -->
@@ -362,7 +362,7 @@
         <!-- Small Badge -->
         <div class="mb-8 flex justify-center">
           <span
-            class="px-4 py-1.5 rounded-full border border-[#e8bb6d]/30 bg-[#e8bb6d]/10 text-[#e8bb6d] text-4xl md:text-6xl font-semibold tracking-wide uppercase backdrop-blur-sm"
+            class="px-4 py-1.5 rounded-full border border-[#db961f]/30 bg-[#db961f]/10 text-[#db961f] text-4xl md:text-6xl font-semibold tracking-wide uppercase backdrop-blur-sm"
           >
             Yuktrix
           </span>
@@ -370,20 +370,20 @@
 
         <!-- Main Heading -->
         <h3
-          class="text-4xl md:text-6xl font-display font-bold max-w-[1440px] mx-auto leading-tight mb-8 text-white drop-shadow-lg"
+          class="text-4xl md:text-6xl font-display font-bold max-w-[1440px] mx-auto leading-tight mb-8 text-black drop-shadow-lg"
         >
           Where Data Awakens <br />
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-[#e8bb6d] to-white"
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#db961f] to-black"
             >Intelligence</span
           >
         </h3>
 
         <!-- Subtext -->
         <p
-          class="text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
+          class="text-xl text-gray-700 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
         >
-          <strong class="text-white font-medium">Yuktrix</strong> — Your AI
+          <strong class="text-black font-medium">Yuktrix</strong> — Your AI
           companion for smarter trading and investing.
         </p>
 
@@ -393,11 +393,11 @@
         >
           <button
             @click="openRegistrationModal"
-            class="group relative bg-[#e8bb6d] text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,215,0,0.2)] overflow-hidden"
+            class="group relative bg-[#db961f] text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-[#cdcfd1] hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,215,0,0.2)] overflow-hidden"
           >
             <span class="relative z-10"> Get Started For Free </span>
             <div
-              class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              class="absolute inset-0 bg-[#cdcfd1]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
             ></div>
           </button>
         </div>
