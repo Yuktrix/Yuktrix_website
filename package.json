@@ -18,14 +18,27 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.5.2",
+    "@nuxt/devtools": "^3.2.1",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@types/aos": "^3.0.7",
     "@types/node": "^22.9.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
-    "vite": "^5.4.10"
+    "vite": "^7.3.1"
+  },
+  "overrides": {
+    "glob": "^13.0.6",
+    "archiver-utils": {
+      "glob": "^13.0.6"
+    },
+    "readdir-glob": "^2.0.2",
+    "tailwind-config-viewer": {
+      "replace-in-file": {
+        ".": "7.2.0",
+        "glob": "^13.0.6"
+      }
+    }
   }
 }

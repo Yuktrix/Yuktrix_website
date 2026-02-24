@@ -1,305 +1,258 @@
 <template>
-  <div class="bg-black" v-if="post">
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
-      <img
-        :src="post.heroImage"
-        :alt="post.title"
-        class="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
-      />
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/90 to-black z-0"
-      ></div>
-
-      <div class="container mx-auto px-6 relative z-10 max-w-4xl">
-        <NuxtLink
-          to="/blog"
-          class="inline-flex items-center gap-2 text-white/70 hover:text-[#e8bb6d] transition-colors mb-8 group"
-        >
-          <svg
-            class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          Back to Blog
-        </NuxtLink>
-
-        <div class="flex items-center gap-3 mb-6 text-sm">
-          <span
-            class="px-3 py-1 bg-[#e8bb6d] text-black text-xs font-bold rounded-full uppercase"
-            >{{ post.category }}</span
-          >
-          <span class="text-white/60">{{ post.date }}</span>
-          <span class="text-white/60">•</span>
-          <span class="text-white/60">{{ post.readTime }}</span>
-        </div>
-
-        <h1
-          class="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight"
-        >
-          {{ post.title }}
-        </h1>
-
-        <p class="text-xl text-white/70 mb-8 leading-relaxed">
-          {{ post.excerpt }}
-        </p>
-
-        <!-- Author Info -->
-        <div class="flex items-center gap-4">
-          <div
-            class="w-12 h-12 rounded-full bg-gradient-to-br from-[#e8bb6d] to-[#e8bb6d]/60 flex items-center justify-center text-black font-bold text-lg"
-          >
-            {{ post.author.initials }}
-          </div>
-          <div>
-            <p class="text-white font-bold">{{ post.author.name }}</p>
-            <p class="text-white/60 text-sm">{{ post.author.role }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Article Content -->
-    <article class="py-16 bg-black">
-      <div class="container mx-auto px-6 max-w-4xl">
-        <!-- Featured Image -->
-        <div
-          class="mb-12 rounded-2xl overflow-hidden border border-white/10"
-          data-aos="zoom-in"
-        >
+  <div class="bg-[#090a0a] min-h-screen font-sans selection:bg-[#db961f] selection:text-black flex flex-col">
+    
+    <template v-if="post">
+      <!-- ==========================================
+        1. ARTICLE HERO (Dark/Terminal Vibe)
+      =========================================== -->
+      <section class="relative pt-32 pb-40 overflow-hidden bg-[#090a0a]">
+        <!-- Background Image & Overlays -->
+        <div class="absolute inset-0 z-0">
           <img
-            :src="post.featuredImage"
+            :src="post.heroImage"
             :alt="post.title"
-            class="w-full h-auto"
+            class="w-full h-full object-cover opacity-20 grayscale mix-blend-overlay"
           />
+          <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/90 via-[#090a0a]/80 to-[#090a0a]"></div>
         </div>
 
-        <!-- Article Body -->
-        <div class="prose prose-invert prose-lg max-w-none">
-          <!-- Loop through content sections -->
-          <div
-            v-for="(section, index) in post.content"
-            :key="index"
-            data-aos="fade-up"
-            :data-aos-delay="index * 50"
+        <!-- Ambient Glow -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#db961f]/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+        <div class="container mx-auto px-6 relative z-10 max-w-4xl" data-aos="fade-down">
+          
+          <!-- Back Navigation -->
+          <NuxtLink
+            to="/blog"
+            class="inline-flex items-center gap-2 text-white/50 hover:text-[#db961f] transition-colors mb-10 group font-mono text-xs uppercase tracking-widest"
           >
-            <!-- Paragraph -->
-            <p
-              v-if="section.type === 'paragraph'"
-              class="text-white/80 text-lg leading-relaxed mb-6"
-            >
-              {{ section.text }}
-            </p>
+            <span class="transform group-hover:-translate-x-1 transition-transform">←</span>
+            Back to Research Index
+          </NuxtLink>
 
-            <!-- Heading -->
-            <h2
-              v-if="section.type === 'heading'"
-              class="text-3xl font-display font-bold text-white mt-12 mb-6"
-            >
-              {{ section.text }}
-            </h2>
+          <!-- Meta Data -->
+          <div class="flex flex-wrap items-center gap-4 mb-8 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
+            <span class="px-3 py-1.5 bg-[#db961f]/10 border border-[#db961f]/30 text-[#db961f] rounded-lg font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(219,150,31,0.1)]">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#db961f] animate-pulse"></span>
+              {{ post.category }}
+            </span>
+            <span>{{ post.date }}</span>
+            <span class="text-white/20">||</span>
+            <span>{{ post.readTime }}</span>
+          </div>
 
-            <!-- Subheading -->
-            <h3
-              v-if="section.type === 'subheading'"
-              class="text-2xl font-bold text-[#e8bb6d] mt-8 mb-4"
-            >
-              {{ section.text }}
-            </h3>
+          <!-- Title & Excerpt -->
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8 leading-[1.1] tracking-tight">
+            {{ post.title }}
+          </h1>
+          <p class="text-xl text-white/60 mb-10 leading-relaxed font-light max-w-3xl border-l-2 border-[#db961f] pl-6">
+            {{ post.excerpt }}
+          </p>
 
-            <!-- List -->
-            <ul
-              v-if="section.type === 'list'"
-              class="space-y-4 mb-8 text-white/80"
-            >
-              <li
-                v-for="(item, i) in section.items"
-                :key="i"
-                class="flex items-start gap-3"
-              >
-                <span class="text-[#e8bb6d] mt-1 font-bold">•</span>
-                <span class="text-lg leading-relaxed">{{ item }}</span>
-              </li>
-            </ul>
+          <!-- Author Info -->
+          <div class="flex items-center gap-4 pt-8 border-t border-white/10">
+            <div class="w-12 h-12 rounded-full bg-[#db961f]/10 border border-[#db961f]/30 flex items-center justify-center text-[#db961f] font-mono font-bold text-lg shadow-inner">
+              {{ post.author.initials }}
+            </div>
+            <div>
+              <p class="text-white font-bold tracking-wide">{{ post.author.name }}</p>
+              <p class="text-white/40 text-xs font-mono uppercase tracking-widest mt-0.5">{{ post.author.role }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <!-- Numbered List -->
-            <ol v-if="section.type === 'numbered'" class="space-y-6 mb-8">
-              <li
-                v-for="(item, i) in section.items"
-                :key="i"
-                class="flex items-start gap-4"
-              >
-                <span
-                  class="flex-shrink-0 w-8 h-8 rounded-full bg-[#e8bb6d]/10 border border-[#e8bb6d]/30 flex items-center justify-center text-[#e8bb6d] font-bold text-sm"
-                  >{{ i + 1 }}</span
-                >
-                <div class="flex-1">
-                  <h4 class="text-white font-bold text-xl mb-2">
-                    {{ item.title }}
-                  </h4>
-                  <p class="text-white/80 text-lg leading-relaxed">
-                    {{ item.text }}
-                  </p>
-                </div>
-              </li>
-            </ol>
+      <!-- ==========================================
+        2. ARTICLE CONTENT (Silver Base for Readability)
+      =========================================== -->
+      <article class="relative z-20 bg-[#cdcfd1] py-20 -mt-20 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] flex-grow">
+        <div class="container mx-auto px-6 max-w-3xl">
+          
+          <!-- Featured Image (If different from hero or prominent) -->
+          <div class="mb-16 rounded-[2rem] overflow-hidden border border-[#090a0a]/10 shadow-2xl relative group" data-aos="fade-up">
+            <div class="absolute inset-0 bg-[#090a0a]/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+            <img
+              :src="post.featuredImage"
+              :alt="post.title"
+              class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+            />
+          </div>
 
-            <!-- Callout Box -->
+          <!-- Dynamic Content Renderer -->
+          <div class="prose prose-lg max-w-none text-[#090a0a]/80">
             <div
-              v-if="section.type === 'callout'"
-              class="p-8 bg-gradient-to-br from-[#e8bb6d]/10 to-transparent border border-[#e8bb6d]/20 rounded-xl my-8"
+              v-for="(section, index) in post.content"
+              :key="index"
+              data-aos="fade-up"
             >
-              <h3 class="text-2xl font-bold text-[#e8bb6d] mb-4">
-                {{ section.title }}
-              </h3>
-              <p class="text-white/80 text-lg leading-relaxed">
+              <!-- Paragraph -->
+              <p v-if="section.type === 'paragraph'" class="text-lg leading-relaxed mb-8 font-medium">
                 {{ section.text }}
               </p>
+
+              <!-- Main Heading -->
+              <h2 v-if="section.type === 'heading'" class="text-3xl font-display font-bold text-[#090a0a] mt-16 mb-8 border-b border-[#090a0a]/10 pb-4">
+                {{ section.text }}
+              </h2>
+
+              <!-- Subheading -->
+              <h3 v-if="section.type === 'subheading'" class="text-2xl font-bold text-[#db961f] mt-10 mb-4 flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-[#db961f]"></span>
+                {{ section.text }}
+              </h3>
+
+              <!-- Bullet List -->
+              <ul v-if="section.type === 'list'" class="space-y-4 mb-10 pl-4">
+                <li v-for="(item, i) in section.items" :key="i" class="flex items-start gap-4">
+                  <svg class="w-5 h-5 text-[#db961f] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-lg leading-relaxed">{{ item }}</span>
+                </li>
+              </ul>
+
+              <!-- Numbered/Structural List -->
+              <div v-if="section.type === 'numbered'" class="space-y-6 mb-12">
+                <div v-for="(item, i) in section.items" :key="i" class="flex flex-col sm:flex-row gap-6 p-6 rounded-2xl bg-white/50 border border-white/60 shadow-sm hover:shadow-md hover:bg-white transition-all">
+                  <div class="shrink-0">
+                    <div class="font-mono text-3xl font-bold text-[#db961f] opacity-80">
+                      0{{ i + 1 }}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold text-[#090a0a] mb-2">{{ item.title }}</h4>
+                    <p class="text-lg leading-relaxed text-[#090a0a]/70">{{ item.text }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Callout Box (Dark High-Contrast Box) -->
+              <div v-if="section.type === 'callout'" class="p-8 md:p-10 bg-[#090a0a] rounded-3xl shadow-2xl my-14 relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-[#db961f]/20 blur-[50px] rounded-full pointer-events-none"></div>
+                <div class="relative z-10 flex items-start gap-6">
+                  <div class="w-12 h-12 rounded-xl bg-[#db961f]/10 flex items-center justify-center shrink-0 border border-[#db961f]/30">
+                    <svg class="w-6 h-6 text-[#db961f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-white mb-3 tracking-wide">{{ section.title }}</h3>
+                    <p class="text-white/80 text-lg leading-relaxed font-light">{{ section.text }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote (Editorial Style) -->
+              <blockquote v-if="section.type === 'quote'" class="my-12 px-8 py-6 border-l-4 border-[#db961f] bg-white/40 rounded-r-2xl italic">
+                <p class="text-2xl font-serif text-[#090a0a] leading-relaxed">
+                  "{{ section.text }}"
+                </p>
+              </blockquote>
+
+              <!-- Inline Image -->
+              <div v-if="section.type === 'image'" class="my-14">
+                <div class="rounded-2xl overflow-hidden border border-[#090a0a]/10 shadow-lg">
+                  <img :src="section.url" :alt="section.caption" class="w-full h-auto" />
+                </div>
+                <p v-if="section.caption" class="text-center text-[#090a0a]/50 text-sm mt-4 font-mono tracking-wide uppercase">
+                  ▲ {{ section.caption }}
+                </p>
+              </div>
             </div>
 
-            <!-- Quote -->
-            <blockquote
-              v-if="section.type === 'quote'"
-              class="border-l-4 border-[#e8bb6d] pl-6 py-4 my-8 bg-white/5 rounded-r-xl"
-            >
-              <p class="text-white text-xl font-medium italic leading-relaxed">
-                "{{ section.text }}"
+            <!-- Bottom CTA Box -->
+            <div class="mt-20 p-10 md:p-12 bg-gradient-to-br from-white to-[#cdcfd1] border border-white rounded-3xl shadow-xl text-center relative overflow-hidden" data-aos="zoom-in">
+              <h3 class="text-3xl font-display font-bold text-[#090a0a] mb-4">
+                Ready to engineer your trading system?
+              </h3>
+              <p class="text-[#090a0a]/70 mb-8 text-lg max-w-xl mx-auto">
+                Transition from discretionary ideas to structured quantitative validation with Yuktrix.
               </p>
-            </blockquote>
-
-            <!-- Image -->
-            <div
-              v-if="section.type === 'image'"
-              class="my-10 rounded-xl overflow-hidden border border-white/10"
-            >
-              <img
-                :src="section.url"
-                :alt="section.caption"
-                class="w-full h-auto"
-              />
-              <p
-                v-if="section.caption"
-                class="text-center text-white/50 text-sm mt-2 px-4 pb-4"
-              >
-                {{ section.caption }}
-              </p>
+              <button @click="openRegistrationModal" class="inline-flex items-center gap-3 bg-[#090a0a] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 hover:shadow-[0_10px_20px_rgba(9,10,10,0.2)] transition-all">
+                Book a Consultation
+                <span class="text-[#db961f]">→</span>
+              </button>
             </div>
           </div>
+        </div>
+      </article>
 
-          <!-- CTA Box -->
-          <div
-            class="p-8 bg-gradient-to-br from-[#e8bb6d]/10 to-transparent border border-[#e8bb6d]/30 rounded-2xl my-12"
-            data-aos="zoom-in"
-          >
-            <h3 class="text-2xl font-bold text-white mb-4">
-              Ready to experience AI-powered market intelligence?
-            </h3>
-            <p class="text-white/70 mb-6 text-lg">
-              Join thousands of Indian traders who've upgraded their
-              understanding with Yuktrix. Start decoding markets today.
-            </p>
+      <!-- ==========================================
+        3. RELATED POSTS (Dark Theme Match Footer)
+      =========================================== -->
+      <section class="py-24 bg-[#090a0a] border-t border-white/5 relative z-10">
+        <div class="container mx-auto px-6">
+          <div class="mb-16" data-aos="fade-up">
+            <h2 class="text-sm font-mono text-[#db961f] uppercase tracking-[0.2em] mb-2">Continue Exploring</h2>
+            <h3 class="text-3xl md:text-4xl font-display font-bold text-white">Related Research</h3>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <NuxtLink
-              to="/"
-              class="inline-block bg-[#e8bb6d] text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all"
+              v-for="relatedPost in relatedPosts"
+              :key="relatedPost.slug"
+              :to="`/blog/${relatedPost.slug}`"
+              class="bg-white/5 rounded-3xl border border-white/10 overflow-hidden hover:border-[#db961f]/50 hover:bg-white/10 transition-all duration-300 group flex flex-col h-full"
+              data-aos="fade-up"
             >
-              Try Yuktrix Free
+              <div class="relative h-48 overflow-hidden">
+                <div class="absolute inset-0 bg-[#090a0a]/20 group-hover:bg-transparent transition-colors z-10"></div>
+                <img
+                  :src="relatedPost.image"
+                  :alt="relatedPost.title"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
+                />
+              </div>
+              <div class="p-8 flex flex-col flex-grow">
+                <h4 class="text-xl font-bold text-white mb-3 group-hover:text-[#db961f] transition-colors line-clamp-2 leading-snug">
+                  {{ relatedPost.title }}
+                </h4>
+                <p class="text-white/50 text-sm mb-6 line-clamp-3 font-light leading-relaxed flex-grow">
+                  {{ relatedPost.excerpt }}
+                </p>
+                <div class="inline-flex items-center gap-2 text-[#db961f] text-xs font-mono font-bold uppercase tracking-widest group-hover:gap-3 transition-all mt-auto">
+                  Read Article
+                  <span>→</span>
+                </div>
+              </div>
             </NuxtLink>
           </div>
         </div>
-      </div>
-    </article>
+      </section>
+    </template>
 
-    <!-- Related Posts -->
-    <section class="py-20 bg-black border-t border-white/10">
-      <div class="container mx-auto px-6">
-        <h2
-          class="text-3xl font-display font-bold text-white mb-12 text-center"
-          data-aos="fade-up"
+    <!-- ==========================================
+      4. 404 / NOT FOUND STATE (Dark Theme)
+    =========================================== -->
+    <div v-else class="flex-grow bg-[#090a0a] flex items-center justify-center py-32 relative overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-500/5 blur-[100px] rounded-full"></div>
+      
+      <div class="text-center px-6 relative z-10">
+        <div class="text-[#db961f] font-mono text-6xl font-bold mb-6">404</div>
+        <h1 class="text-3xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">Record Not Found</h1>
+        <p class="text-white/50 mb-10 text-lg font-mono uppercase tracking-widest">
+          The requested research article does not exist in the index.
+        </p>
+        <NuxtLink
+          to="/blog"
+          class="inline-flex items-center gap-3 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#090a0a] transition-all uppercase tracking-widest text-sm"
         >
-          Continue Reading
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <article
-            v-for="relatedPost in relatedPosts"
-            :key="relatedPost.slug"
-            class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-[#e8bb6d]/30 transition-all group"
-            data-aos="fade-up"
-          >
-            <div class="relative h-48 overflow-hidden">
-              <img
-                :src="relatedPost.image"
-                :alt="relatedPost.title"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="p-6">
-              <h3
-                class="text-lg font-bold text-white mb-2 group-hover:text-[#e8bb6d] transition-colors line-clamp-2"
-              >
-                {{ relatedPost.title }}
-              </h3>
-              <p class="text-white/60 text-sm mb-4 line-clamp-2">
-                {{ relatedPost.excerpt }}
-              </p>
-              <NuxtLink
-                :to="`/blog/${relatedPost.slug}`"
-                class="inline-flex items-center gap-2 text-[#e8bb6d] text-sm font-bold hover:gap-3 transition-all"
-              >
-                Read More
-                <svg
-                  class="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </NuxtLink>
-            </div>
-          </article>
-        </div>
+          <span>←</span> Return to Dashboard
+        </NuxtLink>
       </div>
-    </section>
-  </div>
-
-  <!-- 404 State -->
-  <div v-else class="min-h-screen bg-black flex items-center justify-center">
-    <div class="text-center px-6">
-      <h1 class="text-4xl font-bold text-white mb-4">Post Not Found</h1>
-      <p class="text-white/60 mb-6">
-        The article you're looking for doesn't exist.
-      </p>
-      <NuxtLink
-        to="/blog"
-        class="inline-block bg-[#e8bb6d] text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all"
-      >
-        Back to Blog
-      </NuxtLink>
     </div>
+
+    <!-- Modals -->
+    <RegistrationModal />
   </div>
 </template>
 
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import { useRegistration } from "~/composables/useRegistration";
 
 const route = useRoute();
 const slug = route.params.slug;
+const { openRegistrationModal } = useRegistration();
 
-// Sample blog posts data with full content
+// --- SAMPLE DATA STORE (Self-Contained) ---
 const blogPosts = {
   "why-markets-move": {
     slug: "why-markets-move",
@@ -547,10 +500,9 @@ const blogPosts = {
   },
 };
 
-// Get the current post
+// --- COMPUTED STATE ---
 const post = computed(() => blogPosts[slug]);
 
-// Get related posts (exclude current, limit to 3)
 const relatedPosts = computed(() => {
   return Object.values(blogPosts)
     .filter((p) => p.slug !== slug)

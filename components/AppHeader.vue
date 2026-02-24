@@ -1,161 +1,55 @@
 <template>
-  <div>
-    <header
-      class="fixed w-full top-0 z-50 transition-all duration-300"
-      :class="[
-        mobileMenuOpen
-          ? 'bg-yuktrix-black/96 backdrop-blur-xl border-b border-white/10'
-          : isScrolled
-          ? 'bg-yuktrix-black/80 backdrop-blur-md border-b border-white/10'
-          : 'bg-transparent',
-        !showHeader ? '-translate-y-full' : 'translate-y-0',
-      ]"
-    >
-      <div class="px-4 py-4">
-        <div class="flex items-center justify-between">
-          <!-- Logo Section (Left) -->
-          <NuxtLink to="/" class="flex items-center group">
-            <div class="flex items-center">
-              <div
-                class="md:w-[80px] md:h-[80px] w-[72px] h-[72px] rounded-full flex flex-col items-center justify-center overflow-hidden"
-              >
-                <img
-                  src="/logo.png"
-                  alt="Yuktrix Logo"
-                  class="w-[90px] object-contain"
-                />
-              </div>
-              <img src="/logo2.png" class="w-[130px]" alt="" />
-            </div>
-          </NuxtLink>
-
-          <!-- Navigation & CTA (Right) -->
-          <div class="flex items-center space-x-8">
-            <!-- Navigation -->
-            <nav class="hidden md:flex gap-7 items-center">
-              <NuxtLink
-                v-for="link in links"
-                :key="link.path"
-                :to="link.path"
-                class="text-base font-medium text-gray-300 hover:text-[#e8bb6d] transition-colors relative px-1 py-0.5"
-                active-class="text-[#e8bb6d]"
-              >
-                {{ link.name }}
-                <span
-                  v-if="$route.path === link.path"
-                  class="block mx-auto mt-1 h-1 w-5 rounded bg-[#e8bb6d]"
-                />
-              </NuxtLink>
-            </nav>
-
-            <!-- CTA Button -->
-            <button
-              @click="openRegistrationModal"
-              class="bg-[#e8bb6d] text-black px-4 py-2.5 rounded-full font-bold text-sm hover:bg-[#e8bb6d]Hover transition-all hover:scale-105 whitespace-nowrap shadow-md hidden md:block"
-            >
-              Get Early Access
-            </button>
-
-            <!-- Mobile Menu Button -->
-            <button
-              class="md:hidden text-white hover:text-[#e8bb6d] transition-colors p-2"
-              @click="toggleMobileMenu"
-            >
-              <svg
-                class="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#090a0a]/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+    <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Logo Brand -->
+      <NuxtLink to="/" class="flex items-center gap-3 group">
+        <!-- Optimized Logo Container: Removed padding to "zoom" the actual image -->
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-white/10 group-hover:border-[#db961f]/50 transition-all duration-500 bg-white/5 flex items-center justify-center relative shadow-2xl">
+          <!-- The logo image now scales up on group hover for a creative, dynamic feel -->
+          <img 
+            src="/logo.png" 
+            alt="Yuktrix Logo" 
+            class="w-full h-full object-contain transform transition-transform duration-700 ease-out group-hover:scale-125" 
+            @error="$event.target.style.display = 'none'" 
+          />
+          <!-- Subtle overlay glow for depth -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-[#db961f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
         </div>
+        
+        <span class="text-xl md:text-2xl font-display font-bold tracking-[0.2em] text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#db961f] transition-all uppercase">
+          Yuktrix
+        </span>
+      </NuxtLink>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-10">
+        <NuxtLink to="/" class="text-sm font-medium text-white/70 hover:text-[#db961f] transition-colors tracking-wide">Home</NuxtLink>
+        <NuxtLink to="/about" class="text-sm font-medium text-white/70 hover:text-[#db961f] transition-colors tracking-wide">The Firm</NuxtLink>
+        <NuxtLink to="/services" class="text-sm font-medium text-white/70 hover:text-[#db961f] transition-colors tracking-wide">Services</NuxtLink>
+        <NuxtLink to="/tools" class="text-sm font-medium text-white/70 hover:text-[#db961f] transition-colors tracking-wide">Tools</NuxtLink>
+        <NuxtLink to="/blog" class="text-sm font-medium text-white/70 hover:text-[#db961f] transition-colors tracking-wide">Blog</NuxtLink>
+      </nav>
+
+      <!-- CTA & Mobile Toggle -->
+      <div class="flex items-center gap-4">
+        <button @click="openRegistrationModal" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-[#090a0a] bg-gradient-to-r from-[#db961f] to-[#FEE337] rounded-full hover:scale-105 transition-transform shadow-[0_0_15px_rgba(219,150,31,0.2)]">
+          Book Consultation
+        </button>
+        
+        <!-- Mobile Menu Icon -->
+        <button class="md:hidden text-white/80 hover:text-[#db961f] p-2 transition-colors">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
 
-      <!-- Mobile Menu (Dropdown) -->
-      <div
-        v-if="mobileMenuOpen"
-        class="md:hidden absolute w-full bg-white border-t border-white/10"
-      >
-        <nav class="flex flex-col p-8 gap-4">
-          <NuxtLink
-            v-for="link in links"
-            :key="link.path"
-            :to="link.path"
-            class="text-black text-lg font-medium hover:text-[#e8bb6d] transition-colors py-2"
-            active-class="text-[#e8bb6d]"
-            @click="mobileMenuOpen = false"
-          >
-            {{ link.name }}
-          </NuxtLink>
-          <button
-            @click="openRegistrationModal"
-            class="bg-[#e8bb6d] text-black px-4 py-3 rounded-full font-bold text-base hover:bg-[#e8bb6d]Hover transition-all w-full mt-2 shadow"
-          >
-            Get Early Access
-          </button>
-        </nav>
-      </div>
-    </header>
-    <RegistrationModal />
-  </div>
+    </div>
+  </header>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import { useRoute } from "vue-router";
+import { useRegistration } from "~/composables/useRegistration";
 const { openRegistrationModal } = useRegistration();
-
-const links = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Tools", path: "/tools" },
-  { name: "Blog", path: "/blog" },
-];
-
-const isScrolled = ref(false);
-const showHeader = ref(true);
-const mobileMenuOpen = ref(false);
-let lastScrollY = 0;
-
-const handleScroll = () => {
-  const currentScrollY = window.scrollY;
-
-  // Update isScrolled for background effects
-  isScrolled.value = currentScrollY > 20;
-
-  // Show/hide header based on scroll direction
-  if (currentScrollY > lastScrollY && currentScrollY > 100) {
-    // Scrolling down & past 100px
-    showHeader.value = false;
-  } else {
-    // Scrolling up or at top
-    showHeader.value = true;
-  }
-
-  lastScrollY = currentScrollY;
-};
-
-const toggleMobileMenu = () => {
-  mobileMenuOpen.value = !mobileMenuOpen.value;
-};
-
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-  lastScrollY = window.scrollY;
-});
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
-
-const $route = useRoute();
 </script>
