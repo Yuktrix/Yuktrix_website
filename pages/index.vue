@@ -9,7 +9,7 @@
         <img
           src="/home/slide.png"
           alt="Financial Intelligence Background"
-          class="w-full h-full object-cover object-center opacity-30 grayscale mix-blend-luminosity scale-105 animate-[pulse_20s_ease-in-out_infinite]"
+          class="w-full h-full object-cover object-center opacity-90 grayscale mix-blend-luminosity scale-105 animate-[pulse_20s_ease-in-out_infinite]"
         />
         <!-- Advanced Gradient Overlay -->
         <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/95 via-[#090a0a]/80 to-[#cdcfd1]/10"></div>
