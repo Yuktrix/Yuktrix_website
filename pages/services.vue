@@ -1,293 +1,323 @@
 <template>
-  <div class="md:pb-12 bg-[#cdcfd1] min-h-screen">
-    <!-- Header / Hero Section -->
-    <section
-      class="relative min-h-[85vh] pt-20 pb-16 flex items-center justify-center overflow-hidden"
-    >
+  <!-- Root wrapper with overflow-x-hidden for header alignment parity -->
+  <div class="bg-[#cdcfd1] min-h-screen font-sans selection:bg-[#db961f] selection:text-black overflow-x-hidden">
+    
+    <!-- ==========================================
+      1. HERO SECTION (Institutional Precision)
+    =========================================== -->
+    <section class="relative min-h-[75vh] pt-20 flex items-center justify-center overflow-hidden bg-[#090a0a]">
       <div class="absolute inset-0 z-0">
         <img
           src="/ai-powered-device-concept.jpg"
           alt="Financial Trading Background"
-          class="w-full h-full object-cover opacity-80"
+          class="w-full h-full object-cover opacity-50 grayscale mix-blend-luminosity scale-110 will-change-transform"
         />
-        <!-- Darker gradient for better text readability and professional contrast -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/80 via-[#090a0a]/60 to-[#cdcfd1]/90"
-        ></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/95 via-[#090a0a]/85 to-[#cdcfd1]/10"></div>
       </div>
 
-      <div class="container mx-auto px-6 text-center relative z-10">
+      <!-- Architectural Grid Overlay -->
+      <div class="absolute inset-0 pointer-events-none z-0 opacity-[0.12]" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 5rem 5rem; mask-image: radial-gradient(circle at center, black, transparent 80%);"></div>
+
+      <div class="container mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
         <div 
-          class="inline-block px-4 py-1.5 mb-6 bg-white/10 border border-white/20 backdrop-blur-sm rounded-full text-white/90 font-mono text-xs uppercase tracking-widest"
-          data-aos="fade-down"
+          class="inline-flex items-center gap-3 px-5 py-2 mb-8 bg-[#db961f]/10 border border-[#db961f]/30 backdrop-blur-sm rounded-full text-[#db961f] font-mono text-[10px] uppercase tracking-[0.4em] font-bold"
         >
-          Implementation Services
+          <span class="w-1.5 h-1.5 rounded-full bg-[#db961f] animate-pulse shadow-[0_0_8px_#db961f]"></span>
+          Service Infrastructure
         </div>
-        <h1
-          class="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 text-white leading-tight"
-          data-aos="zoom-in"
-        >
-          Trading Automation Consulting & <br />
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-[#db961f] to-[#FEE337]"
-            >Systemized Implementation</span
-          >
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 text-white leading-none tracking-tighter uppercase">
+          Engagement <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#db961f] to-[#FEE337] font-extrabold italic uppercase">Protocols</span>
         </h1>
-        <p 
-          class="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto font-light leading-relaxed" 
-          data-aos="fade-up" 
-          data-aos-delay="100"
-        >
-          Structured quantitative system design, validation, and disciplined execution architecture for serious market participants.
+        <p class="text-lg md:text-xl text-white/50 max-w-2xl mx-auto font-light leading-relaxed">
+          Objective diagnostics and engineering nodes for professional trading system implementation.
         </p>
       </div>
     </section>
 
-    <!-- Services Grid Section -->
-    <section class="container mx-auto px-6 py-20 relative z-10 -mt-16">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#090a0a] mb-4">Core Competencies & Services</h2>
-        <div class="w-20 h-1.5 bg-gradient-to-r from-[#db961f] to-[#FEE337] mx-auto rounded-full"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service Card (Iterated cleanly via Vue v-for) -->
-        <div 
-          v-for="(service, index) in services" 
-          :key="index"
-          class="group bg-white rounded-2xl p-8 border border-black/5 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:border-[#db961f]/40 transition-all duration-300 flex flex-col h-full"
-          data-aos="fade-up"
-          :data-aos-delay="index * 100"
-        >
-          <!-- Card Header -->
-          <div class="mb-6 flex items-center justify-between">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#cdcfd1]/30 text-[#090a0a] font-mono font-bold text-lg border border-[#cdcfd1] group-hover:bg-[#db961f] group-hover:text-white group-hover:border-[#db961f] transition-colors duration-300">
-              {{ service.id }}
-            </div>
+    <!-- ==========================================
+      2. THE COMMAND CENTER (High-Performance Static Grid)
+    =========================================== -->
+    <section class="relative z-20 -mt-16 bg-[#cdcfd1] rounded-t-[3.5rem] shadow-[0_-30px_60px_rgba(0,0,0,0.25)] py-28 px-6 border-t border-white/50">
+      <div class="container mx-auto max-w-[1400px]">
+        
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8" data-aos="fade-up">
+          <div class="text-left">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-[#090a0a] mb-2 uppercase tracking-tighter text-black">Plan Architecture</h2>
           </div>
+          <div class="flex items-center gap-6 font-mono text-[10px] font-bold text-[#090a0a]/40 uppercase tracking-widest">
+            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full border border-black/20"></span> STANDBY</div>
+            <div class="flex items-center gap-2 text-[#db961f] font-black"><span class="w-2 h-2 rounded-full bg-[#db961f] shadow-[0_0_5px_#db961f]"></span> ACTIVE_NODE</div>
+          </div>
+        </div>
+
+        <!-- The Grid: Perfectly static to avoid disappearing containers -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-20">
           
-          <h3 class="text-xl md:text-2xl font-bold mb-6 text-[#090a0a] leading-tight">
-            {{ service.title }}
-          </h3>
-          
-          <!-- Card Content Body -->
-          <div class="space-y-6 flex-grow">
-            <!-- Challenge -->
-            <div>
-              <h4 class="text-xs font-bold uppercase tracking-wider text-black/40 mb-2">The Challenge</h4>
-              <p class="text-black/70 text-sm leading-relaxed">
-                {{ service.challenge }}
+          <div 
+            v-for="(plan, index) in engagementPlans" 
+            :key="plan.id"
+            @click="activeTier = plan.id"
+            :class="[
+              'relative p-8 rounded-[2rem] transition-colors duration-300 cursor-pointer flex flex-col group overflow-hidden border',
+              activeTier === plan.id 
+                ? 'bg-[#090a0a] text-white border-[#db961f] shadow-2xl' 
+                : 'bg-white/70 hover:bg-white text-[#090a0a] border-black/5 hover:border-[#db961f]/20'
+            ]"
+          >
+            <!-- Plan Identity -->
+            <div class="mb-8">
+              <div class="font-mono text-[9px] font-black tracking-[0.3em] mb-4 uppercase" :class="activeTier === plan.id ? 'text-[#db961f]' : 'text-black/30'">
+                PLAN_0{{ index + 1 }}
+              </div>
+              <h3 class="text-2xl font-display font-bold uppercase leading-tight tracking-tighter" :class="activeTier === plan.id ? 'text-white' : 'text-[#090a0a]'">
+                {{ plan.title }}
+              </h3>
+              <p class="text-[10px] font-bold uppercase tracking-widest mt-2" :class="activeTier === plan.id ? 'text-[#db961f]' : 'text-black/40'">
+                {{ plan.target }}
               </p>
             </div>
-            
-            <!-- Approach -->
-            <div>
-              <h4 class="text-xs font-bold uppercase tracking-wider text-[#db961f] mb-2">Our Approach</h4>
-              <p class="text-black/80 text-sm leading-relaxed border-l-2 border-[#db961f] pl-4 py-1">
-                {{ service.approach }}
-              </p>
-            </div>
-            
+
             <!-- Deliverables -->
-            <div>
-              <h4 class="text-xs font-bold uppercase tracking-wider text-black/40 mb-3">Deliverables</h4>
-              <ul class="space-y-2">
-                <li v-for="(item, i) in service.deliverables" :key="i" class="flex items-start gap-2 text-sm text-black/80 font-medium">
-                  <!-- Custom Check SVG -->
-                  <svg class="w-4 h-4 text-[#db961f] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{{ item }}</span>
-                </li>
-              </ul>
+            <div class="space-y-6 flex-grow">
+              <div class="h-px w-full" :class="activeTier === plan.id ? 'bg-white/10' : 'bg-black/5'"></div>
+              
+              <div>
+                <h4 class="text-[9px] font-mono font-bold uppercase tracking-widest opacity-40 mb-3">Deliverables</h4>
+                <ul class="space-y-3">
+                  <li v-for="inc in plan.inclusions" :key="inc" class="flex items-start gap-2">
+                    <svg class="w-3.5 h-3.5 mt-0.5 shrink-0" :class="activeTier === plan.id ? 'text-[#db961f]' : 'text-black/30'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                    <span class="text-[11px] leading-snug font-medium opacity-80">{{ inc }}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Metadata -->
+              <div class="mt-4 p-4 rounded-2xl transition-colors" :class="activeTier === plan.id ? 'bg-white/5 border border-white/10' : 'bg-black/5 border border-transparent'">
+                <div class="text-[9px] font-mono uppercase opacity-50 mb-1">{{ plan.metaLabel }}</div>
+                <div class="text-lg font-display font-bold tracking-tight" :class="activeTier === plan.id ? 'text-[#db961f]' : 'text-[#090a0a]'">{{ plan.metaValue }}</div>
+              </div>
+            </div>
+
+            <!-- Constraints -->
+            <div class="mt-8 pt-6 border-t border-dashed" :class="activeTier === plan.id ? 'border-white/10' : 'border-black/10'">
+              <span class="text-[8px] font-mono font-black uppercase tracking-widest opacity-30 block mb-2">Technical_Constraint</span>
+              <p class="text-[10px] leading-relaxed opacity-60 italic">
+                {{ plan.note }}
+              </p>
+            </div>
+
+            <!-- Highlight Status -->
+            <div class="absolute top-8 right-8">
+              <div v-if="activeTier === plan.id" class="w-2 h-2 rounded-full bg-[#db961f] shadow-[0_0_12px_#db961f] animate-pulse"></div>
             </div>
           </div>
 
-          <!-- Optional Note Footer -->
-          <div v-if="service.note" class="mt-8 pt-6 border-t border-black/5">
-            <p class="text-xs text-black/50 italic leading-relaxed">
-              * {{ service.note }}
-            </p>
+        </div>
+
+        <!-- Master Interface Button -->
+        <div class="bg-[#090a0a] rounded-[3rem] p-10 md:p-14 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden border-t border-white/10" data-aos="zoom-in">
+          <div class="absolute top-0 right-0 w-96 h-96 bg-[#db961f]/5 blur-[120px] rounded-full pointer-events-none"></div>
+          
+          <div class="text-center md:text-left relative z-10">
+            <h3 class="text-2xl font-display font-bold text-white uppercase tracking-tight mb-2">Protocol Readiness: <span class="text-[#db961f] italic">Verified</span></h3>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section
-      class="relative py-24 bg-[#090a0a] text-center overflow-hidden mt-12 shadow-2xl"
-    >
-      <!-- Background Effect -->
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#db961f]/10 rounded-full blur-[120px] pointer-events-none z-0"
-      ></div>
-
-      <!-- Content Container -->
-      <div class="container mx-auto px-6 relative z-10" data-aos="zoom-in">
-        <div class="mb-6 flex justify-center">
-          <span class="px-5 py-2 rounded-full border border-[#db961f]/30 bg-[#db961f]/10 text-[#FEE337] text-sm font-semibold tracking-widest uppercase">
-            Yuktrix Engagements
-          </span>
-        </div>
-
-        <h3
-          class="text-3xl md:text-5xl font-display font-bold max-w-4xl mx-auto leading-tight mb-8 text-white drop-shadow-lg"
-        >
-          Ready to Architect <br />
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-[#db961f] to-[#FEE337]"
-            >Your Trading System?</span
+          <button 
+            @click="triggerEngagement"
+            class="group relative inline-flex items-center justify-center px-12 py-5 font-black uppercase tracking-[0.4em] italic text-[#090a0a] bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:bg-[#db961f] hover:shadow-[0_0_40px_rgba(219,150,31,0.5)] transform active:scale-95"
           >
-        </h3>
-
-        <div class="flex flex-wrap justify-center gap-3 mb-10 max-w-3xl mx-auto">
-          <span v-for="tag in ['Strategy Complexity', 'Risk Profile', 'Capital Scale', 'Automation Scope', 'Institutional Requirements']" :key="tag" class="px-4 py-1.5 bg-white/5 border border-white/10 text-white/80 rounded-full text-xs font-medium tracking-wide">
-            {{ tag }}
-          </span>
-        </div>
-
-        <p
-          class="text-lg text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
-        >
-          Engagements are custom-tailored based on your specific requirements. Initial consultations assess implementation feasibility before any roadmap design.
-        </p>
-
-        <!-- Buttons -->
-        <div
-          class="flex flex-col sm:flex-row items-center justify-center gap-6"
-        >
-          <button
-            @click="openRegistrationModal"
-            class="group relative bg-gradient-to-r from-[#db961f] to-[#FEE337] text-[#090a0a] px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-[0_0_30px_rgba(219,150,31,0.3)] overflow-hidden"
-          >
-            <span class="relative z-10 flex items-center gap-2"> 
-              Book a Consultation Call 
-              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
+            <span class="relative z-10 flex items-center gap-4">
+              Initialize Implementation Protocol
+              <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </span>
           </button>
         </div>
+
       </div>
     </section>
-    
+
+    <!-- ==========================================
+      3. MODULAR ADD-ONS (System Extensions)
+    =========================================== -->
+    <section class="py-32 px-6 bg-[#090a0a] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+      <div class="container mx-auto max-w-7xl relative z-10">
+        <div class="text-center mb-24" data-aos="fade-up">
+          <h2 class="text-4xl font-display font-bold text-white uppercase tracking-tighter">Engagement <span class="text-[#db961f]">Add-ons</span></h2>
+          <p class="text-white/30 font-mono text-xs uppercase tracking-[0.4em] mt-3">Upsell modules for expanded technical scope</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
+          <div v-for="addon in addons" :key="addon.t" class="p-10 bg-white/[0.03] rounded-[2.5rem] border border-white/5 hover:border-[#db961f]/40 transition-all group backdrop-blur-sm">
+            <h4 class="text-white font-bold mb-4 group-hover:text-[#db961f] transition-colors uppercase tracking-tight text-xl leading-tight">{{ addon.t }}</h4>
+            <p class="text-white/30 text-sm leading-relaxed font-light">{{ addon.d }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+      4. ELIGIBILITY GATE (Verification Rules)
+    =========================================== -->
+    <section class="py-24 px-6 border-y border-black/5 bg-white/40 overflow-hidden">
+      <div class="container mx-auto max-w-7xl">
+        <div class="grid lg:grid-cols-2 gap-24 items-center">
+          <div data-aos="fade-right">
+            <h2 class="text-6xl md:text-7xl font-black uppercase italic tracking-tighter mb-8 leading-[0.85] text-[#090a0a]">
+              Strict<br/><span class="text-red-600 drop-shadow-sm">Eligibility</span>
+            </h2>
+            <p class="text-[#090a0a]/70 text-xl leading-relaxed font-light mb-10 max-w-md">
+              We exclusively automate rule-based strategies. No discretionary overlays allowed within core engine logic.
+            </p>
+            <div class="inline-flex items-center gap-4 p-4 bg-red-600 text-white rounded-xl font-mono text-[10px] font-bold uppercase tracking-[0.2em] shadow-2xl">
+              <svg class="w-5 h-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              Zero Discretion Protocol Required
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6" data-aos="fade-left">
+            <div v-for="rule in [{h:'Absolute Logic', d:'Rules must be mathematically formal. Manual intervention within core execution is strictly architected out.', n:'GATE_01'}, {h:'No Profit Guarantees', d:'We engineer structural integrity. Alpha generation and ROI remain the responsibility of the owner.', n:'GATE_02'}]" :key="rule.h" class="p-10 bg-[#090a0a] rounded-[3rem] border border-white/5 relative group overflow-hidden">
+              <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-[#db961f]/5 blur-3xl rounded-full"></div>
+              <div class="text-[10px] font-mono text-[#db961f] mb-6 tracking-[0.3em] uppercase font-bold">{{ rule.n }}</div>
+              <h4 class="font-display font-bold mb-4 uppercase text-white text-3xl italic tracking-tighter">{{ rule.h }}</h4>
+              <p class="text-white/50 text-sm leading-relaxed font-light">{{ rule.d }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Console Footer CTA -->
+    <section class="py-32 px-6">
+      <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+          <h2 class="text-4xl md:text-6xl font-display font-bold text-[#090a0a] mb-8 uppercase tracking-tighter leading-none">Ready to <br/>Construct?</h2>
+          <button 
+            @click="openRegistrationModal(activeTier)" 
+            class="w-full py-8 bg-[#090a0a] text-white font-black uppercase tracking-[0.6em] italic hover:bg-[#db961f] hover:text-[#090a0a] transition-all shadow-2xl rounded-[2.5rem] text-xl hover:scale-[1.02]"
+          >
+              Open Technical Gateway
+          </button>
+          <p class="mt-12 font-mono text-[10px] text-[#090a0a]/40 uppercase tracking-[0.4em] font-bold">Standard Technical Assessment Fee Applies // Institutional Grade Protocol</p>
+      </div>
+    </section>
+
     <RegistrationModal />
   </div>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { useRegistration } from "~/composables/useRegistration";
 
 const { openRegistrationModal } = useRegistration();
 
-// Extracted Content Data for clean, maintainable rendering
-const services = [
+// Selection state for highlighter effect
+const activeTier = ref('Foundation');
+
+const triggerEngagement = () => {
+  if (activeTier.value) {
+    openRegistrationModal(activeTier.value);
+  }
+};
+
+const engagementPlans = [
   {
-    id: "01",
-    title: "Strategy Structuring & Quantitative Validation",
-    challenge: "Many trading strategies remain ideas rather than systems. Without formal rule structuring and statistical validation, performance becomes inconsistent and vulnerable to regime shifts.",
-    approach: "We convert discretionary trading logic into defined rule-based systems supported by quantitative analysis. Validation precedes automation.",
-    deliverables: [
-      "Rule formalization & logic structuring",
-      "Expectancy modeling",
-      "Drawdown and risk behavior analysis",
-      "Statistical robustness testing",
-      "Multi-period backtesting",
-      "Sensitivity and parameter stability review"
+    id: 'Audit',
+    title: 'Infrastructure Audit',
+    target: 'Diagnostics Node',
+    inclusions: [
+      'Strategy Logic Review',
+      'Backtest Credibility Check',
+      'Risk Framework Evaluation',
+      'Execution Architecture Assessment'
     ],
-    note: "This service may operate independently or as part of full end-to-end implementation."
+    metaLabel: 'Primary Output',
+    metaValue: 'Gap Report',
+    note: 'Technical assessment only. Build or deployment not included.'
   },
   {
-    id: "02",
-    title: "Execution Architecture & Automation Implementation",
-    challenge: "Even validated systems fail when execution is inconsistent or operationally unstable. Manual intervention introduces variability and risk.",
-    approach: "We design structured automation architecture aligned with defined system logic and capital governance. Automation is implemented with engineering discipline — not code-only deployment.",
-    deliverables: [
-      "Broker API integration",
-      "Execution engine structuring",
-      "Order management systems",
-      "Position sizing logic integration",
-      "Monitoring and logging infrastructure",
-      "Deployment architecture design"
+    id: 'Foundation',
+    title: 'Foundation',
+    target: 'Systemization Node',
+    inclusions: [
+      'Absolute Rule Formalization',
+      '3-5yr Quantitative Validation',
+      '1-Broker Live Integration',
+      'OMS Monitoring Setup'
     ],
-    note: "This service is available for clients who already have defined trading strategies."
+    metaLabel: 'Min. Threshold',
+    metaValue: '₹1,00,000+',
+    note: 'Restricted to single strategy. 60-Day stabilization included.'
   },
   {
-    id: "03",
-    title: "Risk Management Framework Design",
-    challenge: "Entries are often optimized while risk architecture remains undefined. Capital governance must be engineered before system scaling.",
-    approach: "We design structured risk frameworks integrated into system logic. Risk precedes return.",
-    deliverables: [
-      "Position sizing models",
-      "Capital allocation design",
-      "Exposure limit structuring",
-      "Drawdown control frameworks",
-      "Portfolio-level risk evaluation",
-      "Monitoring dashboards"
+    id: 'Pro',
+    title: 'The Multi-Node',
+    target: 'Scaling Node',
+    inclusions: [
+      'Up to 3 Concurrent Strats',
+      'Portfolio-aware Risk Engine',
+      'Multi-broker Orchestration',
+      'One optimization cycle'
     ],
-    note: "This service can be delivered independently or integrated within full implementation engagements."
+    metaLabel: 'Architecture',
+    metaValue: 'Multi-Strategy',
+    note: 'Excludes advanced Institutional AI modules.'
   },
   {
-    id: "04",
-    title: "AI & Quantitative Enhancement Systems",
-    challenge: "Markets evolve. Static rule systems may require adaptive intelligence layers to remain robust.",
-    approach: "We apply machine learning and quantitative modeling techniques as structured enhancement layers. AI augments validation — it does not replace discipline.",
-    deliverables: [
-      "Regime detection modeling",
-      "Volatility adaptation frameworks",
-      "Feature-based signal evaluation",
-      "Parameter sensitivity analysis",
-      "Quantitative enhancement modules"
+    id: 'Institutional',
+    title: 'The Sovereign',
+    target: 'Alpha Engine Node',
+    inclusions: [
+      'AI Adaptive Regime Layers',
+      'Volatility Adaptation STX',
+      'Stress Logic Integration',
+      'Custom Portfolio Backend'
     ],
-    note: "Primarily suited for advanced or institutional-scale participants."
+    metaLabel: 'Tier Model',
+    metaValue: 'Institutional',
+    note: 'Custom scoped for prop-desks and institutional HNI entities.'
   },
   {
-    id: "05",
-    title: "Ongoing Monitoring & Optimization Governance",
-    challenge: "Deployment does not eliminate responsibility. System drift and structural changes require disciplined evaluation.",
-    approach: "We implement governance frameworks for ongoing performance assessment. Optimization is validation-driven — not reactive.",
-    deliverables: [
-      "Periodic performance reviews",
-      "Expectancy drift analysis",
-      "Risk metric reassessment",
-      "Structural integrity evaluation",
-      "Parameter review cycles"
+    id: 'Governance',
+    title: 'The Sentinel',
+    target: 'Oversight Node',
+    inclusions: [
+      'Monthly Drift Detection',
+      'Performance Expectancy Review',
+      'Risk Threshold Reassessment',
+      'Quarterly Health Auditing'
     ],
-    note: null
-  },
-  {
-    id: "06",
-    title: "Trading Infrastructure Audit & System Review",
-    challenge: "Existing trading systems may lack transparency, validation clarity, or risk governance.",
-    approach: "We conduct structured audits to evaluate system robustness and infrastructure integrity.",
-    deliverables: [
-      "Strategy logic review",
-      "Backtest credibility assessment",
-      "Risk framework evaluation",
-      "Execution architecture analysis",
-      "Structural gap identification"
-    ],
-    note: "Ideal for traders and firms seeking independent system evaluation."
-  },
-  {
-    id: "07",
-    title: "Portfolio-Level System Architecture Design",
-    challenge: "Multiple strategies operating independently can create hidden risk concentration.",
-    approach: "We design portfolio-level architecture coordinating capital allocation across systems.",
-    deliverables: [
-      "Multi-strategy allocation design",
-      "Correlation analysis",
-      "Exposure balancing models",
-      "Portfolio risk structuring",
-      "Integrated governance design"
-    ],
-    note: null
+    metaLabel: 'Billing Cycle',
+    metaValue: 'Monthly Retainer',
+    note: 'Continuous monitoring only. Excludes new implementation scope.'
   }
 ];
 
+const addons = [
+  {t:'Strategy Automation', d:'Additional rule-set integration per node.'},
+  {t:'Broker Sync', d:'Cross-broker order orchestration logic.'},
+  {t:'Multi-Account Deployment', d:'Execution across distinct investor IDs.'},
+  {t:'Advanced Reporting', d:'Institutional investor-grade analytics templates.'},
+  {t:'Infra Remediation', d:'Audit-to-fix rapid implementation sprints.'},
+  {t:'Technical Enablement', d:'Workshops for technical institution/educator teams.'}
+];
+
 onMounted(() => {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  // AOS animations initialized globally
+  if (process.client) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 });
 </script>
+
+<style scoped>
+.custom-scrollbar::-webkit-scrollbar { width: 3px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
+
+/* System highlight transition */
+.cursor-pointer {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+</style>
