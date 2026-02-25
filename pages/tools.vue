@@ -1,8 +1,9 @@
 <template>
-  <div class="bg-[#cdcfd1] min-h-screen font-sans selection:bg-[#db961f] selection:text-black">
+  <!-- Root wrapper uses overflow-x-hidden to prevent layout shifts and ensure header parity -->
+  <div class="bg-[#cdcfd1] min-h-screen font-sans selection:bg-[#db961f] selection:text-black overflow-x-hidden">
     
     <!-- ==========================================
-      1. HERO SECTION (Dark)
+      1. HERO SECTION (Dark - Aligned with Header)
     =========================================== -->
     <header class="relative pt-32 pb-32 overflow-hidden bg-[#090a0a]">
       <!-- Background Image with Overlay -->
@@ -10,9 +11,9 @@
         <img
           src="/tools/market.png"
           alt="Market Research Background"
-          class="w-full h-full object-cover object-center opacity-75"
+          class="w-full h-full object-cover object-center opacity-75 grayscale mix-blend-luminosity"
         />
-        <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/90 via-[#090a0a]/75 to-[#090a0a]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/95 via-[#090a0a]/80 to-[#090a0a]"></div>
       </div>
 
       <!-- Ambient Glows -->
@@ -20,7 +21,8 @@
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(circle_at_50%_0%,_rgba(219,150,31,0.15),transparent_70%)]"></div>
       </div>
       
-      <div class="max-w-5xl mx-auto px-6 relative text-center z-10" data-aos="zoom-in">
+      <!-- Using standard container to match Header and About page logic -->
+      <div class="container mx-auto px-6 relative z-10 text-center" data-aos="zoom-in">
         <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#db961f]/10 border border-[#db961f]/20 text-[#db961f] text-xs font-bold mb-8 uppercase tracking-[0.2em]">
           <span class="w-1.5 h-1.5 rounded-full bg-[#db961f] mr-2 animate-pulse"></span>
           Professional Infrastructure
@@ -39,7 +41,7 @@
       2. INTRODUCTION & METRICS (Silver - Overlapping)
     =========================================== -->
     <section class="bg-[#cdcfd1] relative z-20 -mt-12 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] py-24">
-      <div class="max-w-7xl mx-auto px-6">
+      <div class="container mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           
           <!-- Left: Intro & Disclaimer -->
@@ -59,8 +61,8 @@
                 <div class="flex-1 h-px bg-[#090a0a]/10"></div>
               </div>
               <div class="flex flex-col items-center text-center relative z-10">
-                <span class="text-[#090a0a] font-bold tracking-wide mb-1">THIS IS NOT A SIGNAL PLATFORM.</span>
-                <span class="text-red-500 font-medium text-sm">IT IS A RESEARCH AND VALIDATION ENVIRONMENT.</span>
+                <span class="text-[#090a0a] font-bold tracking-wide mb-1 uppercase">Research and Validation Only</span>
+                <span class="text-red-600 font-medium text-sm">YUKTRIX DOES NOT PROVIDE TRADING SIGNALS.</span>
               </div>
             </div>
           </div>
@@ -77,10 +79,10 @@
     </section>
 
     <!-- ==========================================
-      3. LAB OVERVIEW (L1 - L5) (Dark)
+      3. LAB OVERVIEW (Dark - High Contrast)
     =========================================== -->
     <section class="bg-[#090a0a] py-32 relative z-10">
-      <div class="max-w-7xl mx-auto px-6">
+      <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-up">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The Quant Research Lab</h2>
@@ -105,7 +107,7 @@
       4. TOOL MODULES (Silver - Overlapping)
     =========================================== -->
     <section class="bg-[#cdcfd1] relative z-20 -mt-12 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] py-32">
-      <div class="max-w-7xl mx-auto px-6 space-y-40">
+      <div class="container mx-auto px-6 space-y-40">
           
         <!-- Module 1: Backtesting -->
         <div class="grid lg:grid-cols-12 gap-12 items-center" data-aos="fade-up">
@@ -130,7 +132,7 @@
           </div>
 
           <!-- Terminal UI Mockup (Dark Contrast) -->
-          <div class="lg:col-span-7 bg-[#090a0a] border border-[#090a0a]/20 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+          <div class="lg:col-span-7 bg-[#090a0a] border border-[#090a0a]/20 rounded-2xl overflow-hidden shadow-2xl flex flex-col min-h-[400px]">
             <div class="bg-white/5 px-6 py-4 flex items-center justify-between border-b border-white/5">
               <div class="flex space-x-2">
                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -231,7 +233,7 @@
                 <ul class="space-y-3 text-sm text-[#090a0a]/80 font-medium">
                   <li>Macro indicators</li>
                   <li>Sector metrics</li>
-                  <li>Company fundamentals</li>
+                  <li>Fundamentals</li>
                   <li>Volatility measures</li>
                 </ul>
               </div>
@@ -282,7 +284,7 @@
       5. TARGET AUDIENCE (Dark)
     =========================================== -->
     <section class="py-32 bg-[#090a0a] relative z-10">
-      <div class="max-w-7xl mx-auto px-6">
+      <div class="container mx-auto px-6">
         <div class="text-center mb-16" data-aos="fade-up">
           <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Designed for Structured System Builders</h2>
           <p class="text-white/60 text-lg">The Quant Research Lab integrates with Yuktrix consulting for high-level engagements.</p>
@@ -304,7 +306,7 @@
     <section class="bg-[#cdcfd1] py-32 relative z-20 -mt-12 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] overflow-hidden">
       <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#090a0a 1px, transparent 1px); background-size: 30px 30px;"></div>
       
-      <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
+      <div class="container mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#090a0a] mb-6 tracking-tight">Access Structure & Deployment</h2>
         <p class="text-[#090a0a]/70 mb-12 text-lg md:text-xl font-medium max-w-2xl mx-auto">
           The Quant Research Lab is available through a structured access model depending on research scope and feature usage.
@@ -313,7 +315,7 @@
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <button @click="openRegistrationModal" class="bg-[#090a0a] text-white font-bold py-5 px-10 rounded-full hover:scale-105 transition-all shadow-xl group flex items-center justify-center gap-3">
             Book a Consultation Call
-            <svg class="w-5 h-5 text-[#db961f] group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <svg class="w-5 h-5 text-[#db961f] group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </button>
           <button class="bg-transparent border-2 border-[#090a0a]/20 text-[#090a0a] font-bold py-5 px-10 rounded-full hover:bg-[#090a0a]/5 transition-colors">
             Technical Specifications

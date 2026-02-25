@@ -1,46 +1,31 @@
 <template>
-  <div class="font-sans selection:bg-[#db961f] selection:text-black bg-[#cdcfd1]">
+  <!-- Root wrapper uses overflow-x-hidden to prevent the 'silver bar' layout shift -->
+  <div class="font-sans selection:bg-[#db961f] selection:text-black bg-[#cdcfd1] overflow-x-hidden">
     <!-- ==========================================
-      1. HERO SECTION (Creative Tech Design)
+      1. HERO SECTION (Redesigned for Container Parity)
     =========================================== -->
     <section class="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden bg-[#090a0a]">
-      <!-- Deep Background Image -->
       <div class="absolute inset-0 z-0">
         <img
           src="/home/slide.png"
           alt="Financial Intelligence Background"
-          class="w-full h-full object-cover object-center opacity-90 grayscale mix-blend-luminosity scale-105 animate-[pulse_20s_ease-in-out_infinite]"
+          class="w-full h-full object-cover object-center opacity-80 grayscale mix-blend-luminosity scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
         />
-        <!-- Advanced Gradient Overlay -->
         <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/95 via-[#090a0a]/80 to-[#cdcfd1]/10"></div>
       </div>
 
-      <!-- Architectural Grid Overlay -->
+      <!-- Architectural Grid Layer -->
       <div class="absolute inset-0 pointer-events-none z-0 opacity-[0.15]" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 4rem 4rem; mask-image: radial-gradient(circle at center, black, transparent 80%); -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);"></div>
 
-      <!-- Animated Glow Effects -->
-      <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#db961f]/15 rounded-full blur-[120px] animate-[pulse_8s_ease-in-out_infinite] z-0 pointer-events-none"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] animate-[pulse_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
-
-      <!-- Floating Tech Badges (Parallax/Float effect) -->
-      <div class="hidden lg:flex absolute top-[30%] left-10 items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg text-white/50 font-mono text-[10px] uppercase tracking-widest animate-[bounce_4s_ease-in-out_infinite]">
-        <span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></span> System.Active
-      </div>
-      <div class="hidden lg:flex absolute bottom-[30%] right-10 items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg text-white/50 font-mono text-[10px] uppercase tracking-widest animate-[bounce_5s_ease-in-out_infinite_reverse]">
-        <svg class="w-4 h-4 text-[#db961f]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> 0.1ms Latency
-      </div>
-
-      <!-- Main Content -->
+      <!-- Content Container: Standardized to match About.vue container logic -->
       <div class="container mx-auto px-6 relative z-10 pt-10 text-center flex flex-col items-center justify-center">
-        <div class="gsap-hero-text opacity-0 translate-y-10 flex flex-col items-center w-full">
+        <div class="gsap-hero-text opacity-0 translate-y-10 flex flex-col items-center w-full" data-aos="zoom-in">
           
-          <!-- Top Badge -->
           <div class="inline-flex items-center justify-center gap-3 px-5 py-2 mb-8 bg-[#090a0a] border border-[#db961f]/30 rounded-full shadow-[0_0_20px_rgba(219,150,31,0.15)] backdrop-blur-xl">
             <span class="w-2 h-2 rounded-full bg-[#db961f] animate-ping"></span>
             <span class="text-[#db961f] text-[11px] font-mono font-bold uppercase tracking-[0.25em]">Quantitative Architecture</span>
           </div>
 
-          <!-- Main Heading -->
           <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[1.05] mb-8 tracking-tighter max-w-5xl mx-auto drop-shadow-2xl">
             <span class="block text-white mb-2">Where Quant Discipline</span>
             <span class="flex items-center justify-center gap-4 text-[#db961f] italic font-light my-4 text-4xl md:text-5xl lg:text-6xl">
@@ -48,31 +33,24 @@
               Meets
               <span class="w-12 md:w-24 h-px bg-gradient-to-l from-transparent to-[#db961f]"></span>
             </span>
-            <span class="block text-transparent bg-clip-text bg-gradient-to-br from-white via-[#cdcfd1] to-white/50 pb-2">
+            <span class="block text-transparent bg-clip-text bg-gradient-to-br from-white via-[#cdcfd1] to-white/50 pb-2 leading-tight">
               Automation Intelligence
             </span>
           </h1>
 
-          <!-- Dynamic Feature Scroller (Terminal Style) -->
-          <div class="h-14 md:h-16 overflow-hidden mb-12 flex items-center justify-start bg-white/5 border border-white/10 backdrop-blur-md px-6 md:px-8 py-3 rounded-2xl w-full max-w-lg shadow-inner">
+          <!-- Terminal Scroller -->
+          <div class="h-14 md:h-16 overflow-hidden mb-12 flex items-center justify-start bg-white/5 border border-white/10 backdrop-blur-md px-6 md:px-8 py-3 rounded-2xl w-full max-w-lg shadow-inner transform-gpu">
             <span class="text-[#db961f] font-mono mr-4 font-bold text-lg">></span>
             <Transition name="hero-feature" mode="out-in">
-              <div
-                :key="activeHeroFeatureIndex"
-                class="text-base md:text-lg font-mono text-white/90 tracking-wide w-full text-left flex items-center"
-              >
+              <div :key="activeHeroFeatureIndex" class="text-base md:text-lg font-mono text-white/90 tracking-wide w-full text-left flex items-center">
                 {{ heroFeatures[activeHeroFeatureIndex] }}<span class="inline-block w-2 h-5 bg-[#db961f] ml-1 animate-pulse"></span>
               </div>
             </Transition>
           </div>
 
-          <!-- CTA Button -->
-          <button
-            @click="openRegistrationModal"
-            class="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-[#090a0a] bg-gradient-to-r from-[#db961f] to-[#FEE337] rounded-full overflow-hidden shadow-[0_0_40px_rgba(219,150,31,0.25)] hover:shadow-[0_0_60px_rgba(219,150,31,0.4)] transition-all duration-300 transform hover:-translate-y-1"
-          >
+          <button @click="openRegistrationModal" class="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-[#090a0a] bg-gradient-to-r from-[#db961f] to-[#FEE337] rounded-full overflow-hidden shadow-[0_0_40px_rgba(219,150,31,0.25)] hover:shadow-[0_0_60px_rgba(219,150,31,0.4)] transition-all duration-300 transform hover:-translate-y-1">
             <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
-            <span class="relative z-10 flex items-center gap-3 text-lg tracking-wide uppercase"> 
+            <span class="relative z-10 flex items-center gap-3 text-lg tracking-wide uppercase text-white md:text-[#090a0a]"> 
               Book Free Consultation
               <svg class="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </span>
@@ -81,7 +59,7 @@
         </div>
       </div>
 
-      <!-- Advanced Scroll Indicator -->
+      <!-- Initializer Line -->
       <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-4 text-white/30 z-10">
         <span class="text-[10px] font-bold font-mono uppercase tracking-[0.3em] opacity-80">Initialize</span>
         <div class="relative w-px h-16 bg-white/10 overflow-hidden">
@@ -90,18 +68,12 @@
       </div>
     </section>
 
-   <!-- ==========================================
-      2. PROBLEM VS SOLUTION (Editorial Glassmorphism)
-    =========================================== -->
-    <section class="py-24 bg-[#cdcfd1] relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
-      <div class="container mx-auto px-6 max-w-[1400px]">
-        
+    <!-- CONTENT SECTIONS: All use container mx-auto px-6 for perfect header alignment -->
+    <section class="py-24 bg-[#cdcfd1] relative z-20 -mt-10 rounded-t-[3rem] shadow-2xl">
+      <div class="container mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
-          
           <!-- LEFT COLUMN: THE FLAW -->
           <div class="flex flex-col h-full" data-aos="fade-right">
-            
-            <!-- 1. Heading (Standardized Height for Alignment) -->
             <div class="lg:h-[200px] mb-8 lg:mb-0">
               <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-red-500/10 border border-red-500/20 text-red-600 rounded-full font-mono text-xs uppercase tracking-[0.2em] font-bold">
                 <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]"></span>
@@ -111,53 +83,32 @@
                 Structural Problem in <br/><span class="text-red-600/90">Modern Trading</span>
               </h2>
             </div>
-
-            <!-- 2. Image -->
             <div class="relative group mb-8">
-              <div class="absolute inset-0 bg-red-500/10 blur-[60px] rounded-full transform translate-y-4 group-hover:bg-red-500/20 transition-colors duration-500 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-red-500/10 blur-[60px] rounded-full transform translate-y-4 pointer-events-none"></div>
               <div class="relative rounded-[2rem] p-3 bg-white/20 backdrop-blur-md border border-white/40 shadow-xl overflow-hidden">
-                 <img src="/home/Structural_problem.png" alt="Structural Problem" class="rounded-3xl w-full h-[250px] md:h-[300px] object-cover" />
-                 <div class="absolute inset-0 bg-red-500/5 mix-blend-overlay pointer-events-none rounded-3xl"></div>
+                 <img src="/home/Structural_problem.png" alt="Structural Problem" class="rounded-3xl w-full h-[300px] object-cover" />
               </div>
             </div>
-
-            <!-- 3. Content -->
-            <div class="flex-grow flex flex-col">
+            <div class="flex-grow">
               <p class="text-xl font-light text-[#090a0a]/70 mb-8 leading-snug">
                 <strong class="font-bold text-[#090a0a]">It’s not the strategy. It’s the structure.</strong> If your system leaks at every stage, no amount of capital will fix it.
               </p>
-
-              <!-- Elegant Glassmorphic Card (Flaw Pattern) -->
-              <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 md:p-8 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.05)] relative overflow-hidden mt-auto">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/5 blur-[60px] rounded-full pointer-events-none"></div>
-                
-                <h3 class="text-sm font-bold text-[#090a0a]/50 uppercase tracking-widest mb-4 relative z-10">Common Structural Weaknesses:</h3>
-                
-                <div class="space-y-2 relative z-10">
-                  <div v-for="(item, i) in flawPoints" :key="i" class="flex items-start gap-4 p-3 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-black/5 group">
-                    <div class="w-7 h-7 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-red-500 transition-colors duration-300">
-                       <svg class="w-3.5 h-3.5 text-red-500 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" /></svg>
+              <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 md:p-8 rounded-[2rem] shadow-sm relative overflow-hidden">
+                <h3 class="text-sm font-bold text-[#090a0a]/50 uppercase tracking-widest mb-4">Common Structural Weaknesses:</h3>
+                <div class="space-y-2">
+                  <div v-for="(item, i) in flawPoints" :key="i" class="flex items-start gap-4 p-3 rounded-2xl hover:bg-white transition-all border border-transparent group">
+                    <div class="w-7 h-7 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-red-500 transition-colors">
+                       <svg class="w-3.5 h-3.5 text-red-500 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" /></svg>
                     </div>
-                    <span class="text-sm md:text-[15px] text-[#090a0a]/80 font-medium leading-relaxed group-hover:text-[#090a0a] transition-colors">{{ item }}</span>
-                  </div>
-                </div>
-
-                <!-- Strong Centralized Statement -->
-                <div class="mt-6 flex justify-center relative z-10">
-                   <div class="inline-flex items-center gap-3 bg-red-500 text-white px-6 py-3 rounded-full text-xs md:text-sm font-bold tracking-[0.1em] uppercase shadow-lg cursor-default">
-                    <span class="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_white]"></span>
-                    It breaks faster.
+                    <span class="text-sm md:text-[15px] text-[#090a0a]/80 font-medium leading-relaxed">{{ item }}</span>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
 
           <!-- RIGHT COLUMN: THE FIX -->
           <div class="flex flex-col h-full" data-aos="fade-left">
-            
-            <!-- 1. Heading (Standardized Height for Alignment) -->
             <div class="lg:h-[200px] mb-8 lg:mb-0">
               <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#db961f]/10 border border-[#db961f]/30 text-[#db961f] rounded-full font-mono text-xs uppercase tracking-[0.2em] font-bold">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#db961f] animate-pulse shadow-[0_0_8px_rgba(219,150,31,0.8)]"></span>
@@ -167,50 +118,30 @@
                 The <span class="text-[#db961f]">Optimized Solution</span>
               </h2>
             </div>
-
-            <!-- 2. Image -->
             <div class="relative group mb-8">
-              <div class="absolute inset-0 bg-[#db961f]/20 blur-[60px] rounded-full transform translate-y-4 group-hover:bg-[#db961f]/30 transition-colors duration-500 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-[#db961f]/20 blur-[60px] rounded-full transform translate-y-4 pointer-events-none"></div>
               <div class="relative rounded-[2rem] p-3 bg-white/20 backdrop-blur-md border border-white/40 shadow-xl overflow-hidden">
-                 <img src="/home/systemized_trading.png" alt="Systemized Trading" class="rounded-3xl w-full h-[250px] md:h-[300px] object-cover" />
+                 <img src="/home/systemized_trading.png" alt="Systemized Trading" class="rounded-3xl w-full h-[300px] object-cover" />
               </div>
             </div>
-
-            <!-- 3. Content -->
             <div class="flex-grow flex flex-col">
               <p class="text-xl font-light text-[#090a0a]/70 mb-8 leading-snug">
-                <strong class="font-bold text-[#db961f]">It’s Not More Signals. It’s a System.</strong> Systemized trading converts ideas into rule-defined, statistically validated, risk-governed processes.
+                <strong class="font-bold text-[#db961f]">It’s Not More Signals. It’s a System.</strong> Systemized trading converts ideas into rule-defined, risk-governed processes.
               </p>
-              
-              <!-- Elegant Glassmorphic Card (Solution Pattern) -->
-              <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 md:p-8 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.05)] relative overflow-hidden mt-auto">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-[#db961f]/5 blur-[60px] rounded-full pointer-events-none"></div>
-                
-                <h3 class="text-sm font-bold text-[#090a0a]/50 uppercase tracking-widest mb-4 relative z-10">Systemized Advantages:</h3>
-
-                <div class="space-y-2 relative z-10">
-                  <div v-for="(item, i) in solutionPoints" :key="i" class="flex items-start gap-4 p-3 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-black/5 group">
-                    <div class="w-7 h-7 rounded-full bg-[#db961f]/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#db961f] transition-colors duration-300">
-                       <svg class="w-3.5 h-3.5 text-[#db961f] group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+              <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 md:p-8 rounded-[2rem] shadow-sm relative overflow-hidden mt-auto">
+                <h3 class="text-sm font-bold text-[#090a0a]/50 uppercase tracking-widest mb-4">Systemized Advantages:</h3>
+                <div class="space-y-2">
+                  <div v-for="(item, i) in solutionPoints" :key="i" class="flex items-start gap-4 p-3 rounded-2xl hover:bg-white transition-all border border-transparent group">
+                    <div class="w-7 h-7 rounded-full bg-[#db961f]/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#db961f] transition-colors">
+                       <svg class="w-3.5 h-3.5 text-[#db961f] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
                     </div>
-                    <span class="text-sm md:text-[15px] text-[#090a0a]/80 font-medium leading-relaxed group-hover:text-[#090a0a] transition-colors">{{ item }}</span>
-                  </div>
-                </div>
-
-                <!-- Strong Centralized Statement -->
-                <div class="mt-6 flex justify-center relative z-10">
-                   <div class="inline-flex items-center gap-3 bg-[#090a0a] text-white px-6 py-3 rounded-full text-xs md:text-sm font-bold tracking-[0.1em] uppercase shadow-lg cursor-default">
-                    <span class="w-2 h-2 rounded-full bg-[#db961f] shadow-[0_0_8px_#db961f]"></span>
-                    Structure first. Scale second.
+                    <span class="text-sm md:text-[15px] text-[#090a0a]/80 font-medium leading-relaxed">{{ item }}</span>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
 

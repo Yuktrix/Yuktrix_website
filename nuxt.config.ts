@@ -15,6 +15,10 @@ export default defineNuxtConfig({
       meta: [
         { name: 'description', content: 'Your AI Financial Intelligence Platform — For Investing, Trading & Wealth Decisions' }
       ],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/logo.png' },
+        { rel: 'apple-touch-icon', href: '/logo.png' }
+      ],
     }
   },
   css: ['~/assets/css/main.css', '~/assets/css/fonts.css'],

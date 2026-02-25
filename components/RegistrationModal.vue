@@ -2,310 +2,194 @@
   <Teleport to="body">
     <div
       v-if="showModal"
-      class="fixed inset-0 z-[100] flex items-center justify-center px-4"
-      @click.self="closeModal"
+      class="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6"
     >
       <!-- Backdrop -->
       <div
-        class="absolute inset-0 bg-black/40 backdrop-blur-sm"
+        class="absolute inset-0 bg-[#090a0a]/60 backdrop-blur-md transition-opacity"
         @click="closeModal"
       ></div>
 
-      <!-- Modal Content -->
+      <!-- Modal Content Container -->
       <div
-        class="relative bg-[#cdcfd1] border border-black/10 rounded-2xl shadow-2xl max-w-md w-full p-8 transform transition-all"
+        class="relative bg-[#cdcfd1] border border-white/20 rounded-3xl shadow-2xl max-w-lg w-full flex flex-col max-h-[92vh] transform transition-all overflow-hidden"
         @click.stop
       >
-        <!-- Close Button -->
-        <button
-          @click="closeModal"
-          class="absolute top-4 right-4 text-gray-600 hover:text-black transition-colors"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <!-- Fixed Header & Close Button Area -->
+        <div class="relative p-6 sm:p-8 border-b border-black/5 shrink-0 bg-[#cdcfd1] z-10">
+          <button
+            @click="closeModal"
+            class="absolute top-6 right-6 text-gray-700 hover:text-black transition-all rounded-full bg-white/50 hover:bg-white border border-black/10 shadow-sm w-10 h-10 flex items-center justify-center z-20"
+            aria-label="Close consultation form"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
 
-        <!-- Modal Header -->
-        <div class="mb-6">
-          <h2 class="text-2xl font-bold text-black mb-2">
-            Book a Consultation
-          </h2>
-          <p class="text-gray-600 text-sm">
-            Build a structured, validated trading system for serious capital.
-          </p>
+          <div class="pr-12">
+            <h2 class="text-2xl sm:text-3xl font-display font-bold text-[#090a0a] mb-2 uppercase tracking-tighter">
+              Book Consultation
+            </h2>
+            <p class="text-gray-600 text-sm font-medium leading-tight">
+              Build a structured, validated trading system for serious capital.
+            </p>
+          </div>
         </div>
 
-        <!-- Registration Form -->
-        <form v-if="!showSuccessMessage" @submit.prevent="handleSubmit" class="space-y-4">
-          <!-- Name Field -->
-          <div>
-            <label
-              for="name"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Full Name <span class="text-red-500">*</span>
-            </label>
-            <input
-              v-model="formData.name"
-              type="text"
-              id="name"
-              required
-              placeholder="Enter your full name"
-              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
-            />
-          </div>
+        <!-- Scrollable Form Area -->
+        <div class="flex-grow overflow-y-auto p-6 sm:p-8 custom-scrollbar">
+          <!-- Registration Form -->
+          <form v-if="!showSuccessMessage" @submit.prevent="handleSubmit" class="space-y-5">
+            <!-- Name Field -->
+            <div>
+              <label for="name" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 font-mono">
+                Full Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                v-model="formData.name"
+                type="text"
+                id="name"
+                required
+                placeholder="Enter your full name"
+                class="w-full px-4 py-3.5 bg-white/50 border border-black/10 rounded-xl text-black placeholder-gray-400 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-all shadow-inner"
+              />
+            </div>
 
-          <!-- Email Field -->
-          <div>
-            <label
-              for="email"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Email Address <span class="text-red-500">*</span>
-            </label>
-            <input
-              v-model="formData.email"
-              type="email"
-              id="email"
-              required
-              placeholder="Enter your professional email"
-              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
-            />
-          </div>
+            <!-- Email Field -->
+            <div>
+              <label for="email" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 font-mono">
+                Email Address <span class="text-red-500">*</span>
+              </label>
+              <input
+                v-model="formData.email"
+                type="email"
+                id="email"
+                required
+                placeholder="Enter your professional email"
+                class="w-full px-4 py-3.5 bg-white/50 border border-black/10 rounded-xl text-black placeholder-gray-400 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-all shadow-inner"
+              />
+            </div>
 
-          <!-- Phone Field -->
-          <div>
-            <label
-              for="phone"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Phone Number <span class="text-red-500">*</span>
-            </label>
-            <input
-              v-model="formData.phone"
-              type="tel"
-              id="phone"
-              required
-              placeholder="Enter your contact number"
-              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
-            />
-          </div>
+            <!-- Phone Field -->
+            <div>
+              <label for="phone" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 font-mono">
+                Phone Number <span class="text-red-500">*</span>
+              </label>
+              <input
+                v-model="formData.phone"
+                type="tel"
+                id="phone"
+                required
+                placeholder="Enter your contact number"
+                class="w-full px-4 py-3.5 bg-white/50 border border-black/10 rounded-xl text-black placeholder-gray-400 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-all shadow-inner"
+              />
+            </div>
 
-          <!-- You Represent -->
-          <div>
-            <label
-              for="represent"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              You Represent <span class="text-red-500">*</span>
-            </label>
-            <select
-              v-model="formData.represent"
-              id="represent"
-              required
-              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
-            >
-              <option value="" disabled class="bg-[#cdcfd1]">
-                Select an option
-              </option>
-              <option value="High Net Worth Individual (HNI)" class="bg-[#cdcfd1]">
-                High Net Worth Individual (HNI)
-              </option>
-              <option value="Proprietary Trading Desk" class="bg-[#cdcfd1]">
-                Proprietary Trading Desk
-              </option>
-              <option value="Fund / Asset Management Firm" class="bg-[#cdcfd1]">
-                Fund / Asset Management Firm
-              </option>
-              <option value="Founder Building a Trading Desk" class="bg-[#cdcfd1]">
-                Founder Building a Trading Desk
-              </option>
-              <option value="Other" class="bg-[#cdcfd1]">Other</option>
-            </select>
-          </div>
-
-          <!-- What Are You Looking To Build -->
-          <div>
-            <label
-              for="build"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              What Are You Looking To Build? <span class="text-red-500">*</span>
-            </label>
-            <select
-              v-model="formData.build"
-              id="build"
-              required
-              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
-            >
-              <option value="" disabled class="bg-[#cdcfd1]">
-                Select an option
-              </option>
-              <option value="Strategy Structuring & Validation" class="bg-[#cdcfd1]">
-                Strategy Structuring & Validation
-              </option>
-              <option value="Full Trading System Architecture" class="bg-[#cdcfd1]">
-                Full Trading System Architecture
-              </option>
-              <option value="Automation & Execution Infrastructure" class="bg-[#cdcfd1]">
-                Automation & Execution Infrastructure
-              </option>
-              <option value="Risk Framework Design" class="bg-[#cdcfd1]">
-                Risk Framework Design
-              </option>
-              <option value="End-to-End Trading Desk Setup" class="bg-[#cdcfd1]">
-                End-to-End Trading Desk Setup
-              </option>
-            </select>
-          </div>
-
-          <!-- Approximate Capital Allocation -->
-          <div>
-            <label
-              for="capital"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Approximate Capital Allocation (Optional but Recommended)
-            </label>
-            <select
-              v-model="formData.capital"
-              id="capital"
-              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
-            >
-              <option value="" disabled class="bg-[#cdcfd1]">
-                Select an option
-              </option>
-              <option value="₹50L – ₹2Cr" class="bg-[#cdcfd1]">
-                ₹50L – ₹2Cr
-              </option>
-              <option value="₹2Cr – ₹10Cr" class="bg-[#cdcfd1]">
-                ₹2Cr – ₹10Cr
-              </option>
-              <option value="₹10Cr+" class="bg-[#cdcfd1]">₹10Cr+</option>
-              <option value="Prefer to discuss privately" class="bg-[#cdcfd1]">
-                Prefer to discuss privately
-              </option>
-            </select>
-          </div>
-
-          <!-- Current Trading Approach -->
-          <div>
-            <label
-              for="approach"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Current Trading Approach <span class="text-red-500">*</span>
-            </label>
-            <select
-              v-model="formData.approach"
-              id="approach"
-              required
-              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors"
-            >
-              <option value="" disabled class="bg-[#cdcfd1]">
-                Select an option
-              </option>
-              <option value="Discretionary Manual Trading" class="bg-[#cdcfd1]">
-                Discretionary Manual Trading
-              </option>
-              <option value="Semi-Systematic" class="bg-[#cdcfd1]">
-                Semi-Systematic
-              </option>
-              <option value="Fully Systematic but needs refinement" class="bg-[#cdcfd1]">
-                Fully Systematic but needs refinement
-              </option>
-              <option value="Exploring structured trading" class="bg-[#cdcfd1]">
-                Exploring structured trading
-              </option>
-            </select>
-          </div>
-
-          <!-- Objective -->
-          <div>
-            <label
-              for="objective"
-              class="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Briefly Describe Your Objective <span class="text-red-500">*</span>
-            </label>
-            <textarea
-              v-model="formData.objective"
-              id="objective"
-              rows="3"
-              placeholder="Tell us what you’re trying to build or improve."
-              required
-              class="w-full px-4 py-3 bg-black/5 border border-black/10 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-colors resize-none"
-            ></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <button
-            type="submit"
-            :disabled="isSubmitting"
-            class="w-full bg-[#db961f] text-black px-6 py-3 rounded-full font-bold text-base hover:bg-[#db961f]/90 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg"
-          >
-            <span v-if="!isSubmitting">Request Strategic Consultation</span>
-            <span v-else class="flex items-center justify-center gap-2">
-              <svg class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
-                <circle
-                  class="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  stroke-width="4"
-                ></circle>
-                <path
-                  class="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                ></path>
-              </svg>
-              Submitting...
-            </span>
-          </button>
-        </form>
-
-        <!-- Success Popup -->
-        <div
-          v-if="showSuccessMessage"
-          class="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/20 backdrop-blur-sm"
-        >
-          <div
-            class="flex flex-col items-center gap-3 bg-white/90 border border-green-500/30 rounded-2xl px-8 py-6 shadow-xl transform transition-all scale-100"
-          >
-            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-green-500/15 border border-green-500/40">
-              <svg
-                class="w-8 h-8 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <!-- You Represent -->
+            <div>
+              <label for="represent" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 font-mono">
+                You Represent <span class="text-red-500">*</span>
+              </label>
+              <select
+                v-model="formData.represent"
+                id="represent"
+                required
+                class="w-full px-4 py-3.5 bg-white/50 border border-black/10 rounded-xl text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-all cursor-pointer shadow-inner appearance-none"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2.5"
-                  d="M5 13l4 4L19 7"
-                />
+                <option value="" disabled>Select an option</option>
+                <option value="High Net Worth Individual (HNI)">High Net Worth Individual (HNI)</option>
+                <option value="Proprietary Trading Desk">Proprietary Trading Desk</option>
+                <option value="Fund / Asset Management Firm">Fund / Asset Management Firm</option>
+                <option value="Founder Building a Trading Desk">Founder Building a Trading Desk</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- What Are You Looking To Build -->
+            <div>
+              <label for="build" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 font-mono">
+                Looking To Build? <span class="text-red-500">*</span>
+              </label>
+              <select
+                v-model="formData.build"
+                id="build"
+                required
+                class="w-full px-4 py-3.5 bg-white/50 border border-black/10 rounded-xl text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-all cursor-pointer shadow-inner appearance-none"
+              >
+                <option value="" disabled>Select an option</option>
+                <option value="Strategy Structuring & Validation">Strategy Structuring & Validation</option>
+                <option value="Full Trading System Architecture">Full Trading System Architecture</option>
+                <option value="Automation & Execution Infrastructure">Automation & Execution Infrastructure</option>
+                <option value="Risk Framework Design">Risk Framework Design</option>
+                <option value="End-to-End Trading Desk Setup">End-to-End Trading Desk Setup</option>
+              </select>
+            </div>
+
+            <!-- Approximate Capital Allocation -->
+            <div>
+              <label for="capital" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 font-mono">
+                Capital Allocation
+              </label>
+              <select
+                v-model="formData.capital"
+                id="capital"
+                class="w-full px-4 py-3.5 bg-white/50 border border-black/10 rounded-xl text-black focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-all cursor-pointer shadow-inner appearance-none"
+              >
+                <option value="" disabled>Select an option</option>
+                <option value="₹50L – ₹2Cr">₹50L – ₹2Cr</option>
+                <option value="₹2Cr – ₹10Cr">₹2Cr – ₹10Cr</option>
+                <option value="₹10Cr+">₹10Cr+</option>
+                <option value="Prefer to discuss privately">Prefer to discuss privately</option>
+              </select>
+            </div>
+
+            <!-- Objective -->
+            <div>
+              <label for="objective" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 font-mono">
+                Objective Description <span class="text-red-500">*</span>
+              </label>
+              <textarea
+                v-model="formData.objective"
+                id="objective"
+                rows="3"
+                placeholder="Tell us what you’re trying to build or improve."
+                required
+                class="w-full px-4 py-3.5 bg-white/50 border border-black/10 rounded-xl text-black placeholder-gray-400 focus:outline-none focus:border-[#db961f] focus:ring-1 focus:ring-[#db961f] transition-all resize-none shadow-inner"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-4 sticky bottom-0 bg-[#cdcfd1] pb-2">
+              <button
+                type="submit"
+                :disabled="isSubmitting"
+                class="w-full bg-[#090a0a] text-white px-6 py-4 rounded-full font-bold text-base hover:bg-[#db961f] hover:text-black transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-xl uppercase tracking-widest"
+              >
+                <span v-if="!isSubmitting">Request Consultation</span>
+                <span v-else class="flex items-center justify-center gap-2">
+                  <svg class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Processing...
+                </span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success Message -->
+          <div
+            v-if="showSuccessMessage"
+            class="flex flex-col items-center justify-center py-12 text-center"
+          >
+            <div class="w-20 h-20 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-6 animate-bounce">
+              <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <p class="text-green-700 text-base font-semibold text-center">
-              Registration submitted!
-            </p>
-            <p class="text-green-700/80 text-sm text-center">
-              We’ll contact you shortly.
-            </p>
+            <h3 class="text-2xl font-bold text-[#090a0a] mb-2 uppercase tracking-tighter">Registration Successful</h3>
+            <p class="text-gray-600">Our engineering team will reach out to schedule your consultation within 24 hours.</p>
           </div>
         </div>
       </div>
@@ -315,6 +199,7 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRegistration } from "~/composables/useRegistration";
 
 const { showModal, closeRegistrationModal } = useRegistration();
 
@@ -328,7 +213,7 @@ const formData = ref({
   represent: "",
   build: "",
   capital: "",
-  approach: "",
+  approach: "Exploring structured trading",
   objective: "",
 });
 
@@ -337,12 +222,10 @@ const closeModal = () => {
   showSuccessMessage.value = false;
 };
 
-const WEB_APP_URL =
-  "https://script.google.com/macros/s/AKfycbwWLJAYrYe0hSGVHtvBzYTSRnZhGVMfPOWQWSuFUjoV48D7nOle7GNCpRk58X8VHitb/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwWLJAYrYe0hSGVHtvBzYTSRnZhGVMfPOWQWSuFUjoV48D7nOle7GNCpRk58X8VHitb/exec";
 
 const handleSubmit = async () => {
   isSubmitting.value = true;
-
   try {
     const payload = new URLSearchParams({
       ...formData.value,
@@ -350,52 +233,34 @@ const handleSubmit = async () => {
       userAgent: process.client ? navigator.userAgent : "",
     });
 
-    const response = await fetch(WEB_APP_URL, {
+    await fetch(WEB_APP_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-      },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: payload.toString(),
     });
 
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}`);
-    }
-
-    let result = null;
-    try {
-      result = await response.json();
-    } catch (error) {
-      result = null;
-    }
-
-    if (result && result.ok === false) {
-      throw new Error(result.error || "Submission failed");
-    }
-
-    console.log("Form submitted:", formData.value);
-
     showSuccessMessage.value = true;
-
-    formData.value = {
-      name: "",
-      email: "",
-      phone: "",
-      represent: "",
-      build: "",
-      capital: "",
-      approach: "",
-      objective: "",
-    };
-
-    setTimeout(() => {
-      closeModal();
-    }, 2000);
+    setTimeout(closeModal, 2500);
   } catch (error) {
     console.error("Submission error:", error);
-    alert("Something went wrong. Please try again.");
   } finally {
     isSubmitting.value = false;
   }
 };
 </script>
+
+<style scoped>
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.2);
+}
+</style>
