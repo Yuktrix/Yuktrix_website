@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss'],
+  modules: ['@netlify/nuxt','@nuxtjs/google-fonts', '@nuxtjs/tailwindcss'],
   compatibilityDate: '2026-02-23',
   googleFonts: {
     families: {
