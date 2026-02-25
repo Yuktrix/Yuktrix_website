@@ -47,7 +47,7 @@
         </div>
 
         <!-- Registration Form -->
-        <form @submit.prevent="handleSubmit" class="space-y-4">
+        <form v-if="!showSuccessMessage" @submit.prevent="handleSubmit" class="space-y-4">
           <!-- Name Field -->
           <div>
             <label
@@ -277,14 +277,36 @@
           </button>
         </form>
 
-        <!-- Success Message -->
+        <!-- Success Popup -->
         <div
           v-if="showSuccessMessage"
-          class="mt-4 p-4 bg-green-500/10 border border-green-500/30 rounded-lg"
+          class="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/20 backdrop-blur-sm"
         >
-          <p class="text-green-400 text-sm text-center">
-            ✓ Registration submitted successfully! We'll contact you soon.
-          </p>
+          <div
+            class="flex flex-col items-center gap-3 bg-white/90 border border-green-500/30 rounded-2xl px-8 py-6 shadow-xl transform transition-all scale-100"
+          >
+            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-green-500/15 border border-green-500/40">
+              <svg
+                class="w-8 h-8 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <p class="text-green-700 text-base font-semibold text-center">
+              Registration submitted!
+            </p>
+            <p class="text-green-700/80 text-sm text-center">
+              We’ll contact you shortly.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -315,12 +337,41 @@ const closeModal = () => {
   showSuccessMessage.value = false;
 };
 
+const WEB_APP_URL =
+  "https://script.google.com/macros/s/AKfycbwWLJAYrYe0hSGVHtvBzYTSRnZhGVMfPOWQWSuFUjoV48D7nOle7GNCpRk58X8VHitb/exec";
+
 const handleSubmit = async () => {
   isSubmitting.value = true;
 
   try {
-    // TODO: Replace with your actual API endpoint
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const payload = new URLSearchParams({
+      ...formData.value,
+      pageUrl: process.client ? window.location.href : "",
+      userAgent: process.client ? navigator.userAgent : "",
+    });
+
+    const response = await fetch(WEB_APP_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+      },
+      body: payload.toString(),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    let result = null;
+    try {
+      result = await response.json();
+    } catch (error) {
+      result = null;
+    }
+
+    if (result && result.ok === false) {
+      throw new Error(result.error || "Submission failed");
+    }
 
     console.log("Form submitted:", formData.value);
 
