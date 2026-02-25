@@ -11,9 +11,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Yuktrix - AI Financial Intelligence',
+      title: 'Yuktrix - Quantitative Intelligence',
       meta: [
-        { name: 'description', content: 'Your AI Financial Intelligence Platform — For Investing, Trading & Wealth Decisions' }
+        { name: 'description', content: 'Your Quant Partner — For Investing, Trading & Wealth Decisions' }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/logo.png' },
