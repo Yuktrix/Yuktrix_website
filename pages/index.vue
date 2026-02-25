@@ -379,7 +379,7 @@ const frameworkSteps = [
     image: "/home/Data Validation.png"
   },
   {
-    title: "Backtesting & Stress",
+    title: "Backtesting & Stress Testing",
     subtitle: "Survivability Test",
     desc: "Historical performance is measured across multiple market regimes and extreme stress scenarios to ensure durability.",
     tags: ["Regime Testing", "Stress Logic"],
@@ -400,7 +400,7 @@ const frameworkSteps = [
     image: "/home/Risk.png"
   },
   {
-    title: "Monitoring/Governance",
+    title: "Monitoring & Governance",
     subtitle: "Continuous Oversight",
     desc: "Post-deployment monitoring for drift detection and periodic optimization to ensure structural integrity.",
     tags: ["Drift Analysis", "Health Audit"],
