@@ -79,6 +79,21 @@
               </select>
             </div>
 
+            <!-- Strategy Maturity -->
+            <div>
+              <label class="block text-xs font-semibold text-[#090a0a]/40 uppercase tracking-widest mb-2">Where is your strategy right now?</label>
+              <select
+                v-model="formData.approach"
+                required
+                class="w-full px-4 py-3.5 bg-white border border-[#090a0a]/10 rounded-xl text-[#090a0a] focus:outline-none focus:border-[#db961f] transition-all text-sm appearance-none cursor-pointer"
+              >
+                <option value="" disabled>Select current stage</option>
+                <option value="Rule-Based">Fully rule-based — ready to automate</option>
+                <option value="Semi-Systematic">Semi-systematic — needs formalization</option>
+                <option value="Discretionary">Discretionary — needs structuring first</option>
+              </select>
+            </div>
+
             <!-- Current Setup -->
             <div>
               <label class="block text-xs font-semibold text-[#090a0a]/40 uppercase tracking-widest mb-2">Current trading setup (optional)</label>
@@ -175,6 +190,7 @@ const formData = ref({
   email: "",
   phone: "",
   represent: "",
+  approach: "",
   objective: "",
   lookingFor: [],
   build: "",
@@ -201,6 +217,7 @@ const handleSubmit = async () => {
       email: formData.value.email,
       phone: formData.value.phone,
       represent: formData.value.represent,
+      approach: formData.value.approach,
       objective: formData.value.objective,
       lookingFor: formData.value.lookingFor.join(", "),
       build: formData.value.build,
@@ -217,7 +234,7 @@ const handleSubmit = async () => {
     if (!response.ok) throw new Error("Network error");
 
     showSuccessMessage.value = true;
-    formData.value = { name: "", email: "", phone: "", represent: "", objective: "", lookingFor: [], build: "" };
+    formData.value = { name: "", email: "", phone: "", represent: "", approach: "", objective: "", lookingFor: [], build: "" };
     setTimeout(closeModal, 3500);
   } catch (error) {
     console.error("Submission error:", error);
