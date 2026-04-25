@@ -207,7 +207,7 @@ const closeModal = () => {
   showSuccessMessage.value = false;
 };
 
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzOWf6YoyoPzinFbvmfPGsmT8gIP2mZ9zDto6YFlgiMRYhuRe5DqHG3n3QDalNfMHXF/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx974zdf1RAyxgTIlMtkR0bQuk3LReIfAW3cQ4XZPB-KcF13i6qilJvACz51I12eANC/exec";
 
 const handleSubmit = async () => {
   isSubmitting.value = true;
