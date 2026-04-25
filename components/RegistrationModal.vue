@@ -207,7 +207,7 @@ const closeModal = () => {
   showSuccessMessage.value = false;
 };
 
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx974zdf1RAyxgTIlMtkR0bQuk3LReIfAW3cQ4XZPB-KcF13i6qilJvACz51I12eANC/exec";
+const WEB_APP_URL = "/.netlify/functions/register";
 
 const handleSubmit = async () => {
   isSubmitting.value = true;
@@ -225,12 +225,13 @@ const handleSubmit = async () => {
       userAgent: process.client ? navigator.userAgent : "",
     });
 
-    await fetch(WEB_APP_URL, {
+    const response = await fetch(WEB_APP_URL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: payload.toString(),
-      mode: "no-cors",
     });
+
+    if (!response.ok) throw new Error("Network error");
 
     showSuccessMessage.value = true;
     formData.value = { name: "", email: "", phone: "", represent: "", approach: "", objective: "", lookingFor: [], build: "" };
