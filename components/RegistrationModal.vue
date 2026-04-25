@@ -218,9 +218,9 @@ const handleSubmit = async () => {
       phone: formData.value.phone,
       represent: formData.value.represent,
       approach: formData.value.approach,
-      objective: formData.value.objective,
+      objective: formData.value.objective || "Not provided",
       lookingFor: formData.value.lookingFor.join(", "),
-      build: formData.value.build,
+      build: formData.value.build || "General Inquiry",
       pageUrl: process.client ? window.location.href : "",
       userAgent: process.client ? navigator.userAgent : "",
     });
