@@ -225,13 +225,12 @@ const handleSubmit = async () => {
       userAgent: process.client ? navigator.userAgent : "",
     });
 
-    const response = await fetch(WEB_APP_URL, {
+    await fetch(WEB_APP_URL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: payload.toString(),
+      mode: "no-cors",
     });
-
-    if (!response.ok) throw new Error("Network error");
 
     showSuccessMessage.value = true;
     formData.value = { name: "", email: "", phone: "", represent: "", approach: "", objective: "", lookingFor: [], build: "" };
