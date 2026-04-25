@@ -11,9 +11,13 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Yuktrix - Quantitative Intelligence',
+      title: 'YuktriX — Self-Hosted Trading ERP | Trading System Architecture for Indian Markets',
       meta: [
-        { name: 'description', content: 'Your Quant Partner — For Investing, Trading & Wealth Decisions' }
+        { name: 'description', content: 'Build, validate, and execute trading strategies with YuktriX — a self-hosted Trading ERP covering the full lifecycle from capital planning to continuous improvement. One-time cost. Your data stays yours.' },
+        { name: 'keywords', content: 'trading ERP, self-hosted trading platform, algo trading India, ICT trading software, backtesting platform, quantitative trading, Upstox API, AngelOne integration, trading system architecture' },
+        { property: 'og:title', content: 'YuktriX — Self-Hosted Trading ERP' },
+        { property: 'og:description', content: 'Build, validate, and execute trading strategies with YuktriX — a self-hosted Trading ERP covering the full lifecycle from capital planning to continuous improvement.' },
+        { property: 'og:type', content: 'website' },
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/logo.png' },

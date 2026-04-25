@@ -1,278 +1,62 @@
 <template>
-  <!-- Root wrapper uses overflow-x-hidden to prevent layout shifts and ensure header parity -->
   <div class="bg-[#cdcfd1] min-h-screen font-sans selection:bg-[#db961f] selection:text-black overflow-x-hidden">
-    
+
     <!-- ==========================================
-      1. HERO SECTION (Dark - Aligned with Header)
+      1. HERO SECTION
     =========================================== -->
-    <header class="relative pt-32 pb-32 overflow-hidden bg-[#090a0a]">
-      <!-- Background Image with Overlay -->
+    <section class="relative min-h-[65vh] pt-20 flex items-center justify-center overflow-hidden bg-[#090a0a]">
       <div class="absolute inset-0 z-0">
-        <img
-          src="/tools/market.png"
-          alt="Market Research Background"
-          class="w-full h-full object-cover object-center opacity-75 grayscale mix-blend-luminosity"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/95 via-[#090a0a]/80 to-[#090a0a]"></div>
+        <img src="/tools/market.png" alt="Platform Background" class="w-full h-full object-cover opacity-30 grayscale mix-blend-luminosity" />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#090a0a]/98 via-[#090a0a]/90 to-[#090a0a]"></div>
       </div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[radial-gradient(circle_at_50%_0%,_rgba(219,150,31,0.12),transparent_65%)] pointer-events-none"></div>
 
-      <!-- Ambient Glows -->
-      <div class="absolute inset-0 pointer-events-none z-0">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(circle_at_50%_0%,_rgba(219,150,31,0.15),transparent_70%)]"></div>
-      </div>
-      
-      <!-- Using standard container to match Header and About page logic -->
-      <div class="container mx-auto px-6 relative z-10 text-center" data-aos="zoom-in">
-        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#db961f]/10 border border-[#db961f]/20 text-[#db961f] text-xs font-bold mb-8 uppercase tracking-[0.2em]">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#db961f] mr-2 animate-pulse"></span>
-          Professional Infrastructure
+      <div class="container mx-auto px-6 relative z-10 text-center py-16" data-aos="zoom-in">
+        <div class="inline-flex items-center gap-2 px-5 py-2 mb-8 bg-[#db961f]/10 border border-[#db961f]/20 rounded-full text-[#db961f] text-xs font-semibold uppercase tracking-[0.3em]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#db961f] animate-pulse"></span>
+          The Platform
         </div>
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white tracking-tight leading-[1.1] mb-8">
-          Quant Research & <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#db961f] to-[#FEE337]">Trading System</span> Validation
+        <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight tracking-tight">
+          Research Infrastructure<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#db961f] to-[#FEE337]">for Serious Trading.</span>
         </h1>
-        <p class="text-lg md:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed font-light">
-          Structured web-based research infrastructure for disciplined systemized trading development. Built for serious market participants seeking rigorous validation.
+        <p class="text-lg md:text-xl text-white/50 max-w-3xl mx-auto font-light leading-relaxed mb-6">
+          Not signal engines. Not prediction tools. Structured instruments for validation, testing, execution, and continuous improvement.
         </p>
+        <div class="inline-flex items-center gap-3 px-5 py-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-300 text-sm font-medium">
+          <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          YUKTRIX DOES NOT PROVIDE TRADING SIGNALS. Research and validation only.
+        </div>
       </div>
-    </header>
+    </section>
 
     <!-- ==========================================
-      2. INTRODUCTION & METRICS (Silver - Overlapping)
+      2. PLATFORM OVERVIEW
     =========================================== -->
-    <section class="bg-[#cdcfd1] relative z-20 -mt-12 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] py-24">
-      <div class="container mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-          
-          <!-- Left: Intro & Disclaimer -->
-          <div class="space-y-8" data-aos="fade-right">
-            <p class="text-xl text-[#090a0a]/80 leading-relaxed font-light">
-              The Yuktrix Quant Research Lab provides web-based tools designed to support structured trading system research, quantitative validation, and performance analysis.
+    <section class="bg-[#cdcfd1] relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.2)] py-24 px-6">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div data-aos="fade-right">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-[#090a0a] mb-6 leading-tight tracking-tight">
+              A Trading ERP — Not Just Another Tool
+            </h2>
+            <p class="text-lg text-[#090a0a]/65 leading-relaxed font-light mb-8">
+              YuktriX is a self-hosted platform covering the complete trading lifecycle — from capital planning and strategy research to live execution, journaling, and continuous improvement. One unified system, on infrastructure you own.
             </p>
-            
-            <div class="p-8 rounded-2xl bg-white/50 backdrop-blur-md border border-white/60 shadow-xl relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-[50px] rounded-full"></div>
-              <p class="text-[#090a0a]/70 text-sm mb-6 italic relative z-10">
-                "These tools are built to complement professional trading automation consulting engagements and are intended for serious market participants seeking disciplined system development."
-              </p>
-              <div class="flex items-center gap-4 mb-6 relative z-10">
-                <div class="flex-1 h-px bg-[#090a0a]/10"></div>
-                <div class="text-xs font-bold text-red-600 uppercase tracking-[0.2em] font-mono">DISCLAIMER</div>
-                <div class="flex-1 h-px bg-[#090a0a]/10"></div>
-              </div>
-              <div class="flex flex-col items-center text-center relative z-10">
-                <span class="text-[#090a0a] font-bold tracking-wide mb-1 uppercase">Research and Validation Only</span>
-                <span class="text-red-600 font-medium text-sm">YUKTRIX DOES NOT PROVIDE TRADING SIGNALS.</span>
+            <div class="grid grid-cols-2 gap-4">
+              <div v-for="stat in stats" :key="stat.label" class="p-5 bg-white/60 rounded-xl border border-white/80 text-center">
+                <div class="text-2xl font-bold text-[#db961f] font-mono mb-1">{{ stat.value }}</div>
+                <div class="text-xs font-semibold text-[#090a0a]/45 uppercase tracking-wider">{{ stat.label }}</div>
               </div>
             </div>
           </div>
 
-          <!-- Right: Metrics Grid -->
-          <div class="grid grid-cols-2 gap-4 md:gap-6" data-aos="fade-left">
-            <div v-for="(metric, i) in metrics" :key="i" class="h-32 md:h-40 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg flex flex-col items-center justify-center p-4 hover:border-[#db961f]/50 hover:bg-white transition-all group">
-              <span class="text-[#db961f] text-3xl md:text-4xl font-bold font-mono mb-2 group-hover:scale-110 transition-transform">{{ metric.value }}</span>
-              <span class="text-xs font-bold text-[#090a0a]/50 uppercase tracking-widest text-center">{{ metric.label }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-      3. LAB OVERVIEW (Dark - High Contrast)
-    =========================================== -->
-    <section class="bg-[#090a0a] py-32 relative z-10">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-up">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The Quant Research Lab</h2>
-            <p class="text-white/60 text-lg max-w-2xl font-light">Modern systemized trading requires structured research infrastructure. The Lab is designed as a multi-layer research stack for measurable system development.</p>
-          </div>
-          <div class="text-[#db961f] font-bold font-mono text-xs md:text-sm flex items-center px-4 py-2 bg-[#db961f]/10 rounded-lg border border-[#db961f]/20">
-            <span class="mr-3 w-2 h-2 rounded-full bg-[#db961f] animate-pulse"></span>
-            SYSTEM_INFRASTRUCTURE [0x00A1]
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" data-aos="fade-up" data-aos-delay="100">
-          <div v-for="(layer, index) in labLayers" :key="index" class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#db961f]/50 hover:bg-white/10 transition-all text-center group">
-            <span class="block text-white font-bold mb-3 group-hover:text-[#db961f] transition-colors">{{ layer.title }}</span>
-            <span class="text-xs font-mono text-white/40 uppercase tracking-[0.2em] group-hover:text-white/60 transition-colors">{{ layer.level }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-      4. TOOL MODULES (Silver - Overlapping)
-    =========================================== -->
-    <section class="bg-[#cdcfd1] relative z-20 -mt-12 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] py-32">
-      <div class="container mx-auto px-6 space-y-40">
-          
-        <!-- Module 1: Backtesting -->
-        <div class="grid lg:grid-cols-12 gap-12 items-center" data-aos="fade-up">
-          <div class="lg:col-span-5 space-y-8">
-            <div class="w-14 h-14 bg-[#db961f]/10 rounded-2xl flex items-center justify-center border border-[#db961f]/30 shadow-[0_0_20px_rgba(219,150,31,0.2)]">
-              <svg class="w-7 h-7 text-[#db961f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-[#090a0a] leading-tight">Statistical Backtesting & Robustness Engine</h2>
-            <div>
-              <h3 class="text-[#090a0a]/50 font-bold uppercase text-xs tracking-[0.2em] mb-3">Purpose</h3>
-              <p class="text-[#090a0a]/70 text-lg font-light leading-relaxed">To evaluate strategy integrity before capital deployment. This engine emphasizes stability across market regimes rather than short-term optimization.</p>
-            </div>
-            <div class="pt-4 border-t border-[#090a0a]/10">
-              <h3 class="text-[#090a0a]/50 font-bold uppercase text-xs tracking-[0.2em] mb-5">Capabilities</h3>
-              <ul class="space-y-4 text-[#090a0a]/80 text-sm md:text-base font-medium">
-                <li v-for="item in ['Multi-period historical backtesting', 'Expectancy modeling & drawdown analysis', 'Risk-reward evaluation & sensitivity testing', 'Overfitting detection controls', 'Structural robustness review']" :key="item" class="flex items-start gap-4">
-                  <span class="w-1.5 h-1.5 bg-[#db961f] rounded-full mt-1.5 shrink-0 shadow-[0_0_8px_#db961f]"></span> 
-                  {{ item }}
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Terminal UI Mockup (Dark Contrast) -->
-          <div class="lg:col-span-7 bg-[#090a0a] border border-[#090a0a]/20 rounded-2xl overflow-hidden shadow-2xl flex flex-col min-h-[400px]">
-            <div class="bg-white/5 px-6 py-4 flex items-center justify-between border-b border-white/5">
-              <div class="flex space-x-2">
-                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-              </div>
-              <span class="text-[11px] font-mono text-white/40 uppercase tracking-widest">Backtest_Engine_v4.2.log</span>
-            </div>
-            <div class="p-8 font-mono text-sm md:text-base text-white/70 leading-loose flex-grow">
-              <div class="text-white/50 mb-2">> Initializing Historical Data Engine...</div>
-              <div class="text-white/50 mb-2">> Loading market constituents (2010-2024)... [DONE]</div>
-              <div class="text-blue-400 mb-2">> Running Expectancy Model on 'Alpha_v2'...</div>
-              <div class="text-yellow-400 mb-2">[WARN] Potential overfitting detected in Period 3 (2020 Q2)</div>
-              <div class="text-green-400 mb-6">[PASS] Structural Robustness Score: 8.4/10</div>
-              
-              <div class="mt-4 p-5 bg-white/[0.03] border border-white/10 rounded-xl space-y-3 text-sm">
-                <div class="flex justify-between items-center border-b border-white/5 pb-2">
-                  <span class="text-white/60">Total Expectancy:</span> 
-                  <span class="text-green-400 font-bold">+1.24R</span>
-                </div>
-                <div class="flex justify-between items-center border-b border-white/5 pb-2">
-                  <span class="text-white/60">Max Drawdown:</span> 
-                  <span class="text-red-400 font-bold">-12.4%</span>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-white/60">Win Rate:</span> 
-                  <span class="text-white font-bold">56.2%</span>
-                </div>
-              </div>
-              <div class="mt-6 flex items-center gap-2">
-                <span class="text-[#db961f] animate-pulse">_</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Module 2: Strategy Analyzer -->
-        <div class="grid lg:grid-cols-12 gap-12 items-center" data-aos="fade-up">
-          <!-- Chart UI Mockup (Dark Contrast) -->
-          <div class="lg:col-span-7 order-2 lg:order-1 bg-[#090a0a] border border-[#090a0a]/20 rounded-2xl overflow-hidden shadow-2xl h-[400px] flex flex-col relative p-8 group">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(219,150,31,0.05),transparent_60%)]"></div>
-            
-            <div class="flex justify-between items-center mb-8 relative z-10">
-              <span class="text-xs font-mono text-white/50 uppercase tracking-[0.2em]">Sustainability Matrix</span>
-              <span class="text-xs font-mono text-[#db961f]">LIVE_EVAL</span>
-            </div>
-
-            <!-- Abstract Bar Chart -->
-            <div class="flex-grow flex items-end justify-between gap-2 relative z-10 pb-4 border-b border-white/10">
-              <div v-for="h in [40, 60, 30, 80, 50, 90, 70, 45, 85, 65, 35, 75]" :key="h" class="w-full bg-[#db961f]/20 rounded-t-sm group-hover:bg-[#db961f]/30 transition-all duration-500 relative overflow-hidden" :style="{ height: `${h}%` }">
-                <div class="absolute bottom-0 left-0 w-full bg-[#db961f] transition-all duration-1000" :style="{ height: `${h * 0.4}%` }"></div>
-              </div>
-            </div>
-            
-            <div class="flex justify-between mt-4 relative z-10">
-              <span class="text-[10px] font-mono text-white/30">Q1</span>
-              <span class="text-[10px] font-mono text-white/30">Q2</span>
-              <span class="text-[10px] font-mono text-white/30">Q3</span>
-              <span class="text-[10px] font-mono text-white/30">Q4</span>
-            </div>
-          </div>
-
-          <div class="lg:col-span-5 order-1 lg:order-2 space-y-8 lg:pl-8">
-            <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/30">
-              <svg class="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-[#090a0a] leading-tight">Strategy Performance Analyzer</h2>
-            <div>
-              <h3 class="text-[#090a0a]/50 font-bold uppercase text-xs tracking-[0.2em] mb-3">Purpose</h3>
-              <p class="text-[#090a0a]/70 text-lg font-light leading-relaxed">To evaluate performance quality beyond simple profitability metrics. Designed to assess long-term sustainability rather than short-term outcomes.</p>
-            </div>
-            <div class="pt-4 border-t border-[#090a0a]/10">
-              <h3 class="text-[#090a0a]/50 font-bold uppercase text-xs tracking-[0.2em] mb-5">Capabilities</h3>
-              <ul class="space-y-4 text-[#090a0a]/80 text-sm md:text-base font-medium">
-                <li v-for="item in ['Risk-adjusted return analysis', 'Volatility sensitivity review', 'Win-rate vs expectancy evaluation', 'Drawdown depth and recovery analysis', 'Capital efficiency assessment & regime breakdown']" :key="item" class="flex items-start gap-4">
-                  <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span> 
-                  {{ item }}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Module 3: Feature Intelligence -->
-        <div class="grid lg:grid-cols-12 gap-12 items-center" data-aos="fade-up">
-          <div class="lg:col-span-5 space-y-8">
-            <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/30">
-              <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-[#090a0a] leading-tight">Quantitative Feature Intelligence</h2>
-            <div>
-              <p class="text-[#090a0a]/70 text-lg font-light leading-relaxed">Provides structured access to over 1000 curated research variables across multiple dimensions. This framework supports quantitative strategy research and model development.</p>
-            </div>
-            
-            <div class="grid grid-cols-2 gap-8 pt-4 border-t border-[#090a0a]/10">
+          <div class="grid grid-cols-1 gap-4" data-aos="fade-left">
+            <div v-for="(layer, i) in platformLayers" :key="i" class="flex items-center gap-5 p-5 bg-white/60 rounded-2xl border border-white/80 hover:bg-white hover:border-[#db961f]/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl bg-[#090a0a] flex items-center justify-center text-[#db961f] text-sm font-bold font-mono shrink-0 group-hover:bg-[#db961f] group-hover:text-[#090a0a] transition-all">{{ String(i + 1).padStart(2, '0') }}</div>
               <div>
-                <h3 class="text-[#090a0a]/50 font-bold uppercase text-xs tracking-[0.2em] mb-4">Coverage</h3>
-                <ul class="space-y-3 text-sm text-[#090a0a]/80 font-medium">
-                  <li>Macro indicators</li>
-                  <li>Sector metrics</li>
-                  <li>Fundamentals</li>
-                  <li>Volatility measures</li>
-                </ul>
-              </div>
-              <div>
-                <h3 class="text-[#090a0a]/50 font-bold uppercase text-xs tracking-[0.2em] mb-4">Capabilities</h3>
-                <ul class="space-y-3 text-sm text-[#090a0a]/80 font-medium">
-                  <li>Factor exploration</li>
-                  <li>Correlation analysis</li>
-                  <li>Regime filtering</li>
-                  <li>Export workflows</li>
-                </ul>
-              </div>
-            </div>
-            <p class="text-xs text-emerald-700 font-mono italic p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl">Note: This is not a prediction engine. It is a research environment.</p>
-          </div>
-
-          <!-- Data Grid UI Mockup (Dark Contrast) -->
-          <div class="lg:col-span-7 bg-[#090a0a] border border-[#090a0a]/20 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-emerald-500/5 blur-[80px] rounded-full pointer-events-none"></div>
-            
-            <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4 relative z-10">
-              <span class="text-xs font-mono text-white/50 uppercase tracking-[0.2em]">Feature Matrix</span>
-              <span class="text-xs font-mono text-emerald-400 px-2 py-1 bg-emerald-500/10 rounded border border-emerald-500/20">INDEX: 0.94 Coherence</span>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 md:gap-4 relative z-10">
-              <div v-for="(tag, i) in featureTags" :key="i" 
-                   :class="['h-12 rounded-lg flex items-center justify-center text-xs font-mono font-bold transition-all border', tag.active ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.1)]' : 'bg-white/5 text-white/40 border-white/5 hover:bg-white/10']">
-                {{ tag.name }}
-              </div>
-            </div>
-
-            <div class="mt-8 pt-6 relative z-10">
-              <div class="flex items-center justify-between text-xs font-mono text-white/50 mb-3">
-                <span>Cluster: Volatility_Regime_A</span>
-                <span>Processing... 94%</span>
-              </div>
-              <div class="w-full h-1.5 bg-black rounded-full overflow-hidden">
-                <div class="w-[94%] h-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></div>
+                <div class="font-bold text-[#090a0a] text-sm group-hover:text-[#db961f] transition-colors">{{ layer.title }}</div>
+                <div class="text-xs text-[#090a0a]/45 font-light mt-0.5">{{ layer.desc }}</div>
               </div>
             </div>
           </div>
@@ -281,45 +65,67 @@
     </section>
 
     <!-- ==========================================
-      5. TARGET AUDIENCE (Dark)
+      3. TOOL MODULES (Alternating Layout)
     =========================================== -->
-    <section class="py-32 bg-[#090a0a] relative z-10">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Designed for Structured System Builders</h2>
-          <p class="text-white/60 text-lg">The Quant Research Lab integrates with Yuktrix consulting for high-level engagements.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
-          <div v-for="(audience, i) in ['Individual Quant Traders', 'HNW System Participants', 'Research-focused Teams', 'Advisory & Inst. Desks']" :key="i" 
-               class="p-8 bg-white/5 border border-white/10 rounded-2xl hover:border-[#db961f]/50 hover:bg-white/10 transition-all group">
-            <span class="text-sm font-mono font-bold text-[#db961f] mb-4 block group-hover:translate-x-2 transition-transform">→ 0{{ i + 1 }}</span>
-            <h4 class="text-white font-bold text-lg">{{ audience }}</h4>
+    <section class="bg-[#090a0a] py-28 px-6 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+      <div class="container mx-auto max-w-6xl relative z-10 space-y-32">
+
+        <div v-for="(module, i) in modules" :key="i" class="grid lg:grid-cols-2 gap-16 items-center" data-aos="fade-up">
+          <!-- Text — alternates side -->
+          <div :class="['space-y-6', i % 2 === 1 ? 'lg:order-2' : '']">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-[0.2em]" :style="`background: ${module.color}15; color: ${module.color}; border: 1px solid ${module.color}30`">
+              {{ module.badge }}
+            </div>
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white leading-tight tracking-tight">{{ module.title }}</h2>
+            <p class="text-white/50 text-base leading-relaxed font-light">{{ module.desc }}</p>
+            <ul class="space-y-3">
+              <li v-for="feat in module.features" :key="feat" class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" :style="`background: ${module.color}; box-shadow: 0 0 8px ${module.color}`"></span>
+                <span class="text-white/65 text-sm font-medium">{{ feat }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Visual — alternates side -->
+          <div :class="['bg-white/[0.03] rounded-2xl border border-white/5 overflow-hidden', i % 2 === 1 ? 'lg:order-1' : '']">
+            <div class="flex items-center gap-2 px-6 py-4 border-b border-white/5 bg-white/[0.02]">
+              <div class="flex gap-1.5"><div class="w-2.5 h-2.5 rounded-full bg-red-500/60"></div><div class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></div><div class="w-2.5 h-2.5 rounded-full bg-green-500/60"></div></div>
+              <span class="text-[10px] font-mono text-white/25 uppercase tracking-widest ml-2">{{ module.windowLabel }}</span>
+            </div>
+            <div class="p-8" v-html="module.visual"></div>
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- ==========================================
-      6. CTA SECTION (Silver - Overlapping)
+      4. WHO IT'S FOR
     =========================================== -->
-    <section class="bg-[#cdcfd1] py-32 relative z-20 -mt-12 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] overflow-hidden">
-      <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#090a0a 1px, transparent 1px); background-size: 30px 30px;"></div>
-      
-      <div class="container mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#090a0a] mb-6 tracking-tight">Access Structure & Deployment</h2>
-        <p class="text-[#090a0a]/70 mb-12 text-lg md:text-xl font-medium max-w-2xl mx-auto">
-          The Quant Research Lab is available through a structured access model depending on research scope and feature usage.
+    <section class="py-24 px-6 bg-[#cdcfd1] relative z-20 -mt-10 rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.2)]">
+      <div class="container mx-auto max-w-5xl text-center" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-[#090a0a] mb-4 tracking-tight">
+          Built for Structured System Builders
+        </h2>
+        <p class="text-[#090a0a]/55 text-lg mb-12 font-light">
+          Whether you're discretionary, semi-systematic, or fully algorithmic — if you treat trading as a business, this platform is for you.
         </p>
-        
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <button @click="openRegistrationModal" class="bg-[#090a0a] text-white font-bold py-5 px-10 rounded-full hover:scale-105 transition-all shadow-xl group flex items-center justify-center gap-3">
-            Book a Consultation Call
-            <svg class="w-5 h-5 text-[#db961f] group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+          <div v-for="(audience, i) in audiences" :key="i" class="p-7 bg-white rounded-2xl border border-[#090a0a]/5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="text-[#db961f] font-bold text-2xl font-mono mb-4 group-hover:scale-110 transition-transform origin-left">→</div>
+            <h4 class="text-[#090a0a] font-bold text-sm leading-tight">{{ audience }}</h4>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button @click="openRegistrationModal" class="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#090a0a] text-white font-bold rounded-xl hover:bg-[#db961f] hover:text-[#090a0a] transition-all shadow-xl">
+            See the Platform in Action
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </button>
-          <button class="bg-transparent border-2 border-[#090a0a]/20 text-[#090a0a] font-bold py-5 px-10 rounded-full hover:bg-[#090a0a]/5 transition-colors">
-            Technical Specifications
-          </button>
+          <a href="/services" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-white border border-[#090a0a]/10 text-[#090a0a] font-medium rounded-xl hover:bg-[#090a0a] hover:text-white transition-all">
+            View Engagement Options
+          </a>
         </div>
       </div>
     </section>
@@ -332,34 +138,106 @@
 import { useRegistration } from "~/composables/useRegistration";
 const { openRegistrationModal } = useRegistration();
 
-// Data extracted to keep template clean
-const metrics = [
-  { value: "1k+", label: "Research Factors" },
-  { value: "0.1ms", label: "Engine Latency" },
-  { value: "∞", label: "Regime Tests" },
-  { value: "SQL", label: "Structured Output" }
+const stats = [
+  { value: "70+", label: "Chart Patterns" },
+  { value: "10yr+", label: "NSE Backtest Data" },
+  { value: "3", label: "Broker Integrations" },
+  { value: "Local", label: "AI — No Cloud" },
 ];
 
-const labLayers = [
-  { title: "Strategy Validation", level: "L1 Layer" },
-  { title: "Performance Analysis", level: "L2 Layer" },
-  { title: "Multi-factor Research", level: "L3 Layer" },
-  { title: "Risk-aware Modeling", level: "L4 Layer" },
-  { title: "Structural Evaluation", level: "L5 Layer" }
+const platformLayers = [
+  { title: "AI Learning", desc: "Local LLM explains indicators, patterns, and concepts in plain language." },
+  { title: "Research", desc: "Market scanner, stock insights, sector heatmaps, and F&O dashboards." },
+  { title: "Strategy Builder", desc: "70+ patterns, full ICT engine, 10+ year NSE backtest with real cost modeling." },
+  { title: "Execution", desc: "Unified API for Upstox, AngelOne, Groww. Paper trade first. Real-time order management." },
+  { title: "Dev/Quant Tools", desc: "API endpoints, custom indicators, optimization algorithms, raw data access." },
 ];
 
-const featureTags = [
-  { name: "GDP_DELTA", active: true },
-  { name: "BETA_IND", active: false },
-  { name: "VIX_SKW", active: true },
-  { name: "CPI_YOY", active: false },
-  { name: "SENT_SCORE", active: true },
-  { name: "CORR_50D", active: false },
-  { name: "OBV_MOM", active: false },
-  { name: "EPS_GRTH", active: true },
-  { name: "IVOL_RSK", active: false },
-  { name: "YKT_ALPH", active: true },
-  { name: "LIQ_RATIO", active: false },
-  { name: "PEG_FWD", active: true }
+const modules = [
+  {
+    badge: "Strategy Builder",
+    color: "#db961f",
+    title: "70+ Patterns. Full ICT Engine. Real Cost Modeling.",
+    desc: "Build strategies using a comprehensive library of technical patterns and the complete ICT methodology — order blocks, fair value gaps, liquidity sweeps, market structure shifts. Backtest against 10+ years of NSE data with realistic slippage and brokerage modeling.",
+    features: [
+      "70+ technical patterns including full ICT engine",
+      "Automated OB, FVG, liquidity sweep detection",
+      "10+ year NSE historical data with real cost modeling",
+      "Walk-forward and regime-aware backtesting",
+      "Sharpe, Sortino, max drawdown, and VAR reporting",
+    ],
+    windowLabel: "strategy-builder.log",
+    visual: `<div class="font-mono text-sm text-white/60 space-y-2">
+      <div class="text-white/30">> Loading NSE data (2010–2024)... [DONE]</div>
+      <div class="text-blue-400">> Building ICT strategy: FVG + OB confluence...</div>
+      <div class="text-white/30">> Running backtest with real costs: ₹20 brokerage + slippage...</div>
+      <div class="text-[#db961f]">[PASS] Sharpe Ratio: 1.84</div>
+      <div class="text-[#db961f]">[PASS] Sortino Ratio: 2.31</div>
+      <div class="text-red-400">[WARN] Max Drawdown: -14.2% — review position sizing</div>
+      <div class="text-green-400">[PASS] Approval Gate: CLEARED for live deployment</div>
+      <div class="mt-4 flex items-center gap-2"><span class="text-[#db961f] animate-pulse">_</span></div>
+    </div>`,
+  },
+  {
+    badge: "Execution Engine",
+    color: "#22c55e",
+    title: "Multi-Broker Execution. Paper Trade First.",
+    desc: "Connect to Upstox, AngelOne, and Groww through a unified API. Paper trade any strategy before going live. Real-time order management, position tracking, and execution monitoring across all brokers from one interface.",
+    features: [
+      "Unified API across Upstox, AngelOne, Groww",
+      "Paper trading mode before any live deployment",
+      "Real-time order status and position tracking",
+      "Execution quality monitoring (slippage analysis)",
+      "Multi-account and multi-broker orchestration",
+    ],
+    windowLabel: "execution-monitor.log",
+    visual: `<div class="space-y-3">
+      <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg border border-white/5 text-sm">
+        <span class="text-white/50 font-mono text-xs">NIFTY 24000 CE</span>
+        <span class="text-green-400 font-bold text-xs">FILLED @ 120.50</span>
+      </div>
+      <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg border border-white/5 text-sm">
+        <span class="text-white/50 font-mono text-xs">BANKNIFTY 52000 PE</span>
+        <span class="text-yellow-400 font-bold text-xs">PENDING</span>
+      </div>
+      <div class="flex justify-between items-center p-3 bg-white/5 rounded-lg border border-white/5 text-sm">
+        <span class="text-white/50 font-mono text-xs">RELIANCE OCT FUT</span>
+        <span class="text-green-400 font-bold text-xs">FILLED @ 2,945.25</span>
+      </div>
+      <div class="mt-4 p-3 bg-[#db961f]/10 border border-[#db961f]/20 rounded-lg">
+        <div class="text-[10px] font-mono text-[#db961f] uppercase tracking-wider">Slippage this session: ₹38 avg — within target</div>
+      </div>
+    </div>`,
+  },
+  {
+    badge: "AI Journal",
+    color: "#a855f7",
+    title: "Auto-Logged Journal. Local AI. Zero Cloud.",
+    desc: "Every trade is automatically logged with P&L, strategy tag, market conditions, and emotional state. A local LLM (Ollama) analyzes your entries to spot behavioral patterns, flag discipline breaches, and suggest improvements — all on your machine.",
+    features: [
+      "Auto-logged entries with every trade",
+      "P&L, strategy tag, and emotional state tracking",
+      "Local LLM analysis — no cloud, fully private",
+      "Behavioral pattern detection across sessions",
+      "Daily debrief and discipline scoring",
+    ],
+    windowLabel: "ai-journal-analysis.log",
+    visual: `<div class="font-mono text-sm text-white/60 space-y-2">
+      <div class="text-white/30">> Ollama model loaded. Analyzing 30 days of journal...</div>
+      <div class="text-purple-400">[PATTERN] Monday entries: avg loss 2.1x vs rest of week</div>
+      <div class="text-purple-400">[PATTERN] After-2PM trades: win rate 34% vs 58% morning</div>
+      <div class="text-purple-400">[PATTERN] "FOMO" tag correlates with 73% losing trades</div>
+      <div class="text-blue-400">[RULE] Suggest: Block new entries Mon AM + after 2 PM</div>
+      <div class="text-green-400">[DONE] Report saved locally. No data left your machine.</div>
+      <div class="mt-3 flex items-center gap-2"><span class="text-purple-400 animate-pulse">_</span></div>
+    </div>`,
+  },
+];
+
+const audiences = [
+  "Algo traders who want self-hosted infrastructure",
+  "ICT traders needing automated pattern detection",
+  "HNI participants needing structured risk governance",
+  "Prop desks and independent quants",
 ];
 </script>

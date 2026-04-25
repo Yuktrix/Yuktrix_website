@@ -26,12 +26,12 @@
           </NuxtLink>
           
           <h3 class="text-xl md:text-3xl font-light text-white mb-6 leading-snug">
-            Where Quant discipline meets <br/><span class="font-bold text-[#db961f]">Automation Intelligence.</span>
+            From trading idea to validated,<br /><span class="font-bold text-[#db961f]">execution-ready system.</span>
           </h3>
           
           <!-- Tech Tags -->
           <div class="flex flex-wrap gap-3 mt-8">
-            <span v-for="tag in ['Investing', 'Trading', 'Wealth Insights', 'Automation']" :key="tag" class="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-xs font-mono tracking-widest uppercase shadow-sm">
+            <span v-for="tag in ['Self-Hosted', 'Strategy Validation', 'Execution', 'Governance']" :key="tag" class="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-xs font-mono tracking-widest uppercase shadow-sm">
               {{ tag }}
             </span>
           </div>

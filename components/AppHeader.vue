@@ -39,7 +39,7 @@
       <!-- Action Area -->
       <div class="flex items-center gap-3 relative z-[160] shrink-0">
         <button @click="openRegistrationModal" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-[#090a0a] bg-gradient-to-r from-[#db961f] to-[#FEE337] rounded-full hover:scale-105 transition-transform shadow-[0_0_15px_rgba(219,150,31,0.2)]">
-          Book Consultation
+          Schedule Assessment
         </button>
         
         <!-- Mobile Menu Toggle -->
@@ -84,7 +84,7 @@
               @click="handleConsultation"
               class="w-full mt-8 flex items-center justify-center px-8 py-4 text-base font-bold text-[#090a0a] bg-gradient-to-r from-[#db961f] to-[#FEE337] rounded-full shadow-2xl active:scale-95 transition-all uppercase tracking-widest"
             >
-              Book Consultation
+              Schedule Assessment
             </button>
           </nav>
           
@@ -107,10 +107,11 @@ const route = useRoute();
 
 const navItems = [
   { label: "Home", to: "/" },
-  { label: "The Firm", to: "/about" },
+  { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
-  { label: "Tools", to: "/tools" },
+  { label: "Platform", to: "/tools" },
   { label: "Blog", to: "/blog" },
+  { label: "FAQ", to: "/faq" },
 ];
 
 const isMenuOpen = ref(false);
