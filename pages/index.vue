@@ -11,18 +11,17 @@
       <div class="container mx-auto px-6 relative z-10 text-center pt-10">
         <div class="gsap-hero-text opacity-0 translate-y-10 max-w-4xl mx-auto flex flex-col items-center">
 
-          <!-- Logo + Wordmark -->
-          <div class="flex items-center gap-4 mb-12">
-            <div class="w-14 h-14 rounded-2xl bg-white/8 border border-white/10 flex items-center justify-center overflow-hidden backdrop-blur-sm">
-              <img src="/logo.png" alt="YuktriX" class="w-10 h-10 object-contain" />
+          <!-- Logo -->
+          <div class="mb-12">
+            <div class="w-24 h-24 rounded-3xl bg-white/8 border border-white/10 flex items-center justify-center overflow-hidden backdrop-blur-sm shadow-[0_0_60px_rgba(219,150,31,0.15)]">
+              <img src="/logo.png" alt="YuktriX" class="w-18 h-18 object-contain scale-110" />
             </div>
-            <span class="text-2xl font-display font-bold tracking-[0.25em] text-white/90 uppercase">YUKTRIX</span>
           </div>
 
           <!-- Eyebrow -->
           <div class="inline-flex items-center gap-2 px-5 py-2 mb-8 bg-white/5 border border-white/10 rounded-full">
             <span class="w-1.5 h-1.5 rounded-full bg-[#db961f] animate-pulse"></span>
-            <span class="text-[#db961f] text-xs font-semibold uppercase tracking-[0.3em]">Self-Hosted Trading ERP</span>
+            <span class="text-[#db961f] text-xs font-semibold uppercase tracking-[0.3em]">Personalized Trading ERP</span>
           </div>
 
           <!-- Headline -->
@@ -33,7 +32,7 @@
 
           <!-- Single sub-sentence -->
           <p class="text-base md:text-lg text-white/50 max-w-xl mx-auto leading-relaxed mb-10 font-light">
-            A complete operating system for serious traders and desks.<br class="hidden md:block" />One-time cost. Self-hosted. Your strategies stay yours.
+            Your dedicated quant partner for a personalized trading journey.<br class="hidden md:block" />From raw idea to a validated, live-running system — built around your edge.
           </p>
 
           <!-- CTAs -->
@@ -133,11 +132,11 @@
       </div>
     </section>
 
-    <!-- 4. WHY YUKTRIX -->
+    <!-- 4. WHY US -->
     <section class="py-24 bg-[#cdcfd1]">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="mb-14" data-aos="fade-up">
-          <p class="text-xs font-mono font-bold text-[#090a0a]/40 uppercase tracking-[0.3em] mb-5">Why YuktriX</p>
+          <p class="text-xs font-mono font-bold text-[#090a0a]/40 uppercase tracking-[0.3em] mb-5">Why Us</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-[#090a0a] leading-tight tracking-tight">
             Built differently.
           </h2>
@@ -235,9 +234,9 @@ let stepTimer;
 
 const heroStats = [
   "9-stage trading lifecycle",
-  "Self-hosted on your VPS",
-  "One-time cost",
-  "Local AI, zero cloud",
+  "ICT engine built-in",
+  "Local AI, private by design",
+  "Personalized for your strategy",
 ];
 
 const problems = [
@@ -260,9 +259,9 @@ const lifecycleSteps = [
 
 const differentiators = [
   {
-    icon: "SH",
-    title: "Self-Hosted — You Own It",
-    body: "Your strategies live on a VPS you control. We could shut down tomorrow and your system keeps running. Your data never leaves your infrastructure.",
+    icon: "PV",
+    title: "Private by Design",
+    body: "Your strategies run on infrastructure you control. Your data never leaves your environment — no third-party cloud exposure, no platform dependency.",
   },
   {
     icon: "AI",
